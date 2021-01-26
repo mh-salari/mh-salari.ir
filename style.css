@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+
+.main{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column ;
+    
+
+    
+}
+
+.avatar{
+    width:200px;
+    height:200px; 
+    border-radius: 50%;
+    padding: 15px;
+}
+.blog-owner
+{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    color: #002938;
+}
+.description
+{
+    font-size: 1rem;
+    text-align: center;
+    color:#364954;
+    padding-bottom: 25px;
+    margin: 0px 2.5px;
+    /* word-wrap: break-word; */
+}
+
+.social-links
+{
+    padding-bottom: 25px; 
+}
+
+.social-links a
+{
+    font-size: 1.5rem;
+    color:#344b47;
+    padding: 0px 5px 0px; 
+    margin: 0px 5px 0px;
+}
+
+.social-links a:hover {
+    color: #002938;
+    font-weight: bolder;
+  }
+
+.social-links a.active {
+    
+    background-color: #4CAF50;
+    color: #002938;
+  }
+
+
+.nav-home ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    
+    
+    
+}
+   
+
+
+
+@media screen and (max-width: 400px){
+    .nav-home ul{ 
+        font-size: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+       
+        
+    }
+    .nav-home li{
+        padding-bottom: 10px;
+    }
+
+
+
+}
+
+.nav-home a {    
+    text-decoration: none;
+    font-size: 1.2rem;
+    /* font-size: 3.5vw; */
+    color: #364954;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    /* white-space: nowrap; */
+    /* border: 2px solid rebeccapurple; */
+    text-align: center;
+    
+}
+
+.nav-home a:hover {
+    color: #002938;
+    font-weight: bolder;
+  }
+
+.nav-home a.active {
+    
+    background-color: #4CAF50;
+    color: #002938;
+  }
+
+footer {
+    border-top: 1px solid #99aebb;
+    padding: 5px 50px 0px;
+    margin: 50px auto 0px auto;
+
+    color: #002938;
+
+    font-size: 1rem;
+    
+  }
+
+/*http://v3.danielmall.com/articles/responsive-line-breaks/ */
+@media screen and (min-width: 400px){
+    .rwd-break {display: none;}
+
+    .nav-home i {display: none;}
+}
