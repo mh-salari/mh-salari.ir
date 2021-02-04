@@ -1,15 +1,46 @@
+/* variables */
+
+:root {
+    --primary: #374955;
+    --secondary: #364954;
+    --links: #344b47;
+    --links-active: #002938;
+}
+
+
+/* reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Chakra Petch', sans-serif;
 }
 
+
+/* base styles */
+
 body {
+    overflow-x: hidden;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    /* height: 100vh; */
+}
+
+.warpper {
+    max-width: 960px;
+    height: 100vh;
+    margin: auto;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    flex-direction: column;
+}
+
+.warpper:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .main {
@@ -19,24 +50,30 @@ body {
     flex-direction: column;
 }
 
+
+/* mobile styles */
+
 .avatar {
     width: 200px;
-    height: 200px;
+    overflow: hidden;
+    /* max-width: 90%; */
     border-radius: 50%;
-    padding: 15px;
+    padding: 10px;
+    display: block;
 }
 
 .blog-owner {
     font-family: 'Yusei Magic', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4em;
+    text-align: center;
     padding-bottom: 10px;
-    color: #002938;
+    color: var(--primary);
 }
 
 .description {
-    font-size: 1rem;
+    font-size: 1em;
     text-align: center;
-    color: #364954;
+    color: var(--secondary);
     padding-bottom: 25px;
     margin: 0px 2.5px;
     /* word-wrap: break-word; */
@@ -47,79 +84,123 @@ body {
 }
 
 .social-links a {
-    font-size: 1.5rem;
-    color: #344b47;
+    font-size: 1.5em;
+    color: var(--links);
     padding: 0 5px;
     margin: 0 5px;
 }
 
 .social-links a:hover {
-    color: #002938;
+    color: var(--links-active);
     font-weight: bolder;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1)
 }
 
 .social-links a.active {
-    background-color: #4CAF50;
-    color: #002938;
+    color: var(--links);
 }
 
 .nav-home ul {
     list-style-type: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.nav-home li {
+    padding-bottom: 5px;
 }
 
 .nav-home a {
     text-decoration: none;
-    font-size: 1.2rem;
-    color: #364954;
-    padding: 5px;
-    margin: 5px;
-    /* white-space: nowrap; */
-    /* border: 2px solid rebeccapurple; */
+    font-size: 1.2em;
+    color: var(--secondary);
     text-align: center;
 }
 
 .nav-home a:hover {
-    color: #002938;
+    color: var(--links-active);
     font-weight: bolder;
 }
 
 .nav-home a.active {
-    background-color: #4CAF50;
-    color: #002938;
+    color: var(--links-active);
 }
 
 footer {
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: center;
     border-top: 1px solid #99aebb;
     padding: 5px 50px 0px;
-    margin: 50px auto 0;
-    color: #002938;
-    font-size: 1rem;
+    margin: 20px auto 10px;
+    color: var(--primary);
+    font-size: 1em;
 }
 
-/*http://v3.danielmall.com/articles/responsive-line-breaks/ */
 
-@media screen and (min-width: 601px) {
+/* medium mobile styles */
+
+@media screen and (min-width: 350px) {
+    .footer-break {
+        display: none;
+    }
+}
+
+
+/* small tablet styles */
+
+@media screen and (min-width: 620px) {
+    body {
+        font-size: 20px;
+    }
+    .avatar {
+        width: 250px;
+        padding: 20px;
+    }
+    .social-links {
+        padding-bottom: 40px;
+    }
+    .nav-home ul {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-bottom: 25px;
+    }
+    .footer-break {
+        display: none;
+    }
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+
+/* large tablet & laptop styles */
+
+@media screen and (min-width: 960px) {
+    body {
+        font-size: 20px;
+    }
     .rwd-break {
         display: none;
+    }
+    .description {
+        padding-bottom: 20px;
+    }
+    .social-links {
+        padding-bottom: 40px;
+    }
+    .nav-home ul {
+        display: flex;
     }
     .nav-home i {
         display: none;
     }
-}
-
-@media (max-width: 600px) {
-    .nav-home ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .nav-home li {
-        padding-bottom: 10px;
-    }
-}
-
-@media (max-width: 400px) {
     .nav-home a {
-        font-size: 4vw;
+        padding: 5px;
+        margin: 5px;
     }
 }
+
+
+/* desktop styles */
+
+@media screen and (min-width: 1200px) {}
