@@ -20,27 +20,11 @@
 /* base styles */
 
 body {
-    overflow-x: hidden;
-    font-family: 'Chakra Petch', sans-serif;
     font-size: 16px;
-    /* height: 100vh; */
-}
-
-.warpper {
-    max-width: 960px;
-    height: 100vh;
-    margin: auto;
-    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-}
-
-.warpper:after {
-    content: "";
-    display: block;
-    clear: both;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .main {
@@ -54,12 +38,10 @@ body {
 /* mobile styles */
 
 .avatar {
-    width: 200px;
-    overflow: hidden;
-    /* max-width: 90%; */
-    border-radius: 50%;
     padding: 10px;
-    display: block;
+    margin-top: 5px;
+    width: 200px;
+    border-radius: 50%;
 }
 
 .blog-owner {
