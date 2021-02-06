@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* min-width: 0;
+    min-height: 0; */
+}
+
+@font-face {
+    font-family: "Yekan";
+    src: url('../assets/persian-web-font/yekan-font/Yekan.eot');
+    src: url('../assets/persian-web-font/yekan-font/Yekan.woff?#iefix') format('embedded-opentype'), url('../assets/persian-web-font/yekan-font/Yekan.woff') format('woff'), url('../assets/persian-web-font/yekan-font/Yekan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url('../assets/persian-web-font/vazir-font-v18.0.0/Vazir.eot');
+    src: url('../assets/persian-web-font/vazir-font-v18.0.0/Vazir.woff?#iefix') format('embedded-opentype'), url('../assets/persian-web-font/vazir-font-v18.0.0/Vazir.woff') format('woff'), url('../assets/persian-web-font/vazir-font-v18.0.0/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 25px;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.site-header {
+    margin: 25px;
+    padding: 0 10px;
+    overflow: auto;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 1.0em;
+}
+
+.nav-home {
+    display: block;
+    text-align: center;
+    padding-right: 0px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: rgba(0, 95, 78, 0.85);
+    white-space: nowrap;
+}
+
+.nav-home i {
+    margin-left: 10px;
+}
+
+.nav-home:hover {
+    color: red;
+    /* font-weight: bolder; */
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.nav-home:active .nav-home:visited {
+    color: rgb(148, 72, 0);
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.nav li {
+    /* display: inline-block; */
+    white-space: nowrap;
+}
+
+.nav li i {
+    margin-right: 10px;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: olive;
+}
+
+.nav li a:active,
+.nav li a :visited {
+    color: rgb(255, 0, 200);
+}
+
+.nav li a:hover {
+    color: red;
+    /* font-weight: bolder; */
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+main h3 {
+    font-family: "Yekan";
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.archive {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 20px;
+}
+
+.posts {
+    display: flex;
+    gap: 2.5px;
+    margin: 0 25px;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.posts-date {
+    text-align: center;
+    flex-basis: 16%;
+    color: rgba(50, 143, 205, 0.693);
+}
+
+.posts-category {
+    flex-basis: 16%;
+    text-align: center;
+    display: none;
+}
+
+.posts-title {
+    padding-right: 20px;
+    flex-basis: 68%;
+    direction: rtl;
+    font-family: "Vazir";
+}
+
+.posts-title a {
+    text-decoration: none;
+}
+
+.posts-title a:active,
+.posts-title a:visited {
+    color: rgb(0, 46, 56);
+}
+
+.posts-title a:hover {
+    color: rgb(255, 0, 0);
+    /* font-weight: bolder; */
+    /* text-shadow: 2px 2px rgba(0, 0, 0, 0.1) */
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 320px) {
+    .nav {
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+    }
+    .nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .site-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .nav-home {
+        display: inline;
+        justify-self: start;
+    }
+    .nav {
+        justify-self: end;
+    }
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    .posts-category {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    main h3 {
+        padding: 50px 0px;
+    }
+}
