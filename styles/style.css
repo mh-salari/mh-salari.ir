@@ -2,8 +2,8 @@
 
 :root {
     --primary: #374955;
-    --secondary: #364954;
-    --links: #344b47;
+    --secondary: #69747b;
+    --links: #5c7982;
     --links-active: #002938;
 }
 
@@ -74,7 +74,7 @@ body {
 
 .social-links a:hover {
     color: var(--links-active);
-    font-weight: bolder;
+    /* font-weight: bolder; */
     text-shadow: 2px 2px rgba(0, 0, 0, 0.1)
 }
 
@@ -96,13 +96,14 @@ body {
 .nav-home a {
     text-decoration: none;
     font-size: 1.2em;
-    color: var(--secondary);
+    color: var(--primary);
     text-align: center;
 }
 
 .nav-home a:hover {
     color: var(--links-active);
-    font-weight: bolder;
+    /*font-weight: bolder;*/
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1)
 }
 
 .nav-home a.active {
@@ -143,8 +144,13 @@ footer {
         padding-bottom: 40px;
     }
     .nav-home ul {
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        /* grid-template-columns: 1fr 1fr 1fr; */
         padding-bottom: 25px;
+    }
+    .nav-home a {
+        padding: 5px;
+        margin: 5px;
     }
     .footer-break {
         display: none;
@@ -173,9 +179,9 @@ footer {
     .nav-home ul {
         display: flex;
     }
-    .nav-home i {
+    /* .nav-home i {
         display: none;
-    }
+    } */
     .nav-home a {
         padding: 5px;
         margin: 5px;
