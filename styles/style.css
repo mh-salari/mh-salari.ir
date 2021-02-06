@@ -1,6 +1,6 @@
 /* variables */
 
-:root {
+ :root {
     --primary: #374955;
     --secondary: #69747b;
     --links: #5c7982;
@@ -180,8 +180,8 @@ footer {
         display: flex;
     }
     /* .nav-home i {
-        display: none;
-    } */
+display: none;
+} */
     .nav-home a {
         padding: 5px;
         margin: 5px;
@@ -192,3 +192,14 @@ footer {
 /* desktop styles */
 
 @media screen and (min-width: 1200px) {}
+
+.nav-home img {
+    vertical-align: middle;
+    width: 1.25em;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+
+.nav-home li:nth-last-child(-n+2) img {
+    width: 1.5em;
+}
