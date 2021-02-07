@@ -1,10 +1,10 @@
 /* variables */
 
  :root {
-    --primary: #374955;
-    --secondary: #69747b;
-    --links: #5c7982;
-    --links-active: #002938;
+    --primary: #003d3b;
+    --secondary: #0b5666;
+    --links: 6, 99, 82;
+    --links-active: #6eb168;
 }
 
 
@@ -45,7 +45,7 @@ body {
 }
 
 .blog-owner {
-    font-family: 'Yusei Magic', sans-serif;
+    font-family: 'Neucha', cursive;
     font-size: 1.4em;
     text-align: center;
     padding-bottom: 10px;
@@ -53,7 +53,9 @@ body {
 }
 
 .description {
+    font-family: 'Loved by the King', cursive;
     font-size: 1em;
+    line-height: 1.2em;
     text-align: center;
     color: var(--secondary);
     padding-bottom: 25px;
@@ -67,7 +69,7 @@ body {
 
 .social-links a {
     font-size: 1.5em;
-    color: var(--links);
+    color: rgba(var(--links), .2);
     padding: 0 5px;
     margin: 0 5px;
 }
@@ -82,6 +84,10 @@ body {
     color: var(--links);
 }
 
+.nav-home {
+    font-family: 'Neucha', cursive;
+}
+
 .nav-home ul {
     list-style-type: none;
     display: grid;
@@ -91,6 +97,17 @@ body {
 
 .nav-home li {
     padding-bottom: 5px;
+}
+
+.nav-home img {
+    vertical-align: middle;
+    width: 1.25em;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+
+.nav-home li:nth-last-child(-n+2) img {
+    width: 1.5em;
 }
 
 .nav-home a {
@@ -111,22 +128,17 @@ body {
 }
 
 footer {
-    font-family: 'Yusei Magic', sans-serif;
+    font-family: 'Zeyada', cursive;
     text-align: center;
-    border-top: 1px solid #99aebb;
+    border-top: 1px solid var(--secondary);
     padding: 5px 50px 0px;
     margin: 20px auto 10px;
     color: var(--primary);
     font-size: 1em;
 }
 
-
-/* medium mobile styles */
-
-@media screen and (min-width: 350px) {
-    .footer-break {
-        display: none;
-    }
+.footer-break {
+    display: none;
 }
 
 
@@ -192,14 +204,3 @@ display: none;
 /* desktop styles */
 
 @media screen and (min-width: 1200px) {}
-
-.nav-home img {
-    vertical-align: middle;
-    width: 1.25em;
-    padding-right: 5px;
-    margin-bottom: 5px;
-}
-
-.nav-home li:nth-last-child(-n+2) img {
-    width: 1.5em;
-}
