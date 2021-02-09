@@ -1,20 +1,26 @@
 ---
 layout: default
 title:  Categories
+custom_css: categories
 permalink: /categories/
 ---
 
 
+
+
+<main>
+
+  <h2 class="title">Categories:</h2>
+  <hr>
 <div class="tag-list">
 {% for cat in site.categories %}
   <div class="tag-group">
     
     {% capture cat_name %}{{ cat | first }}{% endcapture %}
-    
-    <h5 class="tag-group-title" id="{{ cat_name | slugize }}"><a id="{{ cat_name | slugize }}_cat">{{ cat_name }}</a> </h5>
+    <h5 class="tag-group-title" id="{{ cat_name | slugize }}"><a  class="category-links" id="{{ cat_name | slugize }}_cat">{{ cat_name }}</a> </h5>
     {% for post in site.categories[cat_name] %}
     <article class="tag-item">
-      <a class="tag-item-title" href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
+      <a class="post-links" href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
     </article>
     {% endfor %}
   </div>
@@ -22,3 +28,4 @@ permalink: /categories/
 </div>
 
 
+</main>

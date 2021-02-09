@@ -1,23 +1,23 @@
 ---
 layout: default
 title: Tags
+custom_css: tags
+permalink: /tags/
+
 ---
 
-<!-- source: https://github.com/sergiokopplin/indigo/blob/gh-pages/_layouts/post.html -->
-
-
 <section class="list">
-    <h1 class="title">Tags</h1>
+    <h2 class="title">Tags:</h1>
 
     {% assign tags_list = site.tags %}
 
     {% if tags_list.first[0] == null %}
         {% for tag in tags_list %}
-            <a class="item" href="#{{ tag | slugify }}">{{ tag }}</a>
+            <a class="item category-links" href="#{{ tag | slugify }}">{{ tag }} </a>,
         {% endfor %}
     {% else %}
         {% for tag in tags_list %}
-            <a class="item" href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+            <a class="item category-links" href="#{{ tag[0] | slugify }}">{{ tag[0] }} </a>,
         {% endfor %}
     {% endif %}
 
@@ -36,8 +36,9 @@ title: Tags
             {% if post.title != null %}
                 {% if group == null or group == post.group %}
                     <li class="item">
-                        <a class="url" href="{{ site.url }}{{ post.url }}">
-                            <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                        <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                        <a class="post-links" href="{{ site.url }}{{ post.url }}">
+                           
                             <h3 class="title">{{ post.title }}</h3>
                         </a>
                     </li>

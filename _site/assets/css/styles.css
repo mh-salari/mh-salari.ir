@@ -2,7 +2,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* variables */
-:root { --primary: #003d3b; --primary-rgb: 0, 61, 59; --secondary: #0b5666; --links: 6, 99, 82; --links-active: #6eb168; }
+:root { --primary: #003d3b; --primary-rgb: 0, 61, 59; --secondary: #0b5666; --secondary-rgb: 11,86,102; --links: 6, 99, 82; --links-active: #6eb168; }
 
 @font-face { font-family: "Yekan"; src: url("../persian-web-font/yekan-font/Yekan.eot"); src: url("../persian-web-font/yekan-font/Yekan.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/yekan-font/Yekan.woff") format("woff"), url("../persian-web-font/yekan-font/Yekan.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 

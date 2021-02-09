@@ -1,0 +1,21 @@
+.tag-list { text-align: center; margin: 10px 50px; font-family: "Yekan", "Neucha", cursive; font-size: 18px; }
+
+.tag-group { padding: 10px 0; }
+
+.tag-group-title { font-size: 1.1em; }
+
+.tag-item { margin: 10px 0px; }
+
+.list { margin-bottom: 25px; list-style: none; }
+
+.list h2 { font-family: "Neucha", cursive; }
+
+.list .item { font-family: "Yekan", "Neucha", cursive; }
+
+.tag-list h2 { color: #e47600; }
+
+.item { padding: 0; margin: 15px 0; line-height: 1.5em; }
+
+.date { color: rgba(var(--secondary-rgb), 0.3); }
+
+/*# sourceMappingURL=tags.css.map */

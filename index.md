@@ -1,5 +1,6 @@
 ---
 layout: home
-title: "H.U.E."
+custom_css: fa-blog
+title: "Farsi Blog Archive"
 ---
 
