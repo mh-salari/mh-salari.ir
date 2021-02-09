@@ -50,3 +50,14 @@
         color: rgba(var(--primary-rgb),.6);
     }
 }
+
+
+
+.orang-links {
+    text-decoration: none;
+    color: rgb(228, 118, 0);
+
+    &:hover &:active &:visited{
+        color: rgb(228, 118, 0);
+    }
+}

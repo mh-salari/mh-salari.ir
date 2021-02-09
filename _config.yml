@@ -5,7 +5,7 @@ timezone: Asia/Tehran
 
 title: "H.U.E." # the name of your site, e.g. ACME Corp.
 tagline: "MohammadHossein Salari Personal Site| A A blog dedicated to my EE & AI/ML journey" 
-description: I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, STM32, STM8, and Arduino microcontrollers.
+description: I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++ 
 
 author:
   name: MohammadHossein Salari
@@ -44,5 +44,9 @@ highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter_opts:
-    default_lang: html
+    default_lang: python
     css_class   : 'syntax'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true

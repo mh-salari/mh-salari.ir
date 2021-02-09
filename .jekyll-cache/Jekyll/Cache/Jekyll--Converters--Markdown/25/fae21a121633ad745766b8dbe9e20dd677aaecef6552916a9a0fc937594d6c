@@ -1,0 +1,166 @@
+I"�#<p>صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه.<br />
+حداقل خواستمون اینه که:</p>
+
+<ol>
+  <li>موقع روشن شدن سیستم کد به شکل خودکار اجرا شه</li>
+  <li>اگر در هر صورت خطایی رخ داد که باعث کرش کردن برنامه شد به شکل خودکار کدمون مجددا راه اندازی شده</li>
+</ol>
+
+<p>در بین همه‌ی گزینه‌های ممکن برای انجام این کار systemd راحت‌ترین و سرراست ترین راه رسیدن به خواسته‌های بالاست و کیه که ندونه من چقدر تنبلی رو دوست دارم!</p>
+
+<h2 id="ایجاد-یک-برنامهی-نمونه">ایجاد یک برنامه‌ی نمونه:</h2>
+
+<p>اول یک برنامه ساده درست کنیم که صرفا یک متن رو در یک حلقه‌ی بینهایت هر یک دقیقه یک بار در انتهای یک فایل اضافه کنه:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="c1">#!/usr/bin/python
+</span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"/dos/codes/systemd_demo.txt"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+            <span class="c1"># get further user input/do stuff here
+</span>            <span class="nb">file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s"> mississippi</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>این برنامه رو به اسم systemd_demo.py ذخیره می‌کنیم.</p>
+
+<p>اگر کد برنامه رو اجرا کنیم یک فایل به اسم systemd_demo.txt ایجاد خواهد شد:</p>
+
+<p><img src="/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_tail.png" alt="systemd tail" /></p>
+
+<p>دقت کنید که برای اجرای این کد از آدرس کامل محیط آناکوندام و آدرس فایلم استفاده کردم، در مرحله‌ی بعد به این آدرس کامل احتیاج داریم.</p>
+
+<p>هشدار: حتما یک بار توی ترمینال آدرس کامل رو بزنید و برنامه رو اجرا کنید، به خاطر ساختار import کردن ماژول‌ها و … در python ممکنه کد شما وقتی این شکلی اونو فرا می‌خونی با مشکل مواجه شه.</p>
+
+<h2 id="ایجاد-فایل-service">ایجاد فایل service:</h2>
+
+<p>با ویرایشگر دلخواهتون یک فایل با اسم مورد نظر خودتون (که مرتبط با اسم برنامه‌ای شما باشه) در آدرس /lib/systemd/system/ و با پسوند
+.service ایجاد کنید.</p>
+
+<p>من از ویرایشگر nano استفاده می‌کنم، اگر nano رو نصب دارید کافیه در دستور زیر جای YOUR_SERVICE_NAME اسم مورد نظر خودتون رو بذارید.
+ </p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>nano /lib/systemd/system/YOUR_SERVICE_NAME.service</code></pre></figure>
+
+<p> </p>
+
+<p>ساختار کلی‌ای که برای ایجاد یک service لازم داریم به شکل زیره:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="o">[</span>Unit]
+<span class="nv">Description</span><span class="o">=</span>YOUR SERVICE DESCRIPTION FOR HUMANS
+<span class="nv">After</span><span class="o">=</span>multi-user.target
+<span class="nv">Conflicts</span><span class="o">=</span>getty@tty1.service
+
+<span class="o">[</span>Service]
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">ExecStart</span><span class="o">=</span>YOUR PYTHON CODE EXECUTE COMMAND
+<span class="nv">StandardInput</span><span class="o">=</span>tty-force
+<span class="nv">RemainAfterExit</span><span class="o">=</span><span class="nb">yes
+</span><span class="nv">Restart</span><span class="o">=</span>on-failure
+<span class="nv">RestartSec</span><span class="o">=</span>5s
+
+<span class="o">[</span>Install]
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>در ساختار بالا:</p>
+
+<ul>
+  <li>
+    <p>بجای YOUR SERVICE DESCRIPTION FOR HUMANS توضیحات مرتبط با اینکه این کد/سرویس چی هست رو می‌نویسیم.</p>
+  </li>
+  <li>
+    <p>بجای YOUR PYTHON CODE EXECUTE COMMAND دستور اجرای فایل خودمون وارد می‌کنیم.</p>
+  </li>
+  <li>
+    <p>اگر می‌خوایم بعد از اتمام حلقه‌ی اصلی برنامه python اون service فعال بمونه مقدار RemainAfterExit رو برابر yes قرار می‌دیم.</p>
+  </li>
+  <li>
+    <p>همچنین پارامتر RestartSec مقدار تاخیر هنگام اجرای مجدد کدمون رو مشخص می‌کنه.</p>
+  </li>
+</ul>
+
+<p>ساختار فایل بالا رو من برای انجام برنامه‌ی مثال این پست به شکل زیر ویرایش کردم:</p>
+
+<p><img src="/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_demo_service-1.png" alt="systemd demo service-1" /></p>
+
+<h2 id="فعال-سازی-و-اجرای-service">فعال سازی و اجرای service:</h2>
+
+<p>هر بار که ما در آدرس</p>
+
+<p>/lib/systemd/system/</p>
+
+<p>فایلی می‌سازیم و یا در اون فایل‌ها تغییری ایجاد می‌کنیم نیازه تا systemctl رو راه اندازی مجدد کنیم تا تغییراتمون اعمال بشن، این کار با دستور زیر انجام می‌شه:</p>
+
+<p>sudo systemctl daemon-reload</p>
+
+<p>حال با دستورات زیر می‌تونیم serviceای که ایجاد کردیم رو مدیریت کنیم:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="c">#To enable running service</span>
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>YOUR_SERVICE_NAME.service
+
+<span class="c">#To stop running service</span>
+<span class="nb">sudo </span>systemctl stop YOUR_SERVICE_NAME.service
+
+<span class="c">#To start running service</span>
+<span class="nb">sudo </span>systemctl start YOUR_SERVICE_NAME.service
+
+<span class="c">#To restart running service</span>
+<span class="nb">sudo </span>systemctl restart YOUR_SERVICE_NAME.service
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>اگر همه‌چیز به خوبی پیش رفته باشه چنین خروجی‌ای خواهید دید و دیتا شروع می‌کنه وارد فایل systemd_demo.txt شدن.</p>
+
+<p><img src="/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/sysemd_status.png" alt="sysemd status" /></p>
+
+<h2 id="منابع">منابع:</h2>
+
+<div dir="ltr">
+
+<a href="https://singlebrook.com/2017/10/23/auto-restart-crashed-service-systemd/">Auto-recovery of crashed services with systemd</a><br />
+<a href="https://tecadmin.net/setup-autorun-python-script-using-systemd/">How To Setup Autorun a Python Script Using Systemd</a><br />
+<a href="https://github.com/torfsen/python-systemd-tutorial">Writing a systemd Service in Python</a><br />
+<a href="https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files">https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files</a><br />
+
+</div>
+:ET

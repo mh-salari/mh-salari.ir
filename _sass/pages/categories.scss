@@ -1,47 +1,26 @@
-.tag-list
-{
-    // display: flex;
-    // flex-direction: column;
-    // justify-items: center;
-    // align-items: center;
+.tag-list {
     text-align: center;
-    // background: chocolate;
     margin: 10px 50px;
     font-family: "Yekan", "Neucha", cursive;
     font-size: 18px;
-
 }
-
-
-.tag-group
+.title
 {
-    // background: cornflowerblue;
+    color: var(--primary);
+}
+.tag-group {
     padding: 10px 0;
 }
 
-.tag-group-title
-{
+.tag-group-title {
     font-size: 1.1em;
-    // background: crimson;
 }
 
-.tag-item
-{
-    // background: darkgreen;
+.tag-item {
     margin: 10px 0px;
-    // text-align: right;
 }
 
-.category-links:hover{
-    color: rgba(var(--primary-rgb), .5);
-}
-
-
-.title
-{
-    // background:rosybrown;
+.title {
     font-family: "Neucha", cursive;
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
 }
-
-

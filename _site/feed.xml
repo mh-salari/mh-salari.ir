@@ -1,81 +1,157 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-09T07:02:18+03:30</updated><id>/feed.xml</id><title type="html">H.U.E.</title><subtitle>I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, STM32, STM8, and Arduino microcontrollers.</subtitle><author><name>MohammadHossein Salari</name></author><entry><title type="html">بسیار عasfasfasfaالی</title><link href="/p-ost/" rel="alternate" type="text/html" title="بسیار عasfasfasfaالی" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/p-ost</id><content type="html" xml:base="/p-ost/">&lt;!-- ![Screenshot](/assets/svg-icons/cat_b.svg) --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-09T13:56:04+03:30</updated><id>/feed.xml</id><title type="html">H.U.E.</title><subtitle>I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++</subtitle><author><name>MohammadHossein Salari</name></author><entry><title type="html">اجرای کدهای python در لینوکس با استفاده از systemd</title><link href="/test-post/" rel="alternate" type="text/html" title="اجرای کدهای python در لینوکس با استفاده از systemd" /><published>2020-05-29T05:07:00+04:30</published><updated>2020-05-29T05:07:00+04:30</updated><id>/test-post</id><content type="html" xml:base="/test-post/">&lt;p&gt;صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه.&lt;br /&gt;
+حداقل خواستمون اینه که:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;موقع روشن شدن سیستم کد به شکل خودکار اجرا شه&lt;/li&gt;
+  &lt;li&gt;اگر در هر صورت خطایی رخ داد که باعث کرش کردن برنامه شد به شکل خودکار کدمون مجددا راه اندازی شده&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;What has inside?&lt;/p&gt;
+&lt;p&gt;در بین همه‌ی گزینه‌های ممکن برای انجام این کار systemd راحت‌ترین و سرراست ترین راه رسیدن به خواسته‌های بالاست و کیه که ندونه من چقدر تنبلی رو دوست دارم!&lt;/p&gt;
+
+&lt;h2 id=&quot;ایجاد-یک-برنامهی-نمونه&quot;&gt;ایجاد یک برنامه‌ی نمونه:&lt;/h2&gt;
+
+&lt;p&gt;اول یک برنامه ساده درست کنیم که صرفا یک متن رو در یک حلقه‌ی بینهایت هر یک دقیقه یک بار در انتهای یک فایل اضافه کنه:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/python
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/dos/codes/systemd_demo.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;# get further user input/do stuff here
+&lt;/span&gt;            &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; mississippi&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;این برنامه رو به اسم systemd_demo.py ذخیره می‌کنیم.&lt;/p&gt;
+
+&lt;p&gt;اگر کد برنامه رو اجرا کنیم یک فایل به اسم systemd_demo.txt ایجاد خواهد شد:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_tail.png&quot; alt=&quot;systemd tail&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;دقت کنید که برای اجرای این کد از آدرس کامل محیط آناکوندام و آدرس فایلم استفاده کردم، در مرحله‌ی بعد به این آدرس کامل احتیاج داریم.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;هشدار:&lt;/span&gt;. حتما یک بار توی ترمینال آدرس کامل رو بزنید و برنامه رو اجرا کنید، به خاطر ساختار import کردن ماژول‌ها و … در python ممکنه کد شما وقتی این شکلی اونو فرا می‌خونی با مشکل مواجه شه.&lt;/p&gt;
+
+&lt;h2 id=&quot;ایجاد-فایل-service&quot;&gt;ایجاد فایل service:&lt;/h2&gt;
+
+&lt;p&gt;با ویرایشگر دلخواهتون یک فایل با اسم مورد نظر خودتون (که مرتبط با اسم برنامه‌ای شما باشه) در آدرس /lib/systemd/system/ و با پسوند
+service. ایجاد کنید.&lt;/p&gt;
+
+&lt;p&gt;من از ویرایشگر nano استفاده می‌کنم، اگر nano رو نصب دارید کافیه در دستور زیر جای YOUR_SERVICE_NAME اسم مورد نظر خودتون رو بذارید.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;nano /lib/systemd/system/YOUR_SERVICE_NAME.service&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;ساختار کلی‌ای که برای ایجاد یک service لازم داریم به شکل زیره:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Unit]
+&lt;span class=&quot;nv&quot;&gt;Description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR SERVICE DESCRIPTION FOR HUMANS
+&lt;span class=&quot;nv&quot;&gt;After&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;multi-user.target
+&lt;span class=&quot;nv&quot;&gt;Conflicts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;getty@tty1.service
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Service]
+&lt;span class=&quot;nv&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;simple
+&lt;span class=&quot;nv&quot;&gt;ExecStart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR PYTHON CODE EXECUTE COMMAND
+&lt;span class=&quot;nv&quot;&gt;StandardInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;tty-force
+&lt;span class=&quot;nv&quot;&gt;RemainAfterExit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;on-failure
+&lt;span class=&quot;nv&quot;&gt;RestartSec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;5s
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Install]
+&lt;span class=&quot;nv&quot;&gt;WantedBy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;multi-user.target
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;در ساختار بالا:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="گربه‌ها" /><category term="میو میو" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/svg-icons/cat_b.svg" /><media:content medium="image" url="/assets/svg-icons/cat_b.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">بسیار عالی</title><link href="/post-copy-2/" rel="alternate" type="text/html" title="بسیار عالی" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/post%20copy%202</id><content type="html" xml:base="/post-copy-2/">&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+  &lt;li&gt;بجای YOUR SERVICE DESCRIPTION FOR HUMANS توضیحات مرتبط با اینکه این کد/سرویس چی هست رو می‌نویسیم.&lt;/li&gt;
+  &lt;li&gt;بجای YOUR PYTHON CODE EXECUTE COMMAND دستور اجرای فایل خودمون وارد می‌کنیم.&lt;/li&gt;
+  &lt;li&gt;اگر می‌خوایم بعد از اتمام حلقه‌ی اصلی برنامه python اون service فعال بمونه مقدار RemainAfterExit رو برابر yes قرار می‌دیم.&lt;/li&gt;
+  &lt;li&gt;همچنین پارامتر RestartSec مقدار تاخیر هنگام اجرای مجدد کدمون رو مشخص می‌کنه.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;ساختار فایل بالا رو من برای انجام برنامه‌ی مثال این پست به شکل زیر ویرایش کردم:&lt;/p&gt;
 
-&lt;p&gt;What has inside?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_demo_service-1.png&quot; alt=&quot;systemd demo service-1&quot; /&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="گربه‌ها" /><category term="میو میو" /><summary type="html"></summary></entry><entry><title type="html">بسیasdafafaار عالی</title><link href="/post-copy-3/" rel="alternate" type="text/html" title="بسیasdafafaار عالی" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/post%20copy%203</id><content type="html" xml:base="/post-copy-3/">&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;فعال-سازی-و-اجرای-service&quot;&gt;فعال سازی و اجرای service:&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;هر بار که ما در آدرس /lib/systemd/system/ فایلی می‌سازیم و یا در اون فایل‌ها تغییری ایجاد می‌کنیم نیازه تا systemctl رو راه اندازی مجدد کنیم تا تغییراتمون اعمال بشن، این کار با دستور زیر انجام می‌شه:&lt;/p&gt;
 
-&lt;p&gt;What has inside?&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="گربه‌ها" /><category term="میو میو" /><summary type="html"></summary></entry><entry><title type="html">بسیار عالی</title><link href="/post-copy/" rel="alternate" type="text/html" title="بسیار عالی" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/post%20copy</id><content type="html" xml:base="/post-copy/">&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl daemon-reload&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt; 
+حال با دستورات زیر می‌تونیم serviceای که ایجاد کردیم رو مدیریت کنیم:&lt;/p&gt;
 
-&lt;p&gt;What has inside?&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;#To enable running service&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;YOUR_SERVICE_NAME.service
 
-&lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="گربه‌ها" /><category term="میو میو" /><summary type="html"></summary></entry><entry><title type="html">کasfasfsafمتر عالی</title><link href="/post1/" rel="alternate" type="text/html" title="کasfasfsafمتر عالی" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/post1</id><content type="html" xml:base="/post1/">&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+&lt;span class=&quot;c&quot;&gt;#To stop running service&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl stop YOUR_SERVICE_NAME.service
 
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
+&lt;span class=&quot;c&quot;&gt;#To start running service&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start YOUR_SERVICE_NAME.service
 
-&lt;p&gt;What has inside?&lt;/p&gt;
+&lt;span class=&quot;c&quot;&gt;#To restart running service&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart YOUR_SERVICE_NAME.service
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="گربه‌ها" /><category term="میو میو" /><summary type="html"></summary></entry><entry><title type="html">بسیار عafsafالی</title><link href="/pqwost-copy-2/" rel="alternate" type="text/html" title="بسیار عafsafالی" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/pqwost%20copy%202</id><content type="html" xml:base="/pqwost-copy-2/">&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;اگر همه‌چیز به خوبی پیش رفته باشه چنین خروجی‌ای خواهید دید و دیتا شروع می‌کنه وارد فایل systemd_demo.txt شدن.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/sysemd_status.png&quot; alt=&quot;sysemd status&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;What has inside?&lt;/p&gt;
+&lt;h2 id=&quot;منابع&quot;&gt;منابع:&lt;/h2&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="گربه‌ها" /><category term="میو میو" /><summary type="html"></summary></entry><entry><title type="html">پایتون</title><link href="/test/" rel="alternate" type="text/html" title="پایتون" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/test</id><content type="html" xml:base="/test/">&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+&lt;div dir=&quot;ltr&quot;&gt;
 
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&quot;https://singlebrook.com/2017/10/23/auto-restart-crashed-service-systemd/&quot;&gt;Auto-recovery of crashed services with systemd&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://tecadmin.net/setup-autorun-python-script-using-systemd/&quot;&gt;How To Setup Autorun a Python Script Using Systemd&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/torfsen/python-systemd-tutorial&quot;&gt;Writing a systemd Service in Python&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files&quot;&gt;https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files&lt;/a&gt;&lt;br /&gt;
 
-&lt;p&gt;What has inside?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="آموزش پایتون" /><category term="پایتون" /><summary type="html"></summary></entry><entry><title type="html">اشارafasfafه‌گرها در C/C++</title><link href="/post/" rel="alternate" type="text/html" title="اشارafasfafه‌گرها در C/C++" /><published>2021-02-09T05:07:00+03:30</published><updated>2021-02-09T05:07:00+03:30</updated><id>/post</id><content type="html" xml:base="/post/">&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https:///&quot;&gt;Demo&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;What has inside?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gulp&lt;/li&gt;
-  &lt;li&gt;BrowserSync&lt;/li&gt;
-  &lt;li&gt;Stylus&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>johndoe</name></author><category term="C/C++ Tutrials" /><category term="Pointers in C/C++" /><summary type="html"></summary></entry></feed>
+&lt;/div&gt;</content><author><name>MohammadHossein Salari</name></author><category term="Linux" /><category term="Python Linux" /><summary type="html">صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه. حداقل خواستمون اینه که:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/python_systemd.png" /><media:content medium="image" url="/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/python_systemd.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

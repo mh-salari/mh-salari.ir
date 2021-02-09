@@ -7,8 +7,8 @@
 	],
 	"sourcesContent": [
 		"@import \"pages/categories\";\n",
-		".tag-list\n{\n    // display: flex;\n    // flex-direction: column;\n    // justify-items: center;\n    // align-items: center;\n    text-align: center;\n    // background: chocolate;\n    margin: 10px 50px;\n    font-family: \"Yekan\", \"Neucha\", cursive;\n    font-size: 18px;\n\n}\n\n\n.tag-group\n{\n    // background: cornflowerblue;\n    padding: 10px 0;\n}\n\n.tag-group-title\n{\n    font-size: 1.1em;\n    // background: crimson;\n}\n\n.tag-item\n{\n    // background: darkgreen;\n    margin: 10px 0px;\n    // text-align: right;\n}\n\n.category-links:hover{\n    color: rgba(var(--primary-rgb), .5);\n}\n\n\n.title\n{\n    // background:rosybrown;\n    font-family: \"Neucha\", cursive;\n    margin-bottom: 10px ;\n}\n\n\n"
+		".tag-list {\n    text-align: center;\n    margin: 10px 50px;\n    font-family: \"Yekan\", \"Neucha\", cursive;\n    font-size: 18px;\n}\n.title\n{\n    color: var(--primary);\n}\n.tag-group {\n    padding: 10px 0;\n}\n\n.tag-group-title {\n    font-size: 1.1em;\n}\n\n.tag-item {\n    margin: 10px 0px;\n}\n\n.title {\n    font-family: \"Neucha\", cursive;\n    margin-bottom: 10px;\n}"
 	],
 	"names": [],
-	"mappings": "ACAA,AAAA,SAAS,CACT,EAKI,UAAU,EAAE,MAAM,EAElB,MAAM,EAAE,SAAS,EACjB,WAAW,EAAE,0BAA0B,EACvC,SAAS,EAAE,IAAI,GAElB;;AAGD,AAAA,UAAU,CACV,EAEI,OAAO,EAAE,MAAM,GAClB;;AAED,AAAA,gBAAgB,CAChB,EACI,SAAS,EAAE,KAAK,GAEnB;;AAED,AAAA,SAAS,CACT,EAEI,MAAM,EAAE,QAAQ,GAEnB;;AAED,AAAA,eAAe,CAAC,KAAK,CAAA,EACjB,KAAK,EAAE,6BAA4B,GACtC;;AAGD,AAAA,MAAM,CACN,EAEI,WAAW,EAAE,iBAAiB,EAC9B,aAAa,EAAE,IAAK,GACvB"
+	"mappings": "ACAA,AAAA,SAAS,CAAC,EACN,UAAU,EAAE,MAAM,EAClB,MAAM,EAAE,SAAS,EACjB,WAAW,EAAE,0BAA0B,EACvC,SAAS,EAAE,IAAI,GAClB;;AACD,AAAA,MAAM,CACN,EACI,KAAK,EAAE,cAAc,GACxB;;AACD,AAAA,UAAU,CAAC,EACP,OAAO,EAAE,MAAM,GAClB;;AAED,AAAA,gBAAgB,CAAC,EACb,SAAS,EAAE,KAAK,GACnB;;AAED,AAAA,SAAS,CAAC,EACN,MAAM,EAAE,QAAQ,GACnB;;AAED,AAAA,MAAM,CAAC,EACH,WAAW,EAAE,iBAAiB,EAC9B,aAAa,EAAE,IAAI,GACtB"
 }

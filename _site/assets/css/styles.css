@@ -48,6 +48,10 @@
 
 .tag-links:active .tag-links:visited { color: rgba(var(--primary-rgb), 0.6); }
 
+.orang-links { text-decoration: none; color: #e47600; }
+
+.orang-links:hover .orang-links:active .orang-links:visited { color: #e47600; }
+
 .icon { vertical-align: middle; width: 1.25em; padding-right: 5px; margin-bottom: 5px; }
 
 footer { font-family: 'Zeyada', cursive; text-align: center; padding: 50px 0px 0px 0px; color: var(--primary); font-size: 1em; }
@@ -59,5 +63,13 @@ html, body { width: 100%; height: 100%; font-size: 18px; }
 main { overflow: auto; }
 
 .container { max-width: 1200px; margin: 0px auto; padding: 25px; min-height: 90%; display: grid; grid-template-rows: auto 1fr auto; }
+
+hr { color: rgba(var(--primary-rgb), 0.4); }
+
+a { text-decoration: none; color: var(--primary); }
+
+a:hover { color: var(--links-active); }
+
+a:active a:visited { color: var(--links); }
 
 /*# sourceMappingURL=styles.css.map */
