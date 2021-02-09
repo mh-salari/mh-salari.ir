@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+        {% include analytics.html %}
+    {% endif %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% seo title=false %}
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Neucha&family=Zeyada&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/syntax.css" type="text/css" />
+
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/styles.css">
+
+    {% if page.custom_css %}
+        {% for stylesheet in page.custom_css %}
+            <link rel="stylesheet" href="{{ site.url }}/assets/css/{{ stylesheet }}.css">
+        {% endfor %}
+    {% endif %}
+
+    {% feed_meta %}
+    <title>
+        {%if page.title %}
+            {{ page.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+     </title>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        {%include nav-bar.html%}
+
+            {{ content }}
+            
+        <!-- footer -->
+        {% include footer.html %}
+    </div>
+</body>
+
+</html>
