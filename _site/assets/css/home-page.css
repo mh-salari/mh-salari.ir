@@ -28,6 +28,10 @@
 
 .tag-links:active .tag-links:visited { color: rgba(var(--primary-rgb), 0.6); }
 
+.orang-links { text-decoration: none; color: #e47600; }
+
+.orang-links:hover .orang-links:active .orang-links:visited { color: #e47600; }
+
 .icon { vertical-align: middle; width: 1.25em; padding-right: 5px; margin-bottom: 5px; }
 
 footer { font-family: 'Zeyada', cursive; text-align: center; padding: 50px 0px 0px 0px; color: var(--primary); font-size: 1em; }
@@ -35,7 +39,7 @@ footer { font-family: 'Zeyada', cursive; text-align: center; padding: 50px 0px 0
 .footer-break { display: none; }
 
 /* base styles */
-body { font-size: 16px; display: flex; flex-direction: column; justify-content: center; min-height: 100vh; }
+body { font-size: 16px; display: flex; flex-direction: column; justify-content: center; min-height: 90vh; }
 
 .main { display: flex; align-items: center; justify-content: center; flex-direction: column; }
 

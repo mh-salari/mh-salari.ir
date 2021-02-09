@@ -1,72 +1,44 @@
-.tag-list
-{
-    // display: flex;
-    // flex-direction: column;
-    // justify-items: center;
-    // align-items: center;
+.tag-list {
     text-align: center;
-    // background: chocolate;
     margin: 10px 50px;
     font-family: "Yekan", "Neucha", cursive;
-    font-size: 18px;
-
+    font-size: 15px;
 }
 
-
-.tag-group
-{
-    // background: cornflowerblue;
+.tag-group {
     padding: 10px 0;
 }
 
-.tag-group-title
-{
+.tag-group-title {
     font-size: 1.1em;
-    // background: crimson;
 }
 
-.tag-item
-{
-    // background: darkgreen;
+.tag-item {
     margin: 10px 0px;
-    // text-align: right;
 }
 
-// .category-links:hover{
-//     color: rgba(var(--primary-rgb), .5);
-// }
-.list
-{ 
+.list {
     // background: blue;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     list-style: none;
+    h2 {
+        font-family: "Neucha", cursive;
+    }
+    .item {
+        font-family: "Yekan", "Neucha", cursive;
+    }
 }
 
-.list h2{
-    font-family:"Neucha", cursive;
-}
-
-
-.list .item 
-{
-    font-family: "Yekan", "Neucha", cursive;
-}
-.tag-list h2 
-
-{
+.tag-list h2 {
     color: rgb(228, 118, 0);
 }
 
-
-.item
-{
-    // background: blueviolet;
+.item {
     padding: 0;
-margin: 15px 0;    
-line-height: 1.5em;
+    margin: 15px 0;
+    line-height: 1.5em;
 }
 
-.date
-{
+.date {
     color: rgba(var(--secondary-rgb), .3);
 }

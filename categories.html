@@ -17,7 +17,7 @@ permalink: /categories/
   <div class="tag-group">
     
     {% capture cat_name %}{{ cat | first }}{% endcapture %}
-    <h5 class="tag-group-title" id="{{ cat_name | slugize }}"><a  class="category-links" id="{{ cat_name | slugize }}_cat">{{ cat_name }}</a> </h5>
+    <h5 class="tag-group-title" id="{{ cat_name | slugize }}"><a  class="orang-links" id="{{ cat_name | slugize }}_cat">{{ cat_name }}</a> </h5>
     {% for post in site.categories[cat_name] %}
     <article class="tag-item">
       <a class="post-links" href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
