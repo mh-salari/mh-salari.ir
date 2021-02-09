@@ -12,7 +12,7 @@ category: Linux
 author: MohammadHossein Salari
 externalLink: false
 ---
-
+tags: [web, jekyll]
 
 {% highlight python linenos %}
 {% endhighlight %}
