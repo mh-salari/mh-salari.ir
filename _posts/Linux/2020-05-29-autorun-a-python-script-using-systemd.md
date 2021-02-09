@@ -4,7 +4,7 @@ custom_css: fa-post
 
 title: "اجرای کدهای python در لینوکس با استفاده از systemd"
 date: 2020-05-29 5:07
-tag: Python, Linux
+tags: [ Python, Linux]
 image: /assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png
 headerImage: true
 description: "آموزش اجرای اتوماتیک کدهای python هنگام روشن شدن سیستم با استفاده از systemd در لینوکس و اجرای مجدد اسکریپ python در صورت بروز خطا"
