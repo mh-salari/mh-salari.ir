@@ -1,0 +1,24 @@
+---
+layout: default
+
+---
+<main>
+    <h3>آرشیو</h3>
+    <div class="archive">
+        {% for post in site.posts %}
+        <div class="posts">
+            <h5 class="posts-date">
+                {{ post.date | date: "%B %e, %Y" }}
+            </h5>
+            <h5 class="posts-category">
+                <a class="category-links" href="{{ site.url }}/categories/#{{post.category}}"> {{post.category}}</a>
+            </h5>
+            <div class="posts-title">
+                <a class="post-links" href="{{ site.baseurl }}{{ post.url }}"> {{ post.title }}</a>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</main>

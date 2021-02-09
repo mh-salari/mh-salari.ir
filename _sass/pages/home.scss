@@ -1,0 +1,133 @@
+@import "components/reset";
+@import "components/variables";
+@import "components/links";
+@import "components/icon";
+@import "components/footer";
+
+/* base styles */
+
+body {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* mobile styles */
+
+.avatar {
+    margin: 15px;
+    width: 175px;
+    border-radius: 50%;
+}
+
+.blog-owner {
+    font-family: 'Neucha', cursive;
+    font-size: 1.4em;
+    text-align: center;
+    padding-bottom: 10px;
+    color: var(--primary);
+}
+
+.description {
+    font-family: 'Loved by the King', cursive;
+    font-size: 1em;
+    line-height: 1.2em;
+    text-align: center;
+    color: var(--secondary);
+    padding-bottom: 25px;
+    margin: 0px 2.5px;
+}
+
+.social-links {
+    padding-bottom: 25px;
+    .nav-links {
+        font-size: 1.5em;
+        color: rgba(var(--links), .2);
+        padding: 0 5px;
+        margin: 0 5px;
+        &:hover {
+            color: var(--links-active);
+        }
+    }
+}
+
+.nav-home {
+    font-family: 'Neucha', cursive;
+    ul {
+        list-style-type: none;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    li {
+        padding-bottom: 5px;
+        padding: 0 15px;
+        &:nth-last-child(-n+2) .icon {
+            width: 1.5em;
+        }
+    }
+}
+
+
+/* small tablet styles */
+
+@media screen and (min-width: 620px) {
+    body {
+        font-size: 20px;
+    }
+    .avatar {
+        width: 200px;
+        margin: 40px;
+    }
+    .social-links {
+        padding-bottom: 40px;
+    }
+    .nav-home {
+        ul {
+            display: flex;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            padding-bottom: 25px;
+        }
+        nav-links {
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+}
+
+
+/* large tablet & laptop styles */
+
+@media screen and (min-width: 960px) {
+    body {
+        font-size: 20px;
+    }
+    .rwd-break {
+        display: none;
+    }
+    .description {
+        padding-bottom: 20px;
+    }
+    .social-links {
+        padding-bottom: 40px;
+    }
+    .nav-home ul {
+        display: flex;
+    }
+}
+
+
+/* desktop styles */
+
+@media screen and (min-width: 1200px) {}

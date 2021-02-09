@@ -1,0 +1,115 @@
+.article {
+    color: var(--primary);
+    margin: 0 5px;
+}
+
+.post-title {
+    font-family: "Yekan";
+    padding-bottom: 5px;
+    text-align: center;
+    unicode-bidi: plaintext;
+}
+
+.post-date {
+    font-family: 'Loved by the King', cursive;
+    text-align: center;
+    color: rgba(var(--links), .5);
+}
+
+.tag-and-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.post-category {
+    font-family: "Yekan", 'Loved by the King', cursive;
+    text-align: center;
+    color: rgba(var(--links), .75);
+    padding-right: 10px;
+}
+
+.post-tags {
+    font-family: 'Yekan', 'Loved by the King', cursive;
+    text-align: center;
+    color: rgba(var(--links), .75);
+}
+
+.title-image {
+    margin: 0 auto 0px;
+    max-width: 600px;
+    padding: 5px 0 0;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.post-text {
+    max-width: 960px;
+    margin: 0 auto;
+    font-size: 15px;
+    direction: rtl;
+    unicode-bidi: plaintext;
+    font-family: "Vazir";
+    p {
+        line-height: 1.5em;
+        margin: 15px 0;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+.blog-navigation {
+    padding-top: 25px;
+    display: none;
+    .icon {
+        vertical-align: middle;
+        width: 2em;
+        margin: 0 2.5px;
+    }
+}
+
+.blog-navigation-text {
+    font-family: "Yekan", 'Neucha', cursive;
+    unicode-bidi: plaintext;
+}
+
+.footer {
+    padding: 25px 0px 0px 0px;
+}
+
+@media screen and (min-width: 320px) {
+    .article {
+        margin: 0 15px;
+    }
+    .post-text {
+        font-size: 16px;
+    }
+    .blog-navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .article {
+        margin: 0 50px;
+    }
+    .blog-navigation {
+        flex-direction: row;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .article {
+        margin: 0 100px;
+    }
+}

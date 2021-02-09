@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<main>
+    <article class="article">
+
+        <div class="post-title">
+            <a class="post-links" href="{{ site.baseurl }}{{ post.url }}"> {{ page.title }}</a>
+        </div>
+
+        <div class="post-heder">
+            <h5 class="post-date">
+                {{ post.date | date: "%B %e, %Y" }}
+            </h5>
+            <div class="tag-and-category">
+                <h5 class="post-category">
+                    categoris:
+                    <a class="category-links" href="{{ site.url }}/categories/#{{page.category}}"> {{page.category}}</a>
+                </h5>
+                <div class="post-tags">tags: {% for tag in page.tags %}
+                    <a class="tag-links" href="{{ site.url }}/tags/#{{ tag | slugify }}">{{ tag }}</a> {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+        {% if page.image %}
+        <div class="title-image">
+            <img src="{{ page.image }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+
+        <div class="post-text">
+            {{content}}
+        </div>
+
+    </article>
+</main>
+
+<div class="blog-navigation">
+    <div>
+        {% if page.previous.url %}
+        <a class="previous post-links " href="{{page.previous.url}}">
+            <img class="icon" src="{{ site.url }}/assets/svg-icons/dog.svg">
+            <span class="blog-navigation-text">{{page.previous.title}}</span>
+        </a>
+        {% endif %}
+    </div>
+    <div>
+        {% if page.next.url %}
+        <a class="next post-links " href="{{page.next.url}}">
+            <span class="blog-navigation-text">{{page.next.title}}</span>
+            <img class="icon" src="{{ site.url }}/assets/svg-icons/black-cat.svg">
+
+        </a>
+        {% endif %}
+    </div>
+</div>

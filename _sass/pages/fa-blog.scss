@@ -1,0 +1,96 @@
+
+main h3 {
+    font-family: "Yekan";
+    color: var(--primary);
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.archive {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.posts {
+    display: flex;
+    gap: 2.5px;
+    /* margin: 0 5px; */
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.posts-date {
+    text-align: center;
+    flex-basis: 16%;
+    font-family: 'Loved by the King', cursive;
+    color: rgba(var(--primary-rgb), .5);
+}
+
+.posts-category {
+    flex-basis: 16%;
+    text-align: center;
+    display: none;
+    font-family: "Yekan", 'Loved by the King', cursive;
+    color: rgba(var(--primary-rgb), .5);
+}
+
+.posts-title {
+    padding-right: 20px;
+    flex-basis: 84%;
+    direction: rtl;
+    font-family: "Vazir";
+    font-size: 0.8em;
+    color: var(--primary);
+}
+
+@media screen and (min-width: 320px) {
+    .nav-pages {
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .nav-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .nav-home {
+        display: inline;
+        justify-self: start;
+    }
+    .nav-pages {
+        justify-self: end;
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+    .archive {
+        padding: 0 50px;
+    }
+    .posts-title {
+        flex-basis: 68%;
+    }
+    .posts-category {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    main h3 {
+        padding: 50px 0px;
+    }
+    .archive {
+        padding: 0 100px;
+    }
+}
