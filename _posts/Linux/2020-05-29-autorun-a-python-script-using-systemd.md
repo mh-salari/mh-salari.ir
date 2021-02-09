@@ -4,8 +4,8 @@ custom_css: fa-post
 
 title: "اجرای کدهای python در لینوکس با استفاده از systemd"
 date: 2020-05-29 5:07
-tag: Python Linux
-image: /assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/python_systemd.png
+tag: Python, Linux
+image: /assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png
 headerImage: true
 description: "آموزش اجرای اتوماتیک کدهای python هنگام روشن شدن سیستم با استفاده از systemd در لینوکس و اجرای مجدد اسکریپ python در صورت بروز خطا"
 category: Linux
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
 اگر کد برنامه رو اجرا کنیم یک فایل به اسم systemd_demo.txt ایجاد خواهد شد:
 
-![systemd tail](/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_tail.png)
+![systemd tail](/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_tail.png)
 
 دقت کنید که برای اجرای این کد از آدرس کامل محیط آناکوندام و آدرس فایلم استفاده کردم، در مرحله‌ی بعد به این آدرس کامل احتیاج داریم.
 
@@ -99,7 +99,7 @@ WantedBy=multi-user.target
 ساختار فایل بالا رو من برای انجام برنامه‌ی مثال این پست به شکل زیر ویرایش کردم:
 
 
-![systemd demo service-1](/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_demo_service-1.png)
+![systemd demo service-1](/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_demo_service-1.png)
 
 ## فعال سازی و اجرای service:
 
@@ -132,7 +132,7 @@ sudo systemctl restart YOUR_SERVICE_NAME.service
 اگر همه‌چیز به خوبی پیش رفته باشه چنین خروجی‌ای خواهید دید و دیتا شروع می‌کنه وارد فایل systemd_demo.txt شدن.
 
 
-![sysemd status](/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/sysemd_status.png)
+![sysemd status](/assets/post-images/linux/autorun-a-python-script-using-systemd/sysemd_status.png)
 
 ## منابع:
 
