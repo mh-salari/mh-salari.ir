@@ -32,7 +32,7 @@
 
 .orang-links:hover, .orang-links:active, .orang-links:visited { color: #e47600; }
 
-.icon { vertical-align: middle; width: 1.25em; padding-right: 5px; margin-bottom: 5px; }
+.icon { vertical-align: middle; width: 1.25em; margin-bottom: 5px; }
 
 footer { font-family: 'Zeyada', cursive; text-align: center; padding: 50px 0px 0px 0px; color: var(--primary); font-size: 1em; }
 
