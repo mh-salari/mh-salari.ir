@@ -16,9 +16,7 @@
 
 .nav-pages ul { display: flex; flex-direction: column; list-style-type: none; gap: 5px; text-align: center; margin-bottom: 10px; }
 
-.nav-pages li { white-space: nowrap; }
-
-.nav-pages li i { margin-right: 10px; }
+.nav-pages li { white-space: nowrap; margin-right: 10px; }
 
 @media screen and (min-width: 320px) { .nav-pages { display: flex; justify-self: center; justify-content: center; } .nav-pages ul { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; } }
 
