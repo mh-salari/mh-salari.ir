@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://mh-salari.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mh-salari.github.io/" rel="alternate" type="text/html" /><updated>2021-02-09T15:41:30+03:30</updated><id>https://mh-salari.github.io/feed.xml</id><title type="html">H.U.E.</title><subtitle>I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++</subtitle><author><name>mh-salari</name></author><entry><title type="html">اجرای کدهای python در لینوکس با استفاده از systemd</title><link href="https://mh-salari.github.io/test-post/" rel="alternate" type="text/html" title="اجرای کدهای python در لینوکس با استفاده از systemd" /><published>2020-05-29T05:07:00+04:30</published><updated>2020-05-29T05:07:00+04:30</updated><id>https://mh-salari.github.io/test-post</id><content type="html" xml:base="https://mh-salari.github.io/test-post/">&lt;p&gt;صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه.&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://mh-salari.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mh-salari.github.io/" rel="alternate" type="text/html" /><updated>2021-02-09T19:27:10+03:30</updated><id>https://mh-salari.github.io/feed.xml</id><title type="html">H.U.E.</title><subtitle>I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++</subtitle><author><name>mh-salari</name></author><entry><title type="html">اجرای کدهای python در لینوکس با استفاده از systemd</title><link href="https://mh-salari.github.io/autorun-a-python-script-using-systemd/" rel="alternate" type="text/html" title="اجرای کدهای python در لینوکس با استفاده از systemd" /><published>2020-05-29T05:07:00+04:30</published><updated>2020-05-29T05:07:00+04:30</updated><id>https://mh-salari.github.io/autorun-a-python-script-using-systemd</id><content type="html" xml:base="https://mh-salari.github.io/autorun-a-python-script-using-systemd/">&lt;p&gt;صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه.&lt;br /&gt;
 حداقل خواستمون اینه که:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -40,7 +40,7 @@
 
 &lt;p&gt;اگر کد برنامه رو اجرا کنیم یک فایل به اسم systemd_demo.txt ایجاد خواهد شد:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_tail.png&quot; alt=&quot;systemd tail&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_tail.png&quot; alt=&quot;systemd tail&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;دقت کنید که برای اجرای این کد از آدرس کامل محیط آناکوندام و آدرس فایلم استفاده کردم، در مرحله‌ی بعد به این آدرس کامل احتیاج داریم.&lt;/p&gt;
 
@@ -104,7 +104,7 @@ service. ایجاد کنید.&lt;/p&gt;
 
 &lt;p&gt;ساختار فایل بالا رو من برای انجام برنامه‌ی مثال این پست به شکل زیر ویرایش کردم:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/systemd_demo_service-1.png&quot; alt=&quot;systemd demo service-1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_demo_service-1.png&quot; alt=&quot;systemd demo service-1&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;فعال-سازی-و-اجرای-service&quot;&gt;فعال سازی و اجرای service:&lt;/h2&gt;
 
@@ -143,7 +143,7 @@ service. ایجاد کنید.&lt;/p&gt;
 
 &lt;p&gt;اگر همه‌چیز به خوبی پیش رفته باشه چنین خروجی‌ای خواهید دید و دیتا شروع می‌کنه وارد فایل systemd_demo.txt شدن.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/sysemd_status.png&quot; alt=&quot;sysemd status&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux/autorun-a-python-script-using-systemd/sysemd_status.png&quot; alt=&quot;sysemd status&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;منابع&quot;&gt;منابع:&lt;/h2&gt;
 
@@ -154,4 +154,86 @@ service. ایجاد کنید.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/torfsen/python-systemd-tutorial&quot;&gt;Writing a systemd Service in Python&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files&quot;&gt;https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files&lt;/a&gt;&lt;br /&gt;
 
-&lt;/div&gt;</content><author><name>MohammadHossein Salari</name></author><category term="Linux" /><category term="Python Linux" /><summary type="html">صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه. حداقل خواستمون اینه که:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mh-salari.github.io/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/python_systemd.png" /><media:content medium="image" url="https://mh-salari.github.io/assets/post-images/linux_tutrials/autorun-a-python-script-using-systemd/python_systemd.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;/div&gt;</content><author><name>MohammadHossein Salari</name></author><category term="Linux" /><category term="Python, Linux" /><summary type="html">صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه. حداقل خواستمون اینه که:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mh-salari.github.io/assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png" /><media:content medium="image" url="https://mh-salari.github.io/assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">آموزش ایجاد شماره‌ی شناسایی منحصر به فرد در میکروکنترلرهای STM32</title><link href="https://mh-salari.github.io/stm32-id/" rel="alternate" type="text/html" title="آموزش ایجاد شماره‌ی شناسایی منحصر به فرد در میکروکنترلرهای STM32" /><published>2017-09-05T00:00:00+04:30</published><updated>2017-09-05T00:00:00+04:30</updated><id>https://mh-salari.github.io/stm32-id</id><content type="html" xml:base="https://mh-salari.github.io/stm32-id/">&lt;h2 id=&quot;علت-نیاز-به-ایجاد-id-منحصر-به-فرد&quot;&gt;علت نیاز به ایجاد ID منحصر به فرد:&lt;/h2&gt;
+&lt;p&gt;در طراحی سیستم‌های نهفته خیلی وقت‌ها لازمه که برای میکروکنترلرمون یک شماره‌ی شناسایی منحصر به فرد داشته باشیم و مطمعن باشیم که در آینده هیچ دستگاه جدیدی با اون شماره ID ساخته نمی‌شه.
+معمول‌ترین روش‌های انجام این کار یکی اینکه موقع پروگرم کردن میکروکنترلر برنامه‌نویس به اون یک شماره منحصر به فرد رو اختصاص می‌ده و یا نه یک عدد تصادفی بسیار بزرگ در اولین‌بار راه اندازی دستگاه تولید می‌شه و اون عدد به عنوان Id دستگاه در  در حافظه‌ی دائم میکروکنترلر یا EEPROM خارجی ذخیره می‌شه.
+این روش‌ها عیب عمده‌ای که دارن اینه که واقعا هیچ تضمینی وجود نداره که این شماره منحصر به فرد باشه! همچنین تولید عدد رندوم هم واقعا کار سختیه.&lt;/p&gt;
+
+&lt;h2 id=&quot;راه-حل&quot;&gt;راه حل:&lt;/h2&gt;
+&lt;p&gt;اما در میکروکنترلرهای STM32 خود شرکت ST موقع ساخت هر قطعه یک ID با طول ۹۶ بیت رو به عنوان شماره‌ی منحصر به فرد داخل حافظه‌ی میکروکنترلرهاش ذخیره میکنه تا هنگام انجام تست‌های کنترلر کیفت پردازنده‌هاش بتونه بفهمه که اون پردازنده از کجا اومده و ازکدوم ویفر ساخته شده.
+با این اوصاف راحت‌ترین راه داشتن ID منحصر در میکروکنترلرهای STM32 اینه که ما اون ID ایجاد شده توسط شرکت ST رو بخونیم&lt;/p&gt;
+
+&lt;p&gt;Unique ID ذخیره شده در میکروکنترل‌های STM32 از سه بخش زیر تشکیل شده:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;مختصات X و Y روی ویفر که به شکل BCD ذخیره شده.&lt;/li&gt;
+  &lt;li&gt;یک عدد بسیار بزرگ.&lt;/li&gt;
+  &lt;li&gt;شماره‌ی ویفر.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;آدرس ذخیره این ID در هر به خانواده‌ از پردازنده‌ها متفاوته و مطابق به جدل زیر هست:&lt;/p&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-qssw{background-color:#E47600;text-align:left;vertical-align:top}
+.tg-wrap {direction: ltr;}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}&lt;/style&gt;
+
+&lt;div class=&quot;tg-wrap&quot;&gt;&lt;table class=&quot;tg&quot; style=&quot;undefined;table-layout: fixed; width: 213px&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 86.25px&quot; /&gt;
+&lt;col style=&quot;width: 126.25px&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;tg-qssw&quot;&gt;Device line&lt;/th&gt;
+    &lt;th class=&quot;tg-qssw&quot;&gt;Starting address&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;F0, F3&lt;/td&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FFFF7AC&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;F1&lt;/td&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FFFF7E8&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;F2, F4&lt;/td&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FFF7A10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;F7&lt;/td&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FF0F420&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;L0&lt;/td&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FF80050&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;L0, L1,&lt;br /&gt;Cat.1, Cat.2&lt;/td&gt;
+    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FF80050&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;نمونه-کد&quot;&gt;نمونه کد&lt;/h2&gt;
+&lt;p&gt;با توجه به ۳۲ بیتی بودن حافظه‌ی میکروکنترلرهای STM32 می‌شه به این ۹۶ بیت دیتا با استفاده از شاره‌گرهای نوع (unsigned long (32bit دسترسی پیدا کرد، به عنوان مثال برای پردازنده‌ی STM32f103 از کد زیر استفاده می‌کنیم:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1FFFF7E8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1FFFF7EC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1FFFF7F0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>MohammadHossein Salari</name></author><category term="STM32" /><category term="STM32" /><summary type="html">علت نیاز به ایجاد ID منحصر به فرد: در طراحی سیستم‌های نهفته خیلی وقت‌ها لازمه که برای میکروکنترلرمون یک شماره‌ی شناسایی منحصر به فرد داشته باشیم و مطمعن باشیم که در آینده هیچ دستگاه جدیدی با اون شماره ID ساخته نمی‌شه. معمول‌ترین روش‌های انجام این کار یکی اینکه موقع پروگرم کردن میکروکنترلر برنامه‌نویس به اون یک شماره منحصر به فرد رو اختصاص می‌ده و یا نه یک عدد تصادفی بسیار بزرگ در اولین‌بار راه اندازی دستگاه تولید می‌شه و اون عدد به عنوان Id دستگاه در در حافظه‌ی دائم میکروکنترلر یا EEPROM خارجی ذخیره می‌شه. این روش‌ها عیب عمده‌ای که دارن اینه که واقعا هیچ تضمینی وجود نداره که این شماره منحصر به فرد باشه! همچنین تولید عدد رندوم هم واقعا کار سختیه.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://mh-salari.github.io/assets/post-images/stm32/stm32-id/stm32-unique-id.jpg" /><media:content medium="image" url="https://mh-salari.github.io/assets/post-images/stm32/stm32-id/stm32-unique-id.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
