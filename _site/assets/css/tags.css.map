@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "tags.css",
+	"sources": [
+		"tags.scss",
+		"_sass/pages/tags.scss"
+	],
+	"sourcesContent": [
+		"@import \"pages/tags\";\n",
+		".tag-list\n{\n    // display: flex;\n    // flex-direction: column;\n    // justify-items: center;\n    // align-items: center;\n    text-align: center;\n    // background: chocolate;\n    margin: 10px 50px;\n    font-family: \"Yekan\", \"Neucha\", cursive;\n    font-size: 18px;\n\n}\n\n\n.tag-group\n{\n    // background: cornflowerblue;\n    padding: 10px 0;\n}\n\n.tag-group-title\n{\n    font-size: 1.1em;\n    // background: crimson;\n}\n\n.tag-item\n{\n    // background: darkgreen;\n    margin: 10px 0px;\n    // text-align: right;\n}\n\n// .category-links:hover{\n//     color: rgba(var(--primary-rgb), .5);\n// }\n.list\n{ \n    // background: blue;\n    margin-bottom: 25px;\n    list-style: none;\n}\n\n.list h2{\n    font-family:\"Neucha\", cursive;\n}\n\n\n.list .item \n{\n    font-family: \"Yekan\", \"Neucha\", cursive;\n}\n.tag-list h2 \n\n{\n    color: rgb(228, 118, 0);\n}\n\n\n.item\n{\n    // background: blueviolet;\n    padding: 0;\nmargin: 15px 0;    \nline-height: 1.5em;\n}\n\n.date\n{\n    color: rgba(var(--secondary-rgb), .3);\n}"
+	],
+	"names": [],
+	"mappings": "ACAA,AAAA,SAAS,CACT,EAKI,UAAU,EAAE,MAAM,EAElB,MAAM,EAAE,SAAS,EACjB,WAAW,EAAE,0BAA0B,EACvC,SAAS,EAAE,IAAI,GAElB;;AAGD,AAAA,UAAU,CACV,EAEI,OAAO,EAAE,MAAM,GAClB;;AAED,AAAA,gBAAgB,CAChB,EACI,SAAS,EAAE,KAAK,GAEnB;;AAED,AAAA,SAAS,CACT,EAEI,MAAM,EAAE,QAAQ,GAEnB;;AAKD,AAAA,KAAK,CACL,EAEI,aAAa,EAAE,IAAI,EACnB,UAAU,EAAE,IAAI,GACnB;;AAED,AAAA,KAAK,CAAC,EAAE,CAAA,EACJ,WAAW,EAAC,iBAAiB,GAChC;;AAGD,AAAA,KAAK,CAAC,KAAK,CACX,EACI,WAAW,EAAE,0BAA0B,GAC1C;;AACD,AAAA,SAAS,CAAC,EAAE,CAEZ,EACI,KAAK,EAAE,OAAgB,GAC1B;;AAGD,AAAA,KAAK,CACL,EAEI,OAAO,EAAE,CAAC,EACd,MAAM,EAAE,MAAM,EACd,WAAW,EAAE,KAAK,GACjB;;AAED,AAAA,KAAK,CACL,EACI,KAAK,EAAE,+BAA8B,GACxC"
+}

@@ -1,0 +1,72 @@
+.tag-list
+{
+    // display: flex;
+    // flex-direction: column;
+    // justify-items: center;
+    // align-items: center;
+    text-align: center;
+    // background: chocolate;
+    margin: 10px 50px;
+    font-family: "Yekan", "Neucha", cursive;
+    font-size: 18px;
+
+}
+
+
+.tag-group
+{
+    // background: cornflowerblue;
+    padding: 10px 0;
+}
+
+.tag-group-title
+{
+    font-size: 1.1em;
+    // background: crimson;
+}
+
+.tag-item
+{
+    // background: darkgreen;
+    margin: 10px 0px;
+    // text-align: right;
+}
+
+// .category-links:hover{
+//     color: rgba(var(--primary-rgb), .5);
+// }
+.list
+{ 
+    // background: blue;
+    margin-bottom: 25px;
+    list-style: none;
+}
+
+.list h2{
+    font-family:"Neucha", cursive;
+}
+
+
+.list .item 
+{
+    font-family: "Yekan", "Neucha", cursive;
+}
+.tag-list h2 
+
+{
+    color: rgb(228, 118, 0);
+}
+
+
+.item
+{
+    // background: blueviolet;
+    padding: 0;
+margin: 15px 0;    
+line-height: 1.5em;
+}
+
+.date
+{
+    color: rgba(var(--secondary-rgb), .3);
+}
