@@ -1,0 +1,50 @@
+url: ""
+baseurl: "" # the subpath of your site, e.g. /blog
+
+timezone: Asia/Tehran
+
+title: "H.U.E." # the name of your site, e.g. ACME Corp.
+tagline: "MohammadHossein Salari Personal Site | A blog dedicated to my EE & AI/ML journey" 
+description: I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++ 
+
+author: mh-salari
+
+twitter:
+  username: mh_salari
+  card: summary_large_image
+
+social:
+  name: MohammadHossein Salari
+  links:
+    - https://twitter.com/mh_salari
+    - https://www.linkedin.com/in/mohammad-hossein-salari/
+    - https://github.com/mh-salari
+      
+permalink: /:title/
+
+ # Google Analytics
+google_analytics: UA—XXXXXXXX-X
+
+owner:
+  name: MohammadHossein Salari
+  email: mohammad.hossein.salari@gmail.com
+
+  # Display links for next and previous posts for the specified categories
+# post-advance-links: [blog]
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: python
+    css_class   : 'syntax'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true

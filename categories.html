@@ -1,31 +1,33 @@
 ---
 layout: default
-title:  Categories
+title: Categories
 custom_css: categories
 permalink: /categories/
 ---
 
-
-
-
 <main>
+  <section class="list">
+    <h2 class="title">Categories:</h2>
 
-  <h2 class="title">Categories:</h2>
-  <hr>
-<div class="tag-list">
-{% for cat in site.categories %}
-  <div class="tag-group">
-    
-    {% capture cat_name %}{{ cat | first }}{% endcapture %}
-    <h5 class="tag-group-title" id="{{ cat_name | slugize }}"><a  class="orang-links" id="{{ cat_name | slugize }}_cat">{{ cat_name }}</a> </h5>
-    {% for post in site.categories[cat_name] %}
-    <article class="tag-item">
-      <a class="post-links" href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
-    </article>
+    {% assign categories_list = site.categories %} {% if categories_list.first[0] == null %} {% for category in categories_list %}
+    <a class="item category-links" href="#{{ category | slugify }}">{{ category }} </a>, {% endfor %} {% else %} {% for category in categories_list %}
+    <a class="item category-links" href="#{{ category[0] | slugify }}">{{ category[0] }} </a>, {% endfor %} {% endif %} {% assign categories_list =
+    nil %}
+  </section>
+
+  <hr />
+
+  <div class="tag-list">
+    {% for cat in site.categories %}
+    <div class="tag-group">
+      {% capture cat_name %}{{ cat | first }}{% endcapture %}
+      <h5 class="tag-group-title" id="{{ cat_name | slugify }}"><a class="orang-links" id="{{ cat_name | slugify }}">{{ cat_name }}</a></h5>
+      {% for post in site.categories[cat_name] %}
+      <article class="tag-item">
+        <a class="post-links" href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
+      </article>
+      {% endfor %}
+    </div>
     {% endfor %}
   </div>
-{% endfor %}
-</div>
-
-
 </main>
