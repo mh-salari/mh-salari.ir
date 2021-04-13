@@ -12,7 +12,7 @@
 
 .title-image { margin: 0 auto 0px; max-width: 600px; padding: 5px 0 0; }
 
-.title-image img { max-width: 100%; max-height: 100%; }
+.title-image img { display: block; margin: 0 auto; max-width: 100%; max-height: 100%; }
 
 .post-text { max-width: 960px; margin: 0 auto; font-size: 13px; direction: rtl; unicode-bidi: plaintext; font-family: "Vazir"; }
 
