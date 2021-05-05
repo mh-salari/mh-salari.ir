@@ -1,88 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    {% if site.google_analytics and jekyll.environment == 'production' %} {% include analytics.html %} {% endif %}
 
-<head>
-    {% if site.google_analytics and jekyll.environment == 'production' %}
-        {% include analytics.html %}
-    {% endif %}
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% seo title=false %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {% seo title=false %}
-    
+
     <meta property="og:image" content="{{ site.url }}/assets/images/mh-salari.jpeg" />
     <meta property="twitter:image" content="{{ site.url }}/assets/images/mh-salari.jpeg" />
 
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{{ site.url }}/assets/favicon//android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ site.url }}/assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ site.url }}/assets/favicon//manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ site.url }}/assets/favicon//ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/assets/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/assets/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/assets/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/assets/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/assets/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/assets/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/assets/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/assets/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/assets/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ site.url }}/assets/favicon//android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ site.url }}/assets/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="{{ site.url }}/assets/favicon//manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="{{ site.url }}/assets/favicon//ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Neucha&family=Zeyada&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site.url }}/assets/fontawesome-free-5.15.2-web/css/all.min.css" /> {% feed_meta %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Neucha&family=Zeyada&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ site.url }}/assets/fontawesome-free-5.15.2-web/css/all.min.css" />
+    {% feed_meta %}
 
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/home-page.css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/home-page.css" />
 
     <title>{{page.title}}</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- main -->
     <main class="main">
-        <img class="avatar" src="{{ site.url }}/assets/images/mh-salari.jpeg" alt="MohammadHossein Salari">
-        <h1 class="blog-owner">MohammadHossein Salari</h1>
-        <h2 class="description">
-            Half time Electrical Engineer,<br class="rwd-break"> Full time Computer Vision Student.
-        </h2>
-        <div class="social-links">
-            <a class="nav-links" href="https://twitter.com/mh_salari"><i class="fab fa-twitter"></i></a>
-            <a class="nav-links" href="https://www.linkedin.com/in/mohammad-hossein-salari/"><i class="fab fa-linkedin"></i></a>
-            <a class="nav-links" href="https://github.com/mh-salari/"><i class="fab fa-github"></i></a>
-            <a class="nav-links" href="mailto:mohammad.hossein.salari@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
+      <img class="avatar" src="{{ site.url }}/assets/images/mh-salari.jpeg" alt="MohammadHossein Salari" />
+      <h1 class="blog-owner">MohammadHossein Salari</h1>
+      <h2 class="description">
+        Half time Electrical Engineer,<br class="rwd-break" />
+        Full time Computer Vision Student.
+      </h2>
+      <div class="social-links">
+        <a class="nav-links" href="https://twitter.com/mh_salari"><i class="fab fa-twitter"></i></a>
+        <a class="nav-links" href="https://www.linkedin.com/in/mohammad-hossein-salari/"><i class="fab fa-linkedin"></i></a>
+        <a class="nav-links" href="https://github.com/mh-salari/"><i class="fab fa-github"></i></a>
+        <a class="nav-links" href="mailto:mohammad.hossein.salari@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
 
-        <nav class="nav-home">
-            <ul>
-                <li>
-                    <a class="nav-links" href="fa_blog">
-                        <img class="icon" src="{{ site.url }}/assets/svg-icons/fox.svg">FaBlog
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-links" href="#">
-                        <img class="icon" src="{{ site.url }}/assets/svg-icons/penguin.svg"> EnBlog
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-links" href="#">
-                        <img class="icon" src="{{ site.url }}/assets/svg-icons/elephant.svg"> Projects</a>
-                </li>
-                <li>
-                    <a class="nav-links" href="#">
-                        <img class="icon" src="{{ site.url }}/assets/svg-icons/dacentrurus.svg"> Resume</a>
-                </li>
-            </ul>
-        </nav>
+      <nav class="nav-home">
+        <ul>
+          <li>
+            <a class="nav-links" href="fa_blog"> <img class="icon" src="{{ site.url }}/assets/svg-icons/fox.svg" />FaBlog </a>
+          </li>
+          <li>
+            <a class="nav-links" href="#"> <img class="icon" src="{{ site.url }}/assets/svg-icons/penguin.svg" /> EnBlog </a>
+          </li>
+          <li>
+            <a class="nav-links" href="#"> <img class="icon" src="{{ site.url }}/assets/svg-icons/elephant.svg" /> Projects</a>
+          </li>
+          <li>
+            <a class="nav-links" href="#"> <img class="icon" src="{{ site.url }}/assets/svg-icons/dacentrurus.svg" /> Resume</a>
+          </li>
+        </ul>
+      </nav>
     </main>
 
     <!-- footer -->
     {% include footer.html %}
-
-</body>
-
+  </body>
 </html>
