@@ -4,7 +4,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 timezone: Asia/Tehran
 
 title: "HUE" # the name of your site, e.g. ACME Corp.
-tagline: "MohammadHossein(HUE) Salari Personal Site | A blog dedicated to my EE & AI/ML journey" 
+tagline: "Hue (MohammadHossein) Salari Personal Site | A blog dedicated to my EE & AI/ML journey" 
 description: I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++ 
 
 author: hue-salari
@@ -14,10 +14,10 @@ twitter:
   card: summary_large_image
 
 social:
-  name: MohammadHossein Salari
+  name: Hue Salari
   links:
     - https://twitter.com/hue_salari
-    - https://www.linkedin.com/in/mohammad-hossein-salari/
+    - https://www.linkedin.com/in/hue-salari/
     - https://github.com/mh-salari
       
 permalink: /:title/
@@ -26,8 +26,8 @@ permalink: /:title/
 google_analytics: G-SNFETJ4DPW
 
 owner:
-  name: MohammadHossein Salari
-  email: mohammad.hossein.salari@gmail.com
+  name: Hue Salari
+  email: hue.salari@gmail.com
 
   # Display links for next and previous posts for the specified categories
 # post-advance-links: [blog]

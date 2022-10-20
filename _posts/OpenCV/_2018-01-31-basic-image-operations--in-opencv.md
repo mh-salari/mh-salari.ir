@@ -9,7 +9,7 @@ image: /assets/post-images/opencv/basic-image-operations-in-opencv/basic_image_o
 headerImage: true
 description: " در این نوشته یاد می‌گیرم که چطور یک عکس رو در OpenCV بخوانیم، روی اون اعمال مقدماتی‌ای همچون تغییر اندازه، برش، چرخش، تبدیل رنگ عکس به خاکستری و ... رو انجام دهیم، عکس رو نمایش بدهیم و در نهایت نتیجه رو دخیره کنیم."
 category: OpenCV
-author: MohammadHossein Salari
+author: Hue Salari
 externalLink: false
 ---
 
