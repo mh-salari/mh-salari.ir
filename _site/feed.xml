@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-04-13T21:30:51+04:30</updated><id>/feed.xml</id><title type="html">H.U.E.</title><subtitle>I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++</subtitle><author><name>mh-salari</name></author><entry><title type="html">اجرای کدهای python در لینوکس با استفاده از systemd</title><link href="/autorun-a-python-script-using-systemd/" rel="alternate" type="text/html" title="اجرای کدهای python در لینوکس با استفاده از systemd" /><published>2020-05-29T05:07:00+04:30</published><updated>2020-05-29T05:07:00+04:30</updated><id>/autorun-a-python-script-using-systemd</id><content type="html" xml:base="/autorun-a-python-script-using-systemd/">&lt;p&gt;صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه.&lt;br /&gt;
-حداقل خواستمون اینه که:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-20T15:42:57+03:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">HUE</title><subtitle>I have created this blog to document my Electrical Engineering and Artificial Intelligence/Machine Learning journey. I mainly write about Deep Learning, Computer Vision/Image processing, Pytorch, OpenCV, Python, Microcontrollers (STM32, STM8, Arduino) and C/C++</subtitle><author><name>hue-salari</name></author><entry><title type="html">اجرای کدهای python در لینوکس با استفاده از systemd</title><link href="http://localhost:4000/autorun-a-python-script-using-systemd/" rel="alternate" type="text/html" title="اجرای کدهای python در لینوکس با استفاده از systemd" /><published>2020-05-29T05:07:00+04:30</published><updated>2020-05-29T05:07:00+04:30</updated><id>http://localhost:4000/autorun-a-python-script-using-systemd</id><content type="html" xml:base="http://localhost:4000/autorun-a-python-script-using-systemd/"><![CDATA[<p>صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه.<br />
+حداقل خواستمون اینه که:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;موقع روشن شدن سیستم کد به شکل خودکار اجرا شه&lt;/li&gt;
-  &lt;li&gt;اگر در هر صورت خطایی رخ داد که باعث کرش کردن برنامه شد به شکل خودکار کدمون مجددا راه اندازی شده&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>موقع روشن شدن سیستم کد به شکل خودکار اجرا شه</li>
+  <li>اگر در هر صورت خطایی رخ داد که باعث کرش کردن برنامه شد به شکل خودکار کدمون مجددا راه اندازی شده</li>
+</ol>
 
-&lt;p&gt;در بین همه‌ی گزینه‌های ممکن برای انجام این کار systemd راحت‌ترین و سرراست ترین راه رسیدن به خواسته‌های بالاست و کیه که ندونه من چقدر تنبلی رو دوست دارم!&lt;/p&gt;
+<p>در بین همه‌ی گزینه‌های ممکن برای انجام این کار systemd راحت‌ترین و سرراست ترین راه رسیدن به خواسته‌های بالاست و کیه که ندونه من چقدر تنبلی رو دوست دارم!</p>
 
-&lt;h2 id=&quot;ایجاد-یک-برنامهی-نمونه&quot;&gt;ایجاد یک برنامه‌ی نمونه:&lt;/h2&gt;
+<h2 id="ایجاد-یک-برنامهی-نمونه">ایجاد یک برنامه‌ی نمونه:</h2>
 
-&lt;p&gt;اول یک برنامه ساده درست کنیم که صرفا یک متن رو در یک حلقه‌ی بینهایت هر یک دقیقه یک بار در انتهای یک فایل اضافه کنه:&lt;/p&gt;
+<p>اول یک برنامه ساده درست کنیم که صرفا یک متن رو در یک حلقه‌ی بینهایت هر یک دقیقه یک بار در انتهای یک فایل اضافه کنه:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -23,45 +23,45 @@
 9
 10
 11
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/python
-&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;
+</pre></td><td class="code"><pre><span class="c1">#!/usr/bin/python
+</span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/dos/codes/systemd_demo.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;# get further user input/do stuff here
-&lt;/span&gt;            &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; mississippi&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"/dos/codes/systemd_demo.txt"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+            <span class="c1"># get further user input/do stuff here
+</span>            <span class="nb">file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s"> mississippi</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;این برنامه رو به اسم systemd_demo.py ذخیره می‌کنیم.&lt;/p&gt;
+<p>این برنامه رو به اسم systemd_demo.py ذخیره می‌کنیم.</p>
 
-&lt;p&gt;اگر کد برنامه رو اجرا کنیم یک فایل به اسم systemd_demo.txt ایجاد خواهد شد:&lt;/p&gt;
+<p>اگر کد برنامه رو اجرا کنیم یک فایل به اسم systemd_demo.txt ایجاد خواهد شد:</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_tail.png&quot; alt=&quot;systemd tail&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_tail.png" alt="systemd tail" /></p>
 
-&lt;p&gt;دقت کنید که برای اجرای این کد از آدرس کامل محیط آناکوندام و آدرس فایلم استفاده کردم، در مرحله‌ی بعد به این آدرس کامل احتیاج داریم.&lt;/p&gt;
+<p>دقت کنید که برای اجرای این کد از آدرس کامل محیط آناکوندام و آدرس فایلم استفاده کردم، در مرحله‌ی بعد به این آدرس کامل احتیاج داریم.</p>
 
-&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;هشدار:&lt;/span&gt;. حتما یک بار توی ترمینال آدرس کامل رو بزنید و برنامه رو اجرا کنید، به خاطر ساختار import کردن ماژول‌ها و … در python ممکنه کد شما وقتی این شکلی اونو فرا می‌خونی با مشکل مواجه شه.&lt;/p&gt;
+<p><span style="color:red">هشدار:</span>. حتما یک بار توی ترمینال آدرس کامل رو بزنید و برنامه رو اجرا کنید، به خاطر ساختار import کردن ماژول‌ها و … در python ممکنه کد شما وقتی این شکلی اونو فرا می‌خونی با مشکل مواجه شه.</p>
 
-&lt;h2 id=&quot;ایجاد-فایل-service&quot;&gt;ایجاد فایل service:&lt;/h2&gt;
+<h2 id="ایجاد-فایل-service">ایجاد فایل service:</h2>
 
-&lt;p&gt;با ویرایشگر دلخواهتون یک فایل با اسم مورد نظر خودتون (که مرتبط با اسم برنامه‌ای شما باشه) در آدرس /lib/systemd/system/ و با پسوند
-service. ایجاد کنید.&lt;/p&gt;
+<p>با ویرایشگر دلخواهتون یک فایل با اسم مورد نظر خودتون (که مرتبط با اسم برنامه‌ای شما باشه) در آدرس /lib/systemd/system/ و با پسوند
+service. ایجاد کنید.</p>
 
-&lt;p&gt;من از ویرایشگر nano استفاده می‌کنم، اگر nano رو نصب دارید کافیه در دستور زیر جای YOUR_SERVICE_NAME اسم مورد نظر خودتون رو بذارید.&lt;/p&gt;
+<p>من از ویرایشگر nano استفاده می‌کنم، اگر nano رو نصب دارید کافیه در دستور زیر جای YOUR_SERVICE_NAME اسم مورد نظر خودتون رو بذارید.</p>
 
-&lt;p&gt; &lt;/p&gt;
+<p> </p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;nano /lib/systemd/system/YOUR_SERVICE_NAME.service&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>nano /lib/systemd/system/YOUR_SERVICE_NAME.service</code></pre></figure>
 
-&lt;p&gt; &lt;/p&gt;
+<p> </p>
 
-&lt;p&gt;ساختار کلی‌ای که برای ایجاد یک service لازم داریم به شکل زیره:&lt;/p&gt;
+<p>ساختار کلی‌ای که برای ایجاد یک service لازم داریم به شکل زیره:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -76,48 +76,48 @@ service. ایجاد کنید.&lt;/p&gt;
 13
 14
 15
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Unit]
-&lt;span class=&quot;nv&quot;&gt;Description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR SERVICE DESCRIPTION FOR HUMANS
-&lt;span class=&quot;nv&quot;&gt;After&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;multi-user.target
-&lt;span class=&quot;nv&quot;&gt;Conflicts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;getty@tty1.service
+</pre></td><td class="code"><pre><span class="o">[</span>Unit]
+<span class="nv">Description</span><span class="o">=</span>YOUR SERVICE DESCRIPTION FOR HUMANS
+<span class="nv">After</span><span class="o">=</span>multi-user.target
+<span class="nv">Conflicts</span><span class="o">=</span>getty@tty1.service
 
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Service]
-&lt;span class=&quot;nv&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;simple
-&lt;span class=&quot;nv&quot;&gt;ExecStart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;YOUR PYTHON CODE EXECUTE COMMAND
-&lt;span class=&quot;nv&quot;&gt;StandardInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;tty-force
-&lt;span class=&quot;nv&quot;&gt;RemainAfterExit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;on-failure
-&lt;span class=&quot;nv&quot;&gt;RestartSec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;5s
+<span class="o">[</span>Service]
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">ExecStart</span><span class="o">=</span>YOUR PYTHON CODE EXECUTE COMMAND
+<span class="nv">StandardInput</span><span class="o">=</span>tty-force
+<span class="nv">RemainAfterExit</span><span class="o">=</span><span class="nb">yes
+</span><span class="nv">Restart</span><span class="o">=</span>on-failure
+<span class="nv">RestartSec</span><span class="o">=</span>5s
 
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Install]
-&lt;span class=&quot;nv&quot;&gt;WantedBy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;multi-user.target
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="o">[</span>Install]
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;در ساختار بالا:&lt;/p&gt;
+<p>در ساختار بالا:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;بجای YOUR SERVICE DESCRIPTION FOR HUMANS توضیحات مرتبط با اینکه این کد/سرویس چی هست رو می‌نویسیم.&lt;/li&gt;
-  &lt;li&gt;بجای YOUR PYTHON CODE EXECUTE COMMAND دستور اجرای فایل خودمون وارد می‌کنیم.&lt;/li&gt;
-  &lt;li&gt;اگر می‌خوایم بعد از اتمام حلقه‌ی اصلی برنامه python اون service فعال بمونه مقدار RemainAfterExit رو برابر yes قرار می‌دیم.&lt;/li&gt;
-  &lt;li&gt;همچنین پارامتر RestartSec مقدار تاخیر هنگام اجرای مجدد کدمون رو مشخص می‌کنه.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>بجای YOUR SERVICE DESCRIPTION FOR HUMANS توضیحات مرتبط با اینکه این کد/سرویس چی هست رو می‌نویسیم.</li>
+  <li>بجای YOUR PYTHON CODE EXECUTE COMMAND دستور اجرای فایل خودمون وارد می‌کنیم.</li>
+  <li>اگر می‌خوایم بعد از اتمام حلقه‌ی اصلی برنامه python اون service فعال بمونه مقدار RemainAfterExit رو برابر yes قرار می‌دیم.</li>
+  <li>همچنین پارامتر RestartSec مقدار تاخیر هنگام اجرای مجدد کدمون رو مشخص می‌کنه.</li>
+</ul>
 
-&lt;p&gt;ساختار فایل بالا رو من برای انجام برنامه‌ی مثال این پست به شکل زیر ویرایش کردم:&lt;/p&gt;
+<p>ساختار فایل بالا رو من برای انجام برنامه‌ی مثال این پست به شکل زیر ویرایش کردم:</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_demo_service-1.png&quot; alt=&quot;systemd demo service-1&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/post-images/linux/autorun-a-python-script-using-systemd/systemd_demo_service-1.png" alt="systemd demo service-1" /></p>
 
-&lt;h2 id=&quot;فعال-سازی-و-اجرای-service&quot;&gt;فعال سازی و اجرای service:&lt;/h2&gt;
+<h2 id="فعال-سازی-و-اجرای-service">فعال سازی و اجرای service:</h2>
 
-&lt;p&gt;هر بار که ما در آدرس /lib/systemd/system/ فایلی می‌سازیم و یا در اون فایل‌ها تغییری ایجاد می‌کنیم نیازه تا systemctl رو راه اندازی مجدد کنیم تا تغییراتمون اعمال بشن، این کار با دستور زیر انجام می‌شه:&lt;/p&gt;
+<p>هر بار که ما در آدرس /lib/systemd/system/ فایلی می‌سازیم و یا در اون فایل‌ها تغییری ایجاد می‌کنیم نیازه تا systemctl رو راه اندازی مجدد کنیم تا تغییراتمون اعمال بشن، این کار با دستور زیر انجام می‌شه:</p>
 
-&lt;p&gt; &lt;/p&gt;
+<p> </p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl daemon-reload&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>systemctl daemon-reload</code></pre></figure>
 
-&lt;p&gt; 
-حال با دستورات زیر می‌تونیم serviceای که ایجاد کردیم رو مدیریت کنیم:&lt;/p&gt;
+<p> 
+حال با دستورات زیر می‌تونیم serviceای که ایجاد کردیم رو مدیریت کنیم:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -128,124 +128,124 @@ service. ایجاد کنید.&lt;/p&gt;
 9
 10
 11
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;#To enable running service&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;YOUR_SERVICE_NAME.service
+</pre></td><td class="code"><pre><span class="c">#To enable running service</span>
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>YOUR_SERVICE_NAME.service
 
-&lt;span class=&quot;c&quot;&gt;#To stop running service&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl stop YOUR_SERVICE_NAME.service
+<span class="c">#To stop running service</span>
+<span class="nb">sudo </span>systemctl stop YOUR_SERVICE_NAME.service
 
-&lt;span class=&quot;c&quot;&gt;#To start running service&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start YOUR_SERVICE_NAME.service
+<span class="c">#To start running service</span>
+<span class="nb">sudo </span>systemctl start YOUR_SERVICE_NAME.service
 
-&lt;span class=&quot;c&quot;&gt;#To restart running service&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart YOUR_SERVICE_NAME.service
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="c">#To restart running service</span>
+<span class="nb">sudo </span>systemctl restart YOUR_SERVICE_NAME.service
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;اگر همه‌چیز به خوبی پیش رفته باشه چنین خروجی‌ای خواهید دید و دیتا شروع می‌کنه وارد فایل systemd_demo.txt شدن.&lt;/p&gt;
+<p>اگر همه‌چیز به خوبی پیش رفته باشه چنین خروجی‌ای خواهید دید و دیتا شروع می‌کنه وارد فایل systemd_demo.txt شدن.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/post-images/linux/autorun-a-python-script-using-systemd/sysemd_status.png&quot; alt=&quot;sysemd status&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/post-images/linux/autorun-a-python-script-using-systemd/sysemd_status.png" alt="sysemd status" /></p>
 
-&lt;h2 id=&quot;منابع&quot;&gt;منابع:&lt;/h2&gt;
+<h2 id="منابع">منابع:</h2>
 
-&lt;div dir=&quot;ltr&quot;&gt;
+<div dir="ltr">
 
-&lt;a href=&quot;https://singlebrook.com/2017/10/23/auto-restart-crashed-service-systemd/&quot;&gt;Auto-recovery of crashed services with systemd&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://tecadmin.net/setup-autorun-python-script-using-systemd/&quot;&gt;How To Setup Autorun a Python Script Using Systemd&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://github.com/torfsen/python-systemd-tutorial&quot;&gt;Writing a systemd Service in Python&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files&quot;&gt;https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files&lt;/a&gt;&lt;br /&gt;
+<a href="https://singlebrook.com/2017/10/23/auto-restart-crashed-service-systemd/">Auto-recovery of crashed services with systemd</a><br />
+<a href="https://tecadmin.net/setup-autorun-python-script-using-systemd/">How To Setup Autorun a Python Script Using Systemd</a><br />
+<a href="https://github.com/torfsen/python-systemd-tutorial">Writing a systemd Service in Python</a><br />
+<a href="https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files">https://stackoverflow.com/questions/44136655/why-standardinput-tty-in-oneshot-systemd-unit-files</a><br />
 
-&lt;/div&gt;</content><author><name>MohammadHossein Salari</name></author><category term="Linux" /><category term="Python" /><category term="Linux" /><summary type="html">صوت مساله بسیار ساده‌ست، ما کد pythonمون رو نوشتیم، تست کردیم، حالا می‌خوایم بذاریمش یک گوشه به شکل دائم اجرا شه. حداقل خواستمون اینه که:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png" /><media:content medium="image" url="/assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">دستورات کاربردی بعد از نصب اوبونتو</title><link href="/ubuntu-essentials/" rel="alternate" type="text/html" title="دستورات کاربردی بعد از نصب اوبونتو" /><published>2018-01-18T14:19:59+03:30</published><updated>2018-01-18T14:19:59+03:30</updated><id>/ubuntu-essentials</id><content type="html" xml:base="/ubuntu-essentials/">&lt;p&gt;من توی لینوکس تازه کارم و خیلی پیش میاد که می‌زنم همه‌چیز رو آجر می‌کنم و مجبور می‌شم کل سیستم عامل رو از اول نصب کنم، برای راحت‌تر شدن زندگیم کارهایی که بعد از نصب سیستم‌عامل جدید انجام می‌دم رو اینجا نوشته‌ام.&lt;/p&gt;
+</div>]]></content><author><name>Hue Salari</name></author><category term="Linux" /><category term="Python" /><category term="Linux" /><summary type="html"><![CDATA[آموزش اجرای اتوماتیک کدهای python هنگام روشن شدن سیستم با استفاده از systemd در لینوکس و اجرای مجدد اسکریپ python در صورت بروز خطا]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png" /><media:content medium="image" url="http://localhost:4000/assets/post-images/linux/autorun-a-python-script-using-systemd/python_systemd.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">دستورات کاربردی بعد از نصب اوبونتو</title><link href="http://localhost:4000/ubuntu-essentials/" rel="alternate" type="text/html" title="دستورات کاربردی بعد از نصب اوبونتو" /><published>2018-01-18T14:19:59+03:30</published><updated>2018-01-18T14:19:59+03:30</updated><id>http://localhost:4000/ubuntu-essentials</id><content type="html" xml:base="http://localhost:4000/ubuntu-essentials/"><![CDATA[<p>من توی لینوکس تازه کارم و خیلی پیش میاد که می‌زنم همه‌چیز رو آجر می‌کنم و مجبور می‌شم کل سیستم عامل رو از اول نصب کنم، برای راحت‌تر شدن زندگیم کارهایی که بعد از نصب سیستم‌عامل جدید انجام می‌دم رو اینجا نوشته‌ام.</p>
 
-&lt;h2 id=&quot;git-رو-نصب-کنیم&quot;&gt;Git رو نصب کنیم:&lt;/h2&gt;
+<h2 id="git-رو-نصب-کنیم">Git رو نصب کنیم:</h2>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; apt update
-&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; apt upgrade
-&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; apt install git
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</pre></td><td class="code"><pre><span class="nb">sudo</span> apt update
+<span class="nb">sudo</span> apt upgrade
+<span class="nb">sudo</span> apt install git
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;تنظیمات اولیه گیت رو انجام بدیم:&lt;/p&gt;
+<p>تنظیمات اولیه گیت رو انجام بدیم:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.name &lt;span class=&quot;s2&quot;&gt;&quot;your name&quot;&lt;/span&gt;
-git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.email &lt;span class=&quot;s2&quot;&gt;&quot;your@email.com&quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</pre></td><td class="code"><pre>git config <span class="nt">--global</span> user.name <span class="s2">"your name"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"your@email.com"</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;h2 id=&quot;zsh-رو-نصب-کنیم&quot;&gt;zsh رو نصب کنیم:&lt;/h2&gt;
+<h2 id="zsh-رو-نصب-کنیم">zsh رو نصب کنیم:</h2>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;zsh
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nb">sudo </span>apt <span class="nb">install </span>zsh
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;فعالش کنیم:&lt;/p&gt;
+<p>فعالش کنیم:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /user/bin/zsh &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nb">sudo </span>usermod <span class="nt">-s</span> /user/bin/zsh <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;تنظیمات «اوه مای زیشل» رو نصب کنیم:&lt;/p&gt;
+<p>تنظیمات «اوه مای زیشل» رو نصب کنیم:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;sh &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; -&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh <span class="nt">-O</span> -<span class="si">)</span><span class="s2">"</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;zsh رو به فایل ترمینال‌هامون اضافه کنیم:&lt;/p&gt;
+<p>zsh رو به فایل ترمینال‌هامون اضافه کنیم:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; zsh | &lt;span class=&quot;nb&quot;&gt;sudo tee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /etc/shells
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nb">command</span> <span class="nt">-v</span> zsh | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/shells
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;p&gt;ترمینال پیشفرض رو zsh کنیم:&lt;/p&gt;
+<p>ترمینال پیشفرض رو zsh کنیم:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;chsh &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; zsh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nb">sudo </span>chsh <span class="nt">-s</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">command</span> <span class="nt">-v</span> zsh<span class="si">)</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="s2">"</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;h2 id=&quot;ویدئو-پلیر-کله-قندی-رو-نصب-کنیم&quot;&gt;ویدئو پلیر کله قندی رو نصب کنیم:&lt;/h2&gt;
+<h2 id="ویدئو-پلیر-کله-قندی-رو-نصب-کنیم">ویدئو پلیر کله قندی رو نصب کنیم:</h2>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;vlc
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nb">sudo </span>apt <span class="nb">install </span>vlc
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;h2 id=&quot;دانلود-منیجر-uget-رو-نصب-کنیم&quot;&gt;دانلود منیجر &lt;em&gt;uGet&lt;/em&gt; رو نصب کنیم:&lt;/h2&gt;
+<h2 id="دانلود-منیجر-uget-رو-نصب-کنیم">دانلود منیجر <em>uGet</em> رو نصب کنیم:</h2>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;add-apt-repository ppa:plushuang-tw/uget-stable
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt update
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;uget
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</pre></td><td class="code"><pre><span class="nb">sudo </span>add-apt-repository ppa:plushuang-tw/uget-stable
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>uget
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;h2 id=&quot;برای-انجام--شخصی-سازی-gnome-tweaks-رو-نصب-کنیم&quot;&gt;برای انجام  شخصی سازی &lt;em&gt;(GNOME) Tweaks&lt;/em&gt; رو نصب کنیم:&lt;/h2&gt;
+<h2 id="برای-انجام--شخصی-سازی-gnome-tweaks-رو-نصب-کنیم">برای انجام  شخصی سازی <em>(GNOME) Tweaks</em> رو نصب کنیم:</h2>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;gnome-tweak-tool
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nb">sudo </span>apt <span class="nb">install </span>gnome-tweak-tool
+</pre></td></tr></tbody></table></code></pre></figure>
 
-&lt;h2 id=&quot;برای-گرفتن-اسکرین-شات-از-صفحه-shutter-رو-نصب-کنیم&quot;&gt;برای گرفتن اسکرین شات از صفحه &lt;em&gt;shutter&lt;/em&gt; رو نصب کنیم:&lt;/h2&gt;
+<h2 id="برای-گرفتن-اسکرین-شات-از-صفحه-shutter-رو-نصب-کنیم">برای گرفتن اسکرین شات از صفحه <em>shutter</em> رو نصب کنیم:</h2>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-repository ppa:linuxuprising/shutter
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;shutter
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>MohammadHossein Salari</name></author><category term="Linux" /><category term="Linux" /><summary type="html">من توی لینوکس تازه کارم و خیلی پیش میاد که می‌زنم همه‌چیز رو آجر می‌کنم و مجبور می‌شم کل سیستم عامل رو از اول نصب کنم، برای راحت‌تر شدن زندگیم کارهایی که بعد از نصب سیستم‌عامل جدید انجام می‌دم رو اینجا نوشته‌ام.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/post-images/linux/ubuntu-essentials/ubuntu_essentials.png" /><media:content medium="image" url="/assets/post-images/linux/ubuntu-essentials/ubuntu_essentials.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">ایجاد شماره‌ی شناسایی منحصر به فرد در میکروکنترلرهای STM32</title><link href="/stm32-id/" rel="alternate" type="text/html" title="ایجاد شماره‌ی شناسایی منحصر به فرد در میکروکنترلرهای STM32" /><published>2017-09-05T00:00:00+04:30</published><updated>2017-09-05T00:00:00+04:30</updated><id>/stm32-id</id><content type="html" xml:base="/stm32-id/">&lt;p&gt;در میکروکنترلرهای STM32، شرکت ST هنگام ساخت هر قطعه یک ID با طول ۹۶ بیت رو به عنوان شماره‌ی منحصر به فرد داخل حافظه‌ی میکروکنترلر ذخیره میکنه تا هنگام انجام تست‌های کنترلر کیفت پردازنده‌ها بتونه بفهمه که اون قطعه از کجا اومده و از کدوم ویفر ساخته شده.
-پس راحت‌ترین راه داشتن ID منحصر به فرد در میکروکنترلرهای STM32 اینه که ID ایجاد شده توسط شرکت ST رو بخونیم.&lt;/p&gt;
+</pre></td><td class="code"><pre><span class="nb">sudo </span>apt-repository ppa:linuxuprising/shutter
+<span class="nb">sudo </span>apt <span class="nb">install </span>shutter
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>Hue Salari</name></author><category term="Linux" /><category term="Linux" /><summary type="html"><![CDATA[مجموعه دستورات کاربردی بعد از نصب اوبونتو]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/post-images/linux/ubuntu-essentials/ubuntu_essentials.png" /><media:content medium="image" url="http://localhost:4000/assets/post-images/linux/ubuntu-essentials/ubuntu_essentials.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">ایجاد شماره‌ی شناسایی منحصر به فرد در میکروکنترلرهای STM32</title><link href="http://localhost:4000/stm32-id/" rel="alternate" type="text/html" title="ایجاد شماره‌ی شناسایی منحصر به فرد در میکروکنترلرهای STM32" /><published>2017-09-05T00:00:00+04:30</published><updated>2017-09-05T00:00:00+04:30</updated><id>http://localhost:4000/stm32-id</id><content type="html" xml:base="http://localhost:4000/stm32-id/"><![CDATA[<p>در میکروکنترلرهای STM32، شرکت ST هنگام ساخت هر قطعه یک ID با طول ۹۶ بیت رو به عنوان شماره‌ی منحصر به فرد داخل حافظه‌ی میکروکنترلر ذخیره میکنه تا هنگام انجام تست‌های کنترلر کیفت پردازنده‌ها بتونه بفهمه که اون قطعه از کجا اومده و از کدوم ویفر ساخته شده.
+پس راحت‌ترین راه داشتن ID منحصر به فرد در میکروکنترلرهای STM32 اینه که ID ایجاد شده توسط شرکت ST رو بخونیم.</p>
 
-&lt;p&gt;Unique ID ذخیره شده در میکروکنترل‌های STM32 از سه بخش زیر تشکیل شده:&lt;/p&gt;
+<p>Unique ID ذخیره شده در میکروکنترل‌های STM32 از سه بخش زیر تشکیل شده:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;مختصات X و Y روی ویفر که به شکل BCD ذخیره شده.&lt;/li&gt;
-  &lt;li&gt;یک عدد بسیار بزرگ.&lt;/li&gt;
-  &lt;li&gt;شماره‌ی ویفر.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>مختصات X و Y روی ویفر که به شکل BCD ذخیره شده.</li>
+  <li>یک عدد بسیار بزرگ.</li>
+  <li>شماره‌ی ویفر.</li>
+</ul>
 
-&lt;p&gt;آدرس ذخیره این ID در هر خانواده‌ از پردازنده‌های ST متفاوته و مطابق جدول زیر است:&lt;/p&gt;
+<p>آدرس ذخیره این ID در هر خانواده‌ از پردازنده‌های ST متفاوته و مطابق جدول زیر است:</p>
 
-&lt;style type=&quot;text/css&quot;&gt;
+<style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
@@ -254,57 +254,57 @@ git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.email &lt
 .tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-qssw{background-color:#E47600;text-align:left;vertical-align:top}
 .tg-wrap {direction: ltr;}
-@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}&lt;/style&gt;
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 
-&lt;div class=&quot;tg-wrap&quot;&gt;&lt;table class=&quot;tg&quot; style=&quot;undefined;table-layout: fixed; width: 213px&quot;&gt;
-&lt;colgroup&gt;
-&lt;col style=&quot;width: 86.25px&quot; /&gt;
-&lt;col style=&quot;width: 126.25px&quot; /&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-  &lt;tr&gt;
-    &lt;th class=&quot;tg-qssw&quot;&gt;Device line&lt;/th&gt;
-    &lt;th class=&quot;tg-qssw&quot;&gt;Starting address&lt;/th&gt;
-  &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;F0, F3&lt;/td&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FFFF7AC&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;F1&lt;/td&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FFFF7E8&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;F2, F4&lt;/td&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FFF7A10&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;F7&lt;/td&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FF0F420&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;L0&lt;/td&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FF80050&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;L0, L1,&lt;br /&gt;Cat.1, Cat.2&lt;/td&gt;
-    &lt;td class=&quot;tg-baqh&quot;&gt;0x1FF80050&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;&lt;/div&gt;
+<div class="tg-wrap"><table class="tg" style="undefined;table-layout: fixed; width: 213px">
+<colgroup>
+<col style="width: 86.25px" />
+<col style="width: 126.25px" />
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-qssw">Device line</th>
+    <th class="tg-qssw">Starting address</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-baqh">F0, F3</td>
+    <td class="tg-baqh">0x1FFFF7AC</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">F1</td>
+    <td class="tg-baqh">0x1FFFF7E8</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">F2, F4</td>
+    <td class="tg-baqh">0x1FFF7A10</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">F7</td>
+    <td class="tg-baqh">0x1FF0F420</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">L0</td>
+    <td class="tg-baqh">0x1FF80050</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">L0, L1,<br />Cat.1, Cat.2</td>
+    <td class="tg-baqh">0x1FF80050</td>
+  </tr>
+</tbody>
+</table></div>
 
-&lt;p&gt;با توجه به ۳۲ بیتی بودن حافظه‌ی میکروکنترلرهای STM32 می‌شه با استفاده از اشاره‌گرهای نوع (unsigned long (32bit به این ۹۶ بیت دیتا دسترسی پیدا کرد، به عنوان مثال برای پردازنده‌ی STM32f103 از کد زیر استفاده می‌کنیم:&lt;/p&gt;
+<p>با توجه به ۳۲ بیتی بودن حافظه‌ی میکروکنترلرهای STM32 می‌شه با استفاده از اشاره‌گرهای نوع (unsigned long (32bit به این ۹۶ بیت دیتا دسترسی پیدا کرد، به عنوان مثال برای پردازنده‌ی STM32f103 از کد زیر استفاده می‌کنیم:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+</pre></td><td class="code"><pre><span class="kt">uint32_t</span> <span class="n">id</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
 
-&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1FFFF7E8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1FFFF7EC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1FFFF7F0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>MohammadHossein Salari</name></author><category term="STM32" /><category term="STM32" /><summary type="html">در میکروکنترلرهای STM32، شرکت ST هنگام ساخت هر قطعه یک ID با طول ۹۶ بیت رو به عنوان شماره‌ی منحصر به فرد داخل حافظه‌ی میکروکنترلر ذخیره میکنه تا هنگام انجام تست‌های کنترلر کیفت پردازنده‌ها بتونه بفهمه که اون قطعه از کجا اومده و از کدوم ویفر ساخته شده. پس راحت‌ترین راه داشتن ID منحصر به فرد در میکروکنترلرهای STM32 اینه که ID ایجاد شده توسط شرکت ST رو بخونیم.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/post-images/stm32/stm32-id/stm32-unique-id.jpg" /><media:content medium="image" url="/assets/post-images/stm32/stm32-id/stm32-unique-id.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<span class="n">id</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="mh">0x1FFFF7E8</span><span class="p">);</span>
+<span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="mh">0x1FFFF7EC</span><span class="p">);</span>
+<span class="n">id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="mh">0x1FFFF7F0</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>Hue Salari</name></author><category term="STM32" /><category term="STM32" /><summary type="html"><![CDATA[استفاده از اطلاعات ذخیره شده در حافظه‌ی میکروکنترلرهای خانواده‌ی STM32 جهت دستیابی به یک شماره شناسایی منحصر به فرد]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/post-images/stm32/stm32-id/stm32-unique-id.jpg" /><media:content medium="image" url="http://localhost:4000/assets/post-images/stm32/stm32-id/stm32-unique-id.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
