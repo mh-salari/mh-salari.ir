@@ -9,7 +9,7 @@ image: /assets/post-images/linux/autorun-a-python-script-using-systemd/python_sy
 headerImage: true
 description: "آموزش اجرای اتوماتیک کدهای python هنگام روشن شدن سیستم با استفاده از systemd در لینوکس و اجرای مجدد اسکریپ python در صورت بروز خطا"
 category: Linux
-author: MohammadHossein Salari
+author: Hue Salari
 externalLink: false
 ---
 
