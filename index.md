@@ -1,5 +1,5 @@
 ---
 layout: home
-title: "H.U.E."
+title: "Hue Salari Personal Weblog"
 ---
 
