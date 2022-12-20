@@ -41,7 +41,7 @@ body {
 .description {
     font-family: 'Loved by the King', cursive;
     font-size: 1em;
-    line-height: 1.2em;
+    line-height: 1.4em;
     text-align: center;
     color: var(--secondary);
     padding-bottom: 25px;
@@ -118,6 +118,7 @@ body {
     }
     .description {
         padding-bottom: 20px;
+        max-width: 40em;
     }
     .social-links {
         padding-bottom: 40px;
