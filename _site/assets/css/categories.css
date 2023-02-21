@@ -1,13 +1,29 @@
-.tag-list { text-align: center; margin: 10px 50px; font-family: "Yekan", "Neucha", cursive; font-size: 18px; }
+.tag-list {
+  text-align: center;
+  margin: 10px 50px;
+  font-family: "Yekan", "Neucha", cursive;
+  font-size: 18px;
+}
 
-.title { color: var(--primary); }
+.title {
+  color: var(--primary);
+}
 
-.tag-group { padding: 10px 0; }
+.tag-group {
+  padding: 10px 0;
+}
 
-.tag-group-title { font-size: 1.1em; }
+.tag-group-title {
+  font-size: 1.1em;
+}
 
-.tag-item { margin: 10px 0px; }
+.tag-item {
+  margin: 10px 0px;
+}
 
-.title { font-family: "Neucha", cursive; margin-bottom: 10px; }
+.title {
+  font-family: "Neucha", cursive;
+  margin-bottom: 10px;
+}
 
 /*# sourceMappingURL=categories.css.map */

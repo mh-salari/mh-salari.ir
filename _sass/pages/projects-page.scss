@@ -1,0 +1,64 @@
+@import "components/reset";
+@import "components/variables";
+@import "components/links";
+@import "components/icon";
+@import "components/footer";
+
+/* base styles */
+main h3 {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--primary);
+  padding-bottom: 25px;
+  text-align: center;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    .project-thumbnail {
+      max-height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .project-title {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 20px;
+      font-family: 'Open Sans', sans-serif;
+
+      .project-links {
+        color: #333;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .project-description {
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

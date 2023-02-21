@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+
+
+<main>
+
+    <h3>Projects</h3>
+    <div class="projects">
+        {% for project in site.projects%}
+        <div class="project">
+            <div class="project-thumbnail">
+                <a href="{{ site.baseurl }}{{ project.url }}">
+                    <img src="{{ site.baseurl }}{{ project.thumbnail }}" alt="{{ project.title }}" />
+                </a>
+            </div>
+            <div class="project-title">
+                <a class="project-links" href="{{ site.baseurl }}{{ project.url }}"> {{ project.title }}</a>
+            </div>
+            <div class="project-description">{{ project.description }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</main>

@@ -48,3 +48,8 @@ kramdown:
       line_numbers: false
     block:
       line_numbers: true
+
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:title

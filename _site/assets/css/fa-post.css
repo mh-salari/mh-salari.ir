@@ -1,39 +1,130 @@
-.article { color: var(--primary); margin: 0 5px; }
+.article {
+  color: var(--primary);
+  margin: 0 5px;
+}
 
-.post-title { font-family: "Yekan"; padding-bottom: 5px; text-align: center; unicode-bidi: plaintext; }
+.post-title {
+  font-family: "Yekan";
+  padding-bottom: 5px;
+  text-align: center;
+  unicode-bidi: plaintext;
+}
 
-.post-date { font-family: 'Loved by the King', cursive; text-align: center; color: rgba(var(--links), 0.5); }
+.post-date {
+  font-family: "Loved by the King", cursive;
+  text-align: center;
+  color: rgba(var(--links), 0.5);
+}
 
-.tag-and-category { display: flex; justify-content: center; align-items: center; padding-bottom: 5px; }
+.tag-and-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+}
 
-.post-category { font-family: "Yekan", 'Loved by the King', cursive; text-align: center; color: rgba(var(--links), 0.75); padding-right: 10px; }
+.post-category {
+  font-family: "Yekan", "Loved by the King", cursive;
+  text-align: center;
+  color: rgba(var(--links), 0.75);
+  padding-right: 10px;
+}
 
-.post-tags { font-family: 'Yekan', 'Loved by the King', cursive; text-align: center; color: rgba(var(--links), 0.75); }
+.post-tags {
+  font-family: "Yekan", "Loved by the King", cursive;
+  text-align: center;
+  color: rgba(var(--links), 0.75);
+}
 
-.title-image { margin: 0 auto 0px; max-width: 600px; padding: 5px 0 0; }
+.title-image {
+  margin: 0 auto 0px;
+  max-width: 600px;
+  padding: 5px 0 0;
+}
+.title-image img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
 
-.title-image img { display: block; margin: 0 auto; max-width: 100%; max-height: 100%; }
+.post-text {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 13px;
+  direction: rtl;
+  unicode-bidi: plaintext;
+  font-family: "Vazir";
+}
+.post-text p {
+  line-height: 1.5em;
+  margin: 15px 0;
+}
+.post-text img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0 10px;
+}
 
-.post-text { max-width: 960px; margin: 0 auto; font-size: 13px; direction: rtl; unicode-bidi: plaintext; font-family: "Vazir"; }
+.blog-navigation {
+  padding-top: 25px;
+  display: none;
+}
+.blog-navigation .icon {
+  vertical-align: middle;
+  width: 2em;
+  margin: 0 2.5px;
+}
 
-.post-text p { line-height: 1.5em; margin: 15px 0; }
+.blog-navigation-text {
+  font-family: "Yekan", "Neucha", cursive;
+  unicode-bidi: plaintext;
+}
 
-.post-text img { max-width: 100%; max-height: 100%; padding: 0 10px; }
+.footer {
+  padding: 25px 0px 0px 0px;
+}
 
-.blog-navigation { padding-top: 25px; display: none; }
+@media screen and (min-width: 320px) {
+  .article {
+    margin: 0 15px;
+  }
+  .post-text {
+    font-size: 14px;
+  }
+  .blog-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 13px;
+    row-gap: 10px;
+  }
+}
+ul, ol {
+  padding: 0 25px;
+}
 
-.blog-navigation .icon { vertical-align: middle; width: 2em; margin: 0 2.5px; }
-
-.blog-navigation-text { font-family: "Yekan", 'Neucha', cursive; unicode-bidi: plaintext; }
-
-.footer { padding: 25px 0px 0px 0px; }
-
-@media screen and (min-width: 320px) { .article { margin: 0 15px; } .post-text { font-size: 14px; } .blog-navigation { display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: space-between; font-size: 13px; row-gap: 10px; } }
-
-ul, ol { padding: 0 25px; }
-
-@media screen and (min-width: 640px) { .article { margin: 0 50px; } .post-text img { padding: 0 15px; } .blog-navigation { flex-direction: row; font-size: 14px; } }
-
-@media screen and (min-width: 960px) { .article { margin: 0 100px; } .post-text img { padding: 0 20px; } }
+@media screen and (min-width: 640px) {
+  .article {
+    margin: 0 50px;
+  }
+  .post-text img {
+    padding: 0 15px;
+  }
+  .blog-navigation {
+    flex-direction: row;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .article {
+    margin: 0 100px;
+  }
+  .post-text img {
+    padding: 0 20px;
+  }
+}
 
 /*# sourceMappingURL=fa-post.css.map */
