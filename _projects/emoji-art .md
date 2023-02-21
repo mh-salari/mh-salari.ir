@@ -10,7 +10,7 @@ description: "Rendering Images as Emojis with PyTorch."
 
 Inspired by [@bwasti's](https://sigmoid.social/@bwasti/109592598903441446) awesome image-to-emoji project, I built a PyTorch model that renders images as a series of 10-pixel by 10-pixel emojis. 
 
-I created the dataset by downloading the 14-pixel by 14-pixel png images of emojis from https://unicode.org/emoji/charts/full-emoji-list.html.
+I created the dataset by downloading the 14-pixel by 14-pixel png images of emojis from [https://unicode.org/emoji/charts/full-emoji-list.html](https://unicode.org/emoji/charts/full-emoji-list.html).
 
 ![dataset](/assets/projects-images/emoji-art/dataset.png)
 
@@ -51,5 +51,5 @@ Resnet18 output: ![Resnet18 output](/assets/projects-images/emoji-art/mh.png)
 
 EmojiNet output: ![EmojiNet output](/assets/projects-images/emoji-art/mh_mini.png)
 
-I need to work on improving its speed (I have a problem making predictions on a batch of inputs), but I'm super happy with the results. I'll clean the code and release it in the coming weeks and update this page.
+I need to work on improving its speed (I have a problem making predictions on a batch of inputs), but I'm super happy with the results. I'll clean the code and release it sometime in the future and update this page :)
 
