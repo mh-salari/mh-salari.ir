@@ -14,7 +14,7 @@ I hate manually labeling images to train a deep learning model, and I'm the kind
 
 So, I wrote a code that starts to extract optic disc areas from images and changes the threshold values until it finds an area that checks all of the criteria (check the code if you are interested in this part!).
 
-{% video /assets/projects-images/OptDisc-Extractor/t1.mp4 500 500 %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D-Nlaal8U8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Then, I used this threshold-based method to label my data and train a deep neural network for the final optic disc localization. I was able to achieve good results. The extracted regions can also be used to create an even more robust cropping system. I used OpenCV for the threshold-based method and ResNet34 with SmoothL1Loss for the deep learning part of it.
 ![deep learning results](/assets/projects-images/OptDisc-Extractor/t2.jpeg)
