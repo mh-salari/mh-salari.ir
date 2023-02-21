@@ -70,6 +70,7 @@ GEM
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
+    video (0.0.2)
     webrick (1.8.1)
 
 PLATFORMS
@@ -83,6 +84,7 @@ DEPENDENCIES
   rouge
   tzinfo
   tzinfo-data
+  video
 
 BUNDLED WITH
    2.4.7
