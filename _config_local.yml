@@ -37,8 +37,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - video
-  
+
 markdown: kramdown
 highlighter: rouge
 kramdown:
