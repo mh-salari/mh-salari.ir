@@ -1,14 +1,1 @@
-{
-	"version": 3,
-	"file": "categories.css",
-	"sources": [
-		"categories.scss",
-		"_sass/pages/categories.scss"
-	],
-	"sourcesContent": [
-		"@import \"pages/categories\";\n",
-		".tag-list {\n    text-align: center;\n    margin: 10px 50px;\n    font-family: \"Yekan\", \"Neucha\", cursive;\n    font-size: 18px;\n}\n.title\n{\n    color: var(--primary);\n}\n.tag-group {\n    padding: 10px 0;\n}\n\n.tag-group-title {\n    font-size: 1.1em;\n}\n\n.tag-item {\n    margin: 10px 0px;\n}\n\n.title {\n    font-family: \"Neucha\", cursive;\n    margin-bottom: 10px;\n}"
-	],
-	"names": [],
-	"mappings": "ACAA,AAAA,SAAS,CAAC,EACN,UAAU,EAAE,MAAM,EAClB,MAAM,EAAE,SAAS,EACjB,WAAW,EAAE,0BAA0B,EACvC,SAAS,EAAE,IAAI,GAClB;;AACD,AAAA,MAAM,CACN,EACI,KAAK,EAAE,cAAc,GACxB;;AACD,AAAA,UAAU,CAAC,EACP,OAAO,EAAE,MAAM,GAClB;;AAED,AAAA,gBAAgB,CAAC,EACb,SAAS,EAAE,KAAK,GACnB;;AAED,AAAA,SAAS,CAAC,EACN,MAAM,EAAE,QAAQ,GACnB;;AAED,AAAA,MAAM,CAAC,EACH,WAAW,EAAE,iBAAiB,EAC9B,aAAa,EAAE,IAAI,GACtB"
-}
+{"version":3,"sourceRoot":"","sources":["../../_sass/pages/categories.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA;;;AAEJ;EAEI;;;AAEJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA","sourcesContent":[".tag-list {\n    text-align: center;\n    margin: 10px 50px;\n    font-family: \"Yekan\", \"Neucha\", cursive;\n    font-size: 18px;\n}\n.title\n{\n    color: var(--primary);\n}\n.tag-group {\n    padding: 10px 0;\n}\n\n.tag-group-title {\n    font-size: 1.1em;\n}\n\n.tag-item {\n    margin: 10px 0px;\n}\n\n.title {\n    font-family: \"Neucha\", cursive;\n    margin-bottom: 10px;\n}"],"file":"categories.css"}

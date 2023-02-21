@@ -1,73 +1,206 @@
 /* reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* variables */
-:root { --primary: #003d3b; --primary-rgb: 0, 61, 59; --secondary: #0b5666; --secondary-rgb: 11,86,102; --links: 6, 99, 82; --links-active: #6eb168; }
+:root {
+  --primary: #003d3b;
+  --primary-rgb: 0, 61, 59;
+  --secondary: #0b5666;
+  --secondary-rgb: 11,86,102;
+  --links: 6, 99, 82;
+  --links-active: #6eb168;
+}
 
-@font-face { font-family: "Yekan"; src: url("../persian-web-font/yekan-font/Yekan.eot"); src: url("../persian-web-font/yekan-font/Yekan.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/yekan-font/Yekan.woff") format("woff"), url("../persian-web-font/yekan-font/Yekan.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face {
+  font-family: "Yekan";
+  src: url("../persian-web-font/yekan-font/Yekan.eot");
+  src: url("../persian-web-font/yekan-font/Yekan.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/yekan-font/Yekan.woff") format("woff"), url("../persian-web-font/yekan-font/Yekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vazir";
+  src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.eot");
+  src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff") format("woff"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.nav-bar {
+  margin: 15px;
+  padding: 0 10px;
+  overflow: auto;
+  font-family: "Neucha", cursive;
+  font-size: 1.1em;
+  overflow: hidden;
+}
 
-@font-face { font-family: "Vazir"; src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.eot"); src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff") format("woff"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+.nav-home {
+  display: block;
+  text-align: center;
+  padding-right: 0px;
+  margin-bottom: 7.5px;
+  text-decoration: none;
+  color: var(--primary);
+  white-space: nowrap;
+}
 
-.nav-bar { margin: 15px; padding: 0 10px; overflow: auto; font-family: 'Neucha', cursive; font-size: 1.1em; overflow: hidden; }
+.nav-home .icon {
+  margin-left: 10px;
+  width: 1.5em;
+}
 
-.nav-home { display: block; text-align: center; padding-right: 0px; margin-bottom: 7.5px; text-decoration: none; color: var(--primary); white-space: nowrap; }
+.nav-pages ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.nav-pages li {
+  white-space: nowrap;
+  margin-right: 10px;
+}
 
-.nav-home .icon { margin-left: 10px; width: 1.5em; }
+@media screen and (min-width: 320px) {
+  .nav-pages {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+  }
+  .nav-pages ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .nav-home {
+    display: inline;
+    justify-self: start;
+  }
+  .nav-pages {
+    justify-self: end;
+  }
+  .nav-pages ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+.nav-links {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: var(--primary);
+}
+.nav-links:hover {
+  color: var(--links-active);
+  text-shadow: 1px 2px rgba(0, 0, 0, 0.1);
+}
+.nav-links:active {
+  color: var(--links-active);
+}
 
-.nav-pages ul { display: flex; flex-direction: column; list-style-type: none; gap: 5px; text-align: center; margin-bottom: 10px; }
+.category-links {
+  text-decoration: none;
+  color: rgba(var(--primary-rgb), 0.5);
+}
+.category-links:hover {
+  color: rgba(var(--primary-rgb), 0.9);
+}
+.category-links:active, .category-links:visited {
+  color: rgba(var(--primary-rgb), 0.5);
+}
 
-.nav-pages li { white-space: nowrap; margin-right: 10px; }
+.post-links {
+  text-decoration: none;
+  color: var(--primary);
+}
+.post-links:hover {
+  color: var(--links-active);
+}
+.post-links:active {
+  color: var(--primary);
+}
 
-@media screen and (min-width: 320px) { .nav-pages { display: flex; justify-self: center; justify-content: center; } .nav-pages ul { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; } }
+.tag-links {
+  text-decoration: none;
+  color: rgba(var(--primary-rgb), 0.6);
+}
+.tag-links:hover {
+  color: rgba(var(--primary-rgb), 0.9);
+}
+.tag-links:active, .tag-links:visited {
+  color: rgba(var(--primary-rgb), 0.6);
+}
 
-@media screen and (min-width: 640px) { .nav-bar { display: grid; grid-template-columns: 1fr 1fr; } .nav-home { display: inline; justify-self: start; } .nav-pages { justify-self: end; } .nav-pages ul { display: flex; flex-direction: row; gap: 20px; } }
+.orang-links {
+  text-decoration: none;
+  color: rgb(228, 118, 0);
+}
+.orang-links:hover, .orang-links:active, .orang-links:visited {
+  color: rgb(228, 118, 0);
+}
 
-.nav-links { text-decoration: none; font-size: 1.1em; color: var(--primary); }
+.icon {
+  vertical-align: middle;
+  width: 1.25em;
+  margin-bottom: 5px;
+}
 
-.nav-links:hover { color: var(--links-active); text-shadow: 1px 2px rgba(0, 0, 0, 0.1); }
+footer {
+  font-family: "Zeyada", cursive;
+  text-align: center;
+  padding: 50px 0px 0px 0px;
+  color: var(--primary);
+  font-size: 1em;
+}
 
-.nav-links:active { color: var(--links-active); }
+.footer-break {
+  display: none;
+}
 
-.category-links { text-decoration: none; color: rgba(var(--primary-rgb), 0.5); }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+}
 
-.category-links:hover { color: rgba(var(--primary-rgb), 0.9); }
+main {
+  overflow: hidden;
+}
 
-.category-links:active, .category-links:visited { color: rgba(var(--primary-rgb), 0.5); }
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 25px;
+  min-height: 90%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
 
-.post-links { text-decoration: none; color: var(--primary); }
+hr {
+  color: rgba(var(--primary-rgb), 0.4);
+}
 
-.post-links:hover { color: var(--links-active); }
-
-.post-links:active { color: var(--primary); }
-
-.tag-links { text-decoration: none; color: rgba(var(--primary-rgb), 0.6); }
-
-.tag-links:hover { color: rgba(var(--primary-rgb), 0.9); }
-
-.tag-links:active, .tag-links:visited { color: rgba(var(--primary-rgb), 0.6); }
-
-.orang-links { text-decoration: none; color: #e47600; }
-
-.orang-links:hover, .orang-links:active, .orang-links:visited { color: #e47600; }
-
-.icon { vertical-align: middle; width: 1.25em; margin-bottom: 5px; }
-
-footer { font-family: 'Zeyada', cursive; text-align: center; padding: 50px 0px 0px 0px; color: var(--primary); font-size: 1em; }
-
-.footer-break { display: none; }
-
-html, body { width: 100%; height: 100%; font-size: 18px; }
-
-main { overflow: hidden; }
-
-.container { max-width: 1200px; margin: 0px auto; padding: 25px; min-height: 90%; display: grid; grid-template-rows: auto 1fr auto; }
-
-hr { color: rgba(var(--primary-rgb), 0.4); }
-
-a { text-decoration: none; color: var(--primary); }
-
-a:hover { color: var(--links-active); }
-
-a:active a:visited { color: var(--links); }
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+a:hover {
+  color: var(--links-active);
+}
+a:active a:visited {
+  color: var(--links);
+}
 
 /*# sourceMappingURL=styles.css.map */

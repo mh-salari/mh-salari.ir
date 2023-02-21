@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<main>
+    <article class="article">
+
+        <div class="post-title">
+            <h1><a class="post-links" href="{{ site.baseurl }}{{ post.url }}"> {{ page.title }}</a></h1>
+        </div>
+
+        {% if page.thumbnail %}
+        <div class="title-image">
+            <img src="{{ page.thumbnail }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+
+
+        <div class="post-text">
+            {{content}}
+        </div>
+
+    </article>
+</main>
+
+<div class="blog-navigation">
+    <div>
+        {% if page.previous.url %}
+        <a class="previous post-links " href="{{page.previous.url}}">
+            <img class="icon" src="{{ site.url }}/assets/svg-icons/dog.svg">
+            <span class="blog-navigation-text">{{page.previous.title}}</span>
+        </a>
+        {% endif %}
+    </div>
+    <div>
+        {% if page.next.url %}
+        <a class="next post-links " href="{{page.next.url}}">
+            <span class="blog-navigation-text">{{page.next.title}}</span>
+            <img class="icon" src="{{ site.url }}/assets/svg-icons/black-cat.svg">
+
+        </a>
+        {% endif %}
+    </div>
+</div>
