@@ -10,7 +10,8 @@ description: "A very simple python library for normalizing and cleaning Persian 
 
 I wanted to do a couple of NLP projects in Farsi, but soon realized that Farsi NLP community is very young and many components required for text processing are not available in Farsi. Text normalization and cleaning was one of the tools I needed for my project, and I couldn't find a good one. So, I spent a couple of nights writing regex codes in Python to normalize and clean Persian text.
 
-Here is an example of the output data:
+Here is an example of the output of Davat:
+
 ```python 
 >>> import davat
 
