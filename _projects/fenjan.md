@@ -24,3 +24,5 @@ I used Python Twitter API and Selenium for searching Twitter and LinkedIn. All t
 Fenjan also has a Mastodon bot that re-posts Ph.D. positions from Twitter to Sigmoid social. You can find it at [https://sigmoid.social/@fenjan](https://sigmoid.social/@fenjan). Its Mastodon bot has a few more features than the email bot. It downloads tweet images if available and posts them along with the tweet text. It also converts Twitter short links to their non-short format, as link shortening isn't encouraged in Mastodon.
 
 ![Fenjan Mastodon Screenshot](/assets/projects-images/fenjan/mastodon.png)
+
+The code for the Fenjan project is available in this GitHub repository: [https://github.com/mh-salari/fenjan](https://github.com/mh-salari/fenjan)

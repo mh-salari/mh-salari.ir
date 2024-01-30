@@ -39,7 +39,7 @@ body {
 }
 
 .description {
-    font-family: 'Loved by the King', cursive;
+    font-family: 'Neucha', cursive;
     font-size: 1em;
     line-height: 1.4em;
     text-align: center;
@@ -50,11 +50,13 @@ body {
 
 .social-links {
     padding-bottom: 25px;
+
     .nav-links {
         font-size: 1.5em;
         color: rgba(var(--links), .2);
         padding: 0 5px;
         margin: 0 5px;
+
         &:hover {
             color: var(--links-active);
         }
@@ -63,6 +65,7 @@ body {
 
 .nav-home {
     font-family: 'Neucha', cursive;
+
     ul {
         list-style-type: none;
         display: grid;
@@ -70,9 +73,11 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 15px;
     }
+
     li {
         padding-bottom: 5px;
         padding: 0 15px;
+
         &:nth-last-child(-n+2) .icon {
             width: 1.5em;
         }
@@ -86,19 +91,23 @@ body {
     body {
         font-size: 20px;
     }
+
     .avatar {
         width: 200px;
         margin: 40px;
     }
+
     .social-links {
         padding-bottom: 40px;
     }
+
     .nav-home {
         ul {
             display: flex;
             /* grid-template-columns: 1fr 1fr 1fr; */
             padding-bottom: 25px;
         }
+
         nav-links {
             padding: 5px;
             margin: 5px;
@@ -113,16 +122,20 @@ body {
     body {
         font-size: 20px;
     }
+
     .rwd-break {
         display: none;
     }
+
     .description {
         padding-bottom: 20px;
         max-width: 40em;
     }
+
     .social-links {
         padding-bottom: 40px;
     }
+
     .nav-home ul {
         display: flex;
     }
