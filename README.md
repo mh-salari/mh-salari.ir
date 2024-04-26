@@ -1,6 +1,6 @@
 # My Personal Website
 
-Welcome to the repository for my personal website!
+Welcome to the repository of my personal website!
 
 ## About
 
