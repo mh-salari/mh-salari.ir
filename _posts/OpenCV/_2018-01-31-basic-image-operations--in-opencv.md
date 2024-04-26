@@ -9,7 +9,7 @@ image: /assets/post-images/opencv/basic-image-operations-in-opencv/basic_image_o
 headerImage: true
 description: " در این نوشته یاد می‌گیرم که چطور یک عکس رو در OpenCV بخوانیم، روی اون اعمال مقدماتی‌ای همچون تغییر اندازه، برش، چرخش، تبدیل رنگ عکس به خاکستری و ... رو انجام دهیم، عکس رو نمایش بدهیم و در نهایت نتیجه رو دخیره کنیم."
 category: OpenCV
-author: Hue Salari
+author: Mohammadhossein Salari
 externalLink: false
 ---
 
@@ -193,7 +193,7 @@ cv2.imshow("Cropped Image", crop)
 cv2.waitKey(0)
 {% endhighlight %}
 
-<img loading="lazy" class="wp-image-326 aligncenter" src="https://hue-salari.ir/wp-content/uploads/2-300x169.jpg" alt="" width="533" height="300" srcset="https://hue-salari.ir/wp-content/uploads/2-300x169.jpg 300w, https://hue-salari.ir/wp-content/uploads/2-768x431.jpg 768w, https://hue-salari.ir/wp-content/uploads/2-1024x575.jpg 1024w, https://hue-salari.ir/wp-content/uploads/2.jpg 1280w" sizes="(max-width: 533px) 100vw, 533px" /> 
+<img loading="lazy" class="wp-image-326 aligncenter" src="https://mh-salari.ir/wp-content/uploads/2-300x169.jpg" alt="" width="533" height="300" srcset="https://mh-salari.ir/wp-content/uploads/2-300x169.jpg 300w, https://mh-salari.ir/wp-content/uploads/2-768x431.jpg 768w, https://mh-salari.ir/wp-content/uploads/2-1024x575.jpg 1024w, https://mh-salari.ir/wp-content/uploads/2.jpg 1280w" sizes="(max-width: 533px) 100vw, 533px" /> 
 
 ما در برنامه‌ی بالا اومدیم و نسبت طول و عرض عکس رو با استفاده از ضرایب fx و fy تغییر دادم، اما اگر بخواهیم تصویر رو به سایز دقیقی مثل ۶۴۰*۴۸۰ تغییر اندازه بدهیم باید به شکل زیر عمل کنیم:
 
@@ -225,7 +225,7 @@ print("Original image size: ", image.shape)
 print("Resized image size: ", dim)
 cv2.waitKey(0)</pre>
 
-<img loading="lazy" class="wp-image-328 aligncenter" src="https://hue-salari.ir/wp-content/uploads/3-300x169.jpg" alt="" width="533" height="300" srcset="https://hue-salari.ir/wp-content/uploads/3-300x169.jpg 300w, https://hue-salari.ir/wp-content/uploads/3-768x431.jpg 768w, https://hue-salari.ir/wp-content/uploads/3-1024x575.jpg 1024w, https://hue-salari.ir/wp-content/uploads/3.jpg 1280w" sizes="(max-width: 533px) 100vw, 533px" /> 
+<img loading="lazy" class="wp-image-328 aligncenter" src="https://mh-salari.ir/wp-content/uploads/3-300x169.jpg" alt="" width="533" height="300" srcset="https://mh-salari.ir/wp-content/uploads/3-300x169.jpg 300w, https://mh-salari.ir/wp-content/uploads/3-768x431.jpg 768w, https://mh-salari.ir/wp-content/uploads/3-1024x575.jpg 1024w, https://mh-salari.ir/wp-content/uploads/3.jpg 1280w" sizes="(max-width: 533px) 100vw, 533px" /> 
 
 به کاربرد <code class="EnlighterJSRAW">.shape _دقت کنید. قبلا در [این پست][2] در موردش توضیح دادم.
 
@@ -376,7 +376,7 @@ print(rotationMatrix)
 cv2.waitKey(0)</pre>
       
       <h3>
-        <img loading="lazy" class="wp-image-329 aligncenter" src="https://hue-salari.ir/wp-content/uploads/4-300x169.jpg" alt="" width="532" height="300" srcset="https://hue-salari.ir/wp-content/uploads/4-300x169.jpg 300w, https://hue-salari.ir/wp-content/uploads/4-768x431.jpg 768w, https://hue-salari.ir/wp-content/uploads/4-1024x575.jpg 1024w, https://hue-salari.ir/wp-content/uploads/4.jpg 1280w" sizes="(max-width: 532px) 100vw, 532px" />
+        <img loading="lazy" class="wp-image-329 aligncenter" src="https://mh-salari.ir/wp-content/uploads/4-300x169.jpg" alt="" width="532" height="300" srcset="https://mh-salari.ir/wp-content/uploads/4-300x169.jpg 300w, https://mh-salari.ir/wp-content/uploads/4-768x431.jpg 768w, https://mh-salari.ir/wp-content/uploads/4-1024x575.jpg 1024w, https://mh-salari.ir/wp-content/uploads/4.jpg 1280w" sizes="(max-width: 532px) 100vw, 532px" />
       </h3>
       
       <h3>
@@ -455,7 +455,7 @@ cv2.imwrite('Gray.jpg',gray, [cv2.IMWRITE_JPEG_QUALITY,10])
 cv2.destroyAllWindows()</pre>
       
       <p>
-        <img loading="lazy" class="size-medium wp-image-408 aligncenter" src="https://hue-salari.ir/wp-content/uploads/quality-300x261.png" alt="" width="300" height="261" srcset="https://hue-salari.ir/wp-content/uploads/quality-300x261.png 300w, https://hue-salari.ir/wp-content/uploads/quality.png 438w" sizes="(max-width: 300px) 100vw, 300px" />
+        <img loading="lazy" class="size-medium wp-image-408 aligncenter" src="https://mh-salari.ir/wp-content/uploads/quality-300x261.png" alt="" width="300" height="261" srcset="https://mh-salari.ir/wp-content/uploads/quality-300x261.png 300w, https://mh-salari.ir/wp-content/uploads/quality.png 438w" sizes="(max-width: 300px) 100vw, 300px" />
       </p>
       
       <p>
@@ -473,9 +473,9 @@ cv2.destroyAllWindows()</pre>
       </p>
       
       <p>
-        نویسنده: <a href="https://hue-salari.ir/">محمد حسین سالاری</a>
+        نویسنده: <a href="https://mh-salari.ir/">محمد حسین سالاری</a>
       </p>
 
- [1]: https://hue-salari.ir/install-opencv3-on-ubuntu-17-10/
- [2]: https://hue-salari.ir/introduction-to-numpy/
+ [1]: https://mh-salari.ir/install-opencv3-on-ubuntu-17-10/
+ [2]: https://mh-salari.ir/introduction-to-numpy/
  [3]: https://docs.opencv.org/3.0-beta/modules/imgproc/doc/miscellaneous_transformations.html#void%20cvtColor(InputArray%20src,%20OutputArray%20dst,%20int%20code,%20int%20dstCn)

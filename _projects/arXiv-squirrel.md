@@ -30,4 +30,4 @@ To build arXivSquirrel, I used several go modules, including:
 
 If you're a AI researcher, I highly recommend giving arXivSquirrel a try. It's a great tool for staying up to date on the latest papers and saving time in the process. You can find the source code for arXivSquirrel on its GitHub page at [https://github.com/mh-salari/arXivSquirrel](https://github.com/mh-salari/arXivSquirrel).
 
-you can also find my personalized arXiv feed at this link: [https://arxiv.ai-hue.ir/arxiv.xml](https://arxiv.ai-hue.ir/arxiv.xml)
+

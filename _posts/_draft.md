@@ -9,7 +9,7 @@ image: /assets/post-images/
 headerImage: true
 description: ""
 category: Linux
-author: Hue  Salari
+author: Mohammadhossein  Salari
 externalLink: false
 ---
 tags: [web, jekyll]

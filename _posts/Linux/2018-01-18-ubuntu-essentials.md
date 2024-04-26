@@ -9,7 +9,7 @@ image: /assets/post-images/linux/ubuntu-essentials/ubuntu_essentials.png
 headerImage: true
 description: "مجموعه دستورات کاربردی بعد از نصب اوبونتو"
 category: Linux
-author: Hue Salari
+author: Mohammadhossein Salari
 externalLink: false
 ---
 
