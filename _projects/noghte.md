@@ -3,7 +3,7 @@ layout: project
 custom_css: project
 title: "Noghte"
 # permalink: /projects/#
-date:  2021-02-21 12:00:06 +0000
+date:  2021-02-25 12:00:06 +0000
 thumbnail: /assets/projects-images/noghte/noghte_demo.jpg
 description: "A lightweight image annotation tool for placing landmarks on medical images."
 ---

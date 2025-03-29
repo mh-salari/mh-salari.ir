@@ -3,7 +3,7 @@ layout: project
 custom_css: project
 title: "Fenjan"
 # permalink: /projects/#
-date:  2021-02-21 12:00:01 +0000
+date:  2021-02-30 12:00:01 +0000
 thumbnail: /assets/projects-images/fenjan/greeting26.png
 description: "A bot that finds Ph.D. positions from social media and university websites, delivering daily personalized updates."
 ---

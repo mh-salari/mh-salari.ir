@@ -3,7 +3,7 @@ layout: project
 custom_css: project
 title: "Automatically extracting the optic disc area in fundus images"
 # permalink: /projects/#
-date:  2021-02-21 12:00:03 +0000
+date:  2021-02-28 12:00:03 +0000
 thumbnail: /assets/projects-images/OptDisc-Extractor/t0.png
 description: "A project that automates the detection of optic discs in fundus images to assist with glaucoma screening."
 ---

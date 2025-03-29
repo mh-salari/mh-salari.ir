@@ -3,7 +3,7 @@ layout: project
 custom_css: project
 title: "WOTW"
 # permalink: /projects/#
-date:  2021-02-21 12:00:07 +0000
+date:  2021-02-25 12:00:07 +0000
 thumbnail: /assets/projects-images/wotw/archive.png
 description: "A search platform for finding Tehran stock market and cryptocurrency mentions across Telegram channels."
 ---

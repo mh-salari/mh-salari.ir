@@ -3,7 +3,7 @@ layout: project
 custom_css: project
 title: "hafez-fal.ir"
 # permalink: /projects/#
-date:  2021-02-21 12:00:07 +0000
+date:  2021-02-26 12:00:07 +0000
 thumbnail: /assets/projects-images/hafez-fal/logo.png
 description: "A clean, ad-free website for reading Hafez's poetry with an NLP-powered Twitter bot."
 ---
