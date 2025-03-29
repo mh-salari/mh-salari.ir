@@ -5,16 +5,16 @@ title: "Emoji-Art"
 # permalink: /projects/#
 date:  2021-02-21 12:00:04 +0000
 thumbnail: /assets/projects-images/emoji-art/1.png
-description: "Rendering Images as Emojis with PyTorch."
+description: "Converting images into emoji mosaics using PyTorch."
 ---
 
-Inspired by [@bwasti's](https://sigmoid.social/@bwasti/109592598903441446) awesome image-to-emoji project, I built a PyTorch model that renders images as a series of 10-pixel by 10-pixel emojis. 
+After seeing [@bwasti's](https://sigmoid.social/@bwasti/109592598903441446) creative image-to-emoji project, I created my own PyTorch implementation that transforms photos into mosaics made of 10x10 pixel emoji tiles.
 
-I created the dataset by downloading the 14-pixel by 14-pixel png images of emojis from [https://unicode.org/emoji/charts/full-emoji-list.html](https://unicode.org/emoji/charts/full-emoji-list.html).
+The project started by building a dataset from standard emoji images found at [unicode.org](https://unicode.org/emoji/charts/full-emoji-list.html), using their 14x14 pixel PNG versions.
 
 ![dataset](/assets/projects-images/emoji-art/dataset.png)
 
-For transformation, I just did `transforms.GaussianBlur(kernel_size=(3, 3), sigma=(0.1, 0.9))` and `transforms.RandomRotation(degrees=5)`.
+To improve model training, I applied basic image augmentation with Gaussian blur and slight rotation to create more variation in the training data.
 
 For the model, first, I overfitted `torchvision.models.resnet18()` and then this small model. Both worked fine, but I like the output of the resnet18 more. 
 

@@ -5,10 +5,10 @@ title: "Davat(دوات)"
 # permalink: /projects/#
 date:  2021-02-21 12:00:05 +0000
 thumbnail: /assets/projects-images/davat/davat.png
-description: "A very simple python library for normalizing and cleaning Persian text."
+description: "A Python library for normalizing and cleaning Persian text for NLP applications."
 ---
 
-I wanted to do a couple of NLP projects in Farsi, but soon realized that Farsi NLP community is very young and many components required for text processing are not available in Farsi. Text normalization and cleaning was one of the tools I needed for my project, and I couldn't find a good one. So, I spent a couple of nights writing regex codes in Python to normalize and clean Persian text.
+When starting some NLP projects in Farsi, I noticed that the Persian NLP ecosystem lacked many basic text processing tools that are common in other languages. Unable to find a suitable text normalization library for my needs, I created Davat by developing regex patterns in Python to properly clean and normalize Persian text.
 
 Here is an example of the output of Davat:
 
