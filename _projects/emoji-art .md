@@ -3,7 +3,7 @@ layout: project
 custom_css: project
 title: "Emoji-Art"
 # permalink: /projects/#
-date:  2021-02-21 12:00:04 +0000
+date:  2021-02-27 12:00:04 +0000
 thumbnail: /assets/projects-images/emoji-art/1.png
 description: "Converting images into emoji mosaics using PyTorch."
 ---

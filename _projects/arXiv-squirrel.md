@@ -3,7 +3,7 @@ layout: project
 custom_css: project
 title: "arXivSquirrel"
 # permalink: /projects/#
-date:  2021-02-21 12:00:02 +0000
+date:  2021-02-29 12:00:02 +0000
 thumbnail: /assets/projects-images/arXivSquirrel/arXivSquirrel.png
 description: "A Go program that creates personalized RSS feeds from arXiv.org based on your research keywords."
 ---
