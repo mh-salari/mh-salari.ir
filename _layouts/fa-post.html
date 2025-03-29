@@ -40,19 +40,18 @@ layout: default
 
 <div class="blog-navigation">
     <div>
-        {% if page.previous.url %}
-        <a class="previous post-links " href="{{page.previous.url}}">
-            <img class="icon" src="{{ site.url }}/assets/svg-icons/dog.svg">
-            <span class="blog-navigation-text">{{page.previous.title}}</span>
+        {% if page.next.url %}
+        <a class="next post-links" href="{{page.next.url}}">
+            <span class="blog-navigation-text">{{page.next.title}}</span>
+            <i class="fas fa-chevron-left"></i>
         </a>
         {% endif %}
     </div>
     <div>
-        {% if page.next.url %}
-        <a class="next post-links " href="{{page.next.url}}">
-            <span class="blog-navigation-text">{{page.next.title}}</span>
-            <img class="icon" src="{{ site.url }}/assets/svg-icons/black-cat.svg">
-
+        {% if page.previous.url %}
+        <a class="previous post-links" href="{{page.previous.url}}">
+            <i class="fas fa-chevron-right"></i>
+            <span class="blog-navigation-text">{{page.previous.title}}</span>
         </a>
         {% endif %}
     </div>

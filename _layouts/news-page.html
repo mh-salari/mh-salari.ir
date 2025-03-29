@@ -9,10 +9,21 @@ layout: default
     <div class="news-item">
       <div class="news-date">{{ news.date | date: "%B %d, %Y" }}</div>
       <h3 class="news-title">
-        <a href="{{ site.baseurl }}{{ news.url }}">{{ news.title }}</a>
+        <a href="{{ site.baseurl }}{{ news.url }}" class="news-title-link">{{ news.title }}</a>
       </h3>
       <div class="news-excerpt">{{ news.excerpt | strip_html | truncatewords: 30 }}</div>
     </div>
     {% endfor %}
   </div>
 </main>
+
+<style>
+/* Direct style override for news title links */
+.news-title-link {
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+.news-title-link:hover {
+  color: var(--color-links-hover) !important;
+}
+</style>

@@ -1,8 +1,5 @@
-<footer class="footer">
-    {{ site.owner.name }} <br class="footer-break"> &copy; {{ site.time | date: '%Y' }}
-
-    <a class="link " href="{{ site.url }}/feed.xml" target="_blank">
-        <img class="icon" src="{{ site.url }}/assets/svg-icons/rss.svg">
-    </a>
-
+<footer class="footer" role="contentinfo">
+    <div class="footer-content">
+        <span class="copyright">{{ site.owner.name }}<br class="footer-break"> &copy; {{ site.time | date: '%Y' }}</span>
+    </div>
 </footer>

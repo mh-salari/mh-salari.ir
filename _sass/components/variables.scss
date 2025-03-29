@@ -1,10 +1,50 @@
-/* variables */
+/* 
+ * Global CSS Variables 
+ * Using modern CSS custom properties for better theming
+ */
 
 :root {
-    --primary: #003d3b;
-    --primary-rgb: 0, 61, 59;
-    --secondary: #0b5666;
-    --secondary-rgb: 11,86,102;
-    --links: 6, 99, 82;
-    --links-active: #6eb168;
+    /* Primary Colors */
+    --color-primary: #003d3b;
+    --color-primary-rgb: 0, 61, 59;
+    --color-primary-light: rgba(var(--color-primary-rgb), 0.8);
+    
+    /* Secondary Colors */
+    --color-secondary: #0b5666;
+    --color-secondary-rgb: 11, 86, 102;
+    --color-secondary-light: rgba(var(--color-secondary-rgb), 0.8);
+    
+    /* Links */
+    --color-links-rgb: 6, 99, 82;
+    --color-links: rgb(var(--color-links-rgb));
+    --color-links-hover: #8A678A;
+    --color-active: #6eb168;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Border Radius */
+    --border-radius-sm: 3px;
+    --border-radius-md: 5px;
+    --border-radius-lg: 8px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-default: 0.3s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 3px 10px rgba(0, 0, 0, 0.15);
+    
+    /* For backward compatibility */
+    --primary: var(--color-primary);
+    --primary-rgb: var(--color-primary-rgb);
+    --secondary: var(--color-secondary);
+    --secondary-rgb: var(--color-secondary-rgb);
+    --links: var(--color-links-rgb);
+    --links-active: var(--color-active);
 }

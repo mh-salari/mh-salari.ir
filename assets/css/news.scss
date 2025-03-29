@@ -1,0 +1,13 @@
+---
+---
+/* Import the news styles */
+@use "pages/news";
+
+/* Add overrides to ensure links in news articles hover correctly */
+.post-text a {
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--color-links-hover) !important;
+  }
+}

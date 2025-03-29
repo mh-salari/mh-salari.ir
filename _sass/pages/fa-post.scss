@@ -66,15 +66,7 @@
     }
 }
 
-.blog-navigation {
-    padding-top: 25px;
-    display: none;
-    .icon {
-        vertical-align: middle;
-        width: 2em;
-        margin: 0 2.5px;
-    }
-}
+/* Blog navigation styles now in components/navigation.scss */
 
 .blog-navigation-text {
     font-family: "Yekan", 'Neucha', cursive;
@@ -92,15 +84,6 @@
     .post-text {
         font-size: 14px;
     }
-    .blog-navigation {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: space-between;
-        font-size: 13px;
-        row-gap: 10px;
-    }
 }
 
 ul,ol{
@@ -116,10 +99,6 @@ ul,ol{
         img {
             padding: 0 15px;
         }
-    }
-    .blog-navigation {
-        flex-direction: row;
-        font-size: 14px;
     }
 }
 

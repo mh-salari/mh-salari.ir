@@ -1,3 +1,11 @@
 ---
 ---
+/* Import FA post styles */
 @use "pages/fa-post";
+@use "components/navigation";
+
+/* Persian-specific overrides */
+.blog-navigation .blog-navigation-text {
+  font-family: "Yekan", 'Neucha', cursive;
+  unicode-bidi: plaintext;
+}
