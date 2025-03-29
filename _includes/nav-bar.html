@@ -1,26 +1,61 @@
-<header class="nav-bar">
-    <a href="{{ site.url }}/" class="nav-home nav-links">HOME<img class="icon"
-            src="{{ site.url }}/assets/svg-icons/apatosaurus.svg"></a>
-    <nav class="nav-pages">
-        <ul>
-            <li>
-                <a class="nav-links" href="{{ site.url }}/fa_blog">
-                    <img class="icon" src="{{ site.url }}/assets/svg-icons/fox.svg">FaBlog
-                </a>
-            </li>
-            <li>
-                <a class="nav-links" href="#">
-                    <img class="icon" src="{{ site.url }}/assets/svg-icons/penguin.svg"> EnBlog
-                </a>
-            </li>
-            <li>
-                <a class="nav-links" href="{{ site.url }}/projects">
-                    <img class="icon" src="{{ site.url }}/assets/svg-icons/elephant.svg"> Projects</a>
-            </li>
-            <li>
-                <a class="nav-links" href="{{ site.url }}/assets/files/Mohammadhossein Salari - CV.pdf">
-                    <img class="icon" src="{{ site.url }}/assets/svg-icons/dacentrurus.svg"> Resume</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+<!-- Sticky Navigation Bar -->
+<nav class="main-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="{{ site.url }}/" title="Home" {% if page.url == '/' %}class="active"{% endif %}>
+                <i class="fas fa-home"></i>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="{{ site.url }}/news" title="News" {% if page.url contains '/news' %}class="active"{% endif %}>
+                <i class="far fa-newspaper"></i>
+                <span class="nav-text">News</span>
+            </a>
+            <a href="{{ site.url }}/projects" title="Projects" {% if page.url contains '/projects' %}class="active"{% endif %}>
+                <i class="far fa-folder-open"></i>
+                <span class="nav-text">Projects</span>
+            </a>
+            <a href="{{ site.url }}/publications" title="Publications" {% if page.url contains '/publications' %}class="active"{% endif %}>
+                <i class="far fa-file-alt"></i>
+                <span class="nav-text">Publications</span>
+            </a>
+            <a href="{{ site.url }}/fa_blog" title="Persian Blog" {% if page.url contains '/fa_blog' %}class="active"{% endif %}>
+                <i class="far fa-edit"></i>
+                <span class="nav-text">FaBlog</span>
+            </a>
+            <a href="#" title="English Blog">
+                <i class="far fa-sticky-note"></i>
+                <span class="nav-text">EnBlog</span>
+            </a>
+            <a href="{{ site.url }}/assets/files/Mohammadhossein Salari - CV.pdf" title="Resume">
+                <i class="far fa-user"></i>
+                <span class="nav-text">Resume</span>
+            </a>
+        </div>
+        <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<script>
+    // Simple script for the mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    });
+
+    // Add a class to the nav when scrolling
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.main-nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+</script>

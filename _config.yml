@@ -53,3 +53,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title
+  news:
+    output: true
+    permalink: /:collection/:title
+  publications:
+    output: true
+    permalink: /:collection/:title

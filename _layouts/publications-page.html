@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<main>
+  <h2>Publications</h2>
+  
+  <div class="publications-list">
+    {% assign publications_by_year = site.publications | group_by: "year" | sort: "name" | reverse %}
+    
+    {% for year_group in publications_by_year %}
+      <h3 class="year-heading">{{ year_group.name }}</h3>
+      
+      {% assign sorted_pubs = year_group.items | sort: "date" | reverse %}
+      {% for publication in sorted_pubs %}
+        <div class="publication-item">
+          <h4 class="publication-title">
+            <a href="{{ site.baseurl }}{{ publication.url }}">{{ publication.title }}</a>
+          </h4>
+          <div class="publication-authors">{{ publication.authors }}</div>
+          <div class="publication-venue">{{ publication.venue }}</div>
+          
+          <div class="publication-links">
+            {% if publication.doi %}
+            <a href="https://doi.org/{{ publication.doi }}" target="_blank" class="doi-link">
+              <i class="fas fa-external-link-alt"></i> DOI
+            </a>
+            {% endif %}
+            
+            {% if publication.pdf %}
+            <a href="{{ site.baseurl }}{{ publication.pdf }}" target="_blank" class="pdf-link">
+              <i class="fas fa-file-pdf"></i> PDF
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</main>
