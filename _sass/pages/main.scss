@@ -1,10 +1,10 @@
-@import "components/reset";
-@import "components/variables";
-@import "components/fa-fonts";
-@import "components/nav-bar";
-@import "components/links";
-@import "components/icon";
-@import "components/footer";
+@use "components/reset";
+@use "components/variables";
+@use "components/fa-fonts";
+@use "components/nav-bar";
+@use "components/links";
+@use "components/icon";
+@use "components/footer";
 html,
 body {
     width: 100%;

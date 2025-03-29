@@ -29,6 +29,7 @@
 .post-text {
     max-width: 960px;
     margin: 0 auto;
+    margin-top: 1rem !important;
     padding-top: 25px;
     font-size: 16px;
     unicode-bidi: plaintext;
@@ -47,10 +48,11 @@
 .blog-navigation {
     padding-top: 25px;
     display: none;
-    .icon {
-        vertical-align: middle;
-        width: 2em;
-        margin: 0 2.5px;
+    
+    i {
+        font-size: 1.5em;
+        margin: 0 5px;
+        color: var(--links-active);
     }
 }
 

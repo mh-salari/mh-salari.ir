@@ -4,7 +4,13 @@ footer {
     padding: 50px 0px 0px 0px;
     // margin: 10px auto;
     color: var(--primary);
-    font-size: 1em;
+    font-size: 1.3em;
+    
+    .icon {
+        /* Keep icon size unchanged */
+        width: 0.9em;
+        height: 0.9em;
+    }
 }
 
 .footer-break {

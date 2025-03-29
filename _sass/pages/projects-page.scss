@@ -1,8 +1,8 @@
-@import "components/reset";
-@import "components/variables";
-@import "components/links";
-@import "components/icon";
-@import "components/footer";
+@use "components/reset";
+@use "components/variables";
+@use "components/links";
+@use "components/icon";
+@use "components/footer";
 
 /* base styles */
 main h3 {

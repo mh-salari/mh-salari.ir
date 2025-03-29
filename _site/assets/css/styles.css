@@ -15,87 +15,6 @@
   --links-active: #6eb168;
 }
 
-@font-face {
-  font-family: "Yekan";
-  src: url("../persian-web-font/yekan-font/Yekan.eot");
-  src: url("../persian-web-font/yekan-font/Yekan.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/yekan-font/Yekan.woff") format("woff"), url("../persian-web-font/yekan-font/Yekan.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Vazir";
-  src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.eot");
-  src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff") format("woff"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-.nav-bar {
-  margin: 15px;
-  padding: 0 10px;
-  overflow: auto;
-  font-family: "Neucha", cursive;
-  font-size: 1.1em;
-  overflow: hidden;
-}
-
-.nav-home {
-  display: block;
-  text-align: center;
-  padding-right: 0px;
-  margin-bottom: 7.5px;
-  text-decoration: none;
-  color: var(--primary);
-  white-space: nowrap;
-}
-
-.nav-home .icon {
-  margin-left: 10px;
-  width: 1.5em;
-}
-
-.nav-pages ul {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  gap: 5px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.nav-pages li {
-  white-space: nowrap;
-  margin-right: 10px;
-}
-
-@media screen and (min-width: 320px) {
-  .nav-pages {
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-  }
-  .nav-pages ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-}
-@media screen and (min-width: 640px) {
-  .nav-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .nav-home {
-    display: inline;
-    justify-self: start;
-  }
-  .nav-pages {
-    justify-self: end;
-  }
-  .nav-pages ul {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
-}
 .nav-links {
   text-decoration: none;
   font-size: 1.1em;
@@ -161,46 +80,193 @@ footer {
   text-align: center;
   padding: 50px 0px 0px 0px;
   color: var(--primary);
-  font-size: 1em;
+  font-size: 1.3em;
+}
+footer .icon {
+  /* Keep icon size unchanged */
+  width: 0.9em;
+  height: 0.9em;
 }
 
 .footer-break {
   display: none;
 }
 
-html,
+/* Base styles */
 body {
-  width: 100%;
-  height: 100%;
-  font-size: 18px;
-}
-
-main {
-  overflow: hidden;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0px auto;
-  padding: 25px;
-  min-height: 90%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
-hr {
-  color: rgba(var(--primary-rgb), 0.4);
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--primary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
-  color: var(--primary);
+  color: rgba(var(--links), 0.9);
+  transition: color 0.3s ease;
 }
 a:hover {
   color: var(--links-active);
 }
-a:active a:visited {
-  color: var(--links);
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Neucha", cursive;
+  color: var(--primary);
+  margin-top: 0;
+}
+
+/* Main Nav */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.main-nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo a i {
+  font-size: 1.5rem;
+  color: var(--primary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.nav-logo a i:hover {
+  transform: scale(1.1);
+  color: var(--links-active);
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+.nav-links.active {
+  display: flex;
+}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: var(--primary);
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--links-active);
+}
+.nav-links a:hover i, .nav-links a:hover .icon, .nav-links a.active i, .nav-links a.active .icon {
+  transform: scale(1.1);
+}
+.nav-links a i, .nav-links a .icon {
+  width: 1.25em;
+  margin-right: 0.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+.nav-toggle:focus {
+  outline: none;
+}
+
+/* Page container */
+.page-container {
+  padding-top: 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Common section styling */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.section-header h2 {
+  font-size: 1.75rem;
+  position: relative;
+}
+.section-header h2:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--links-active);
+}
+.section-header .view-all {
+  color: rgba(var(--links), 0.8);
+  font-size: 0.9rem;
+}
+.section-header .view-all:hover {
+  color: var(--links-active);
+}
+
+/* Responsive styles */
+@media screen and (min-width: 992px) {
+  .nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  .nav-links a {
+    padding: 0.5rem 1rem;
+    /* No need to override hover styles here as they're already defined above */
+  }
+  .nav-links a .nav-text {
+    display: inline;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

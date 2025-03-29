@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include analytics.html %}
     {% endif %}
@@ -11,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% seo title=false %}
-
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/assets/favicon/apple-icon-60x60.png">
@@ -26,23 +24,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ site.url }}/assets/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ site.url }}/assets/favicon//manifest.json">
+    <link rel="manifest" href="{{ site.url }}/assets/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ site.url }}/assets/favicon//ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="{{ site.url }}/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Neucha&family=Zeyada&display=swap"
         rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ site.url }}/assets/fontawesome-free-5.15.2-web/css/all.min.css">
     <link rel="stylesheet" href="{{ site.url }}/assets/css/syntax.css" type="text/css" />
-
     <link rel="stylesheet" href="{{ site.url }}/assets/css/styles.css">
 
     {% if page.custom_css %}
@@ -59,19 +54,19 @@
         {{ site.title }}
         {% endif %}
     </title>
-
 </head>
 
 <body>
-    <div class="container">
-        <!-- Navbar -->
-        {%include nav-bar.html%}
+    {% include nav-bar.html %}
 
+    <div class="page-container">
         {{ content }}
 
         <!-- footer -->
         {% include footer.html %}
     </div>
+
+    <!-- Nav bar script is included in the nav-bar.html include -->
 </body>
 
 </html>

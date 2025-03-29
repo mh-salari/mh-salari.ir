@@ -41,51 +41,118 @@
 </head>
 
 <body>
-  <!-- main -->
-  <main class="main">
-    <img class="avatar" src="{{ site.url }}/assets/images/mh-salari.jpeg" alt="Mohammadhossein Salari" />
-    <h1 class="blog-owner">MohammadHossien Salari</h1>
-    <h2 class="description">
+  {% include nav-bar.html %}
 
-      I am currently a doctoral researcher at the Interactive Technologies Lab at the University of Eastern Finland. I
-      am working under the guidance of Prof. Roman Bednarik (University of Eastern Finland, Finland) and Prof. Dr. Anke
-      Huckauf (Ulm University, Germany).
-
-      I am deeply passionate about computer vision and edge AI technologies, as well as the development of
-      cost-effective eye-trackers for everyday applications. Additionally, I am actively involved in the practical
-      implementation and performance assessment of eye-tracking technology in real-world scenarios.
-
-    </h2>
-    <div class="social-links">
-      <a class="nav-links" href="https://www.linkedin.com/in/mh-salari/"><i class="fab fa-linkedin"></i></a>
-      <a class="nav-links" href="https://github.com/mh-salari/"><i class="fab fa-github"></i></a>
-      <a class="nav-links" href="mailto:Mohammadhossein.salari@gmail.com"><i class="fas fa-envelope"></i></a>
+  <!-- Header Section -->
+  <header class="hero">
+    <div class="profile-container">
+      <div class="profile-image">
+        <img src="{{ site.url }}/assets/images/mh-salari.jpeg" alt="Mohammadhossein Salari" />
+      </div>
+      <div class="profile-info">
+        <h1 class="profile-name">Mohammadhossein Salari</h1>
+        <p class="profile-bio">
+          I am a doctoral researcher at the Interactive Technologies Research Group, University of Eastern Finland. My current work involves implementing and assessing eye-tracking technology in challenging real-world environments, with the aim of developing effective and robust predictive gaze-based models in the wild. I am passionate about computer vision on edge devices and creating cost-effective eye-tracking solutions for everyday use.
+        </p>
+        <div class="profile-social">
+          <a href="https://www.linkedin.com/in/mh-salari/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/mh-salari/" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:Mohammadhossein.salari@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <nav class="nav-home">
-      <ul>
-        <li>
-          <a class="nav-links" href="fa_blog"> <img class="icon" src="{{ site.url }}/assets/svg-icons/fox.svg" />FaBlog
-          </a>
-        </li>
-        <li>
-          <a class="nav-links" href="#"> <img class="icon" src="{{ site.url }}/assets/svg-icons/penguin.svg" /> EnBlog
-          </a>
-        </li>
-        <li>
-          <a class="nav-links" href="projects"> <img class="icon" src="{{ site.url }}/assets/svg-icons/elephant.svg" />
-            Projects</a>
-        </li>
-        <li>
-          <a class="nav-links" href="{{ site.url }}/assets/files/Mohammadhossein Salari - CV.pdf"> <img class="icon"
-              src="{{ site.url }}/assets/svg-icons/dacentrurus.svg" /> Resume</a>
-        </li>
-      </ul>
-    </nav>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Latest News Section -->
+    <section class="content-section news-section">
+      <div class="section-header">
+        <h2>Latest News</h2>
+        <a href="{{ site.url }}/news" class="view-all">View All</a>
+      </div>
+      <div class="news-grid">
+        {% assign all_news = site.news | sort: 'date' | reverse %}
+        {% for news in all_news limit:3 %}
+        <div class="news-card">
+          <div class="news-date">{{ news.date | date: "%B %d, %Y" }}</div>
+          <h3 class="news-title">
+            <a href="{{ site.baseurl }}{{ news.url }}">{{ news.title }}</a>
+          </h3>
+          <div class="news-excerpt">{{ news.excerpt | strip_html | truncatewords: 20 }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="content-section projects-section">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <a href="{{ site.url }}/projects" class="view-all">View All</a>
+      </div>
+      <div class="projects-grid">
+        {% assign all_projects = site.projects | sort: 'date' | reverse %}
+        {% for project in all_projects limit:3 %}
+        <div class="project-card">
+          <div class="project-image">
+            <a href="{{ site.baseurl }}{{ project.url }}">
+              <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
+            </a>
+          </div>
+          <h3 class="project-title">
+            <a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a>
+          </h3>
+          <div class="project-description">{{ project.description }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Recent Publications Section -->
+    <section class="content-section publications-section">
+      <div class="section-header">
+        <h2>Recent Publications</h2>
+        <a href="{{ site.url }}/publications" class="view-all">View All</a>
+      </div>
+      <div class="publications-list">
+        {% assign all_publications = site.publications | sort: 'year' | reverse %}
+        {% for publication in all_publications limit:3 %}
+        <div class="publication-item">
+          <h3 class="publication-title">
+            <a href="{{ site.baseurl }}{{ publication.url }}">{{ publication.title }}</a>
+          </h3>
+          <div class="publication-authors">{{ publication.authors }}</div>
+          <div class="publication-venue">{{ publication.venue }} ({{ publication.year }})</div>
+          <div class="publication-links">
+            {% if publication.doi %}
+            <a href="https://doi.org/{{ publication.doi }}" target="_blank" class="doi-link">
+              <i class="fas fa-external-link-alt"></i> DOI
+            </a>
+            {% endif %}
+            
+            {% if publication.pdf %}
+            <a href="{{ site.baseurl }}{{ publication.pdf }}" target="_blank" class="pdf-link">
+              <i class="fas fa-file-pdf"></i> PDF
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
   </main>
 
-  <!-- footer -->
+  <!-- Footer -->
   {% include footer.html %}
+
+  <!-- Nav bar script is included in the nav-bar.html include -->
 </body>
 
 </html>

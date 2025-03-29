@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<main>
+  <h2>News & Updates</h2>
+  <div class="news-list">
+    {% for news in site.news reversed %}
+    <div class="news-item">
+      <div class="news-date">{{ news.date | date: "%B %d, %Y" }}</div>
+      <h3 class="news-title">
+        <a href="{{ site.baseurl }}{{ news.url }}">{{ news.title }}</a>
+      </h3>
+      <div class="news-excerpt">{{ news.excerpt | strip_html | truncatewords: 30 }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
