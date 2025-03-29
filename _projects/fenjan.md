@@ -5,19 +5,18 @@ title: "Fenjan"
 # permalink: /projects/#
 date:  2021-02-21 12:00:01 +0000
 thumbnail: /assets/projects-images/fenjan/greeting26.png
-description: "Fenjan is a bot that searches for the latest Ph.D. positions on social media and universities' websites, and sends personalized emails to users every morning."
+description: "A bot that finds Ph.D. positions from social media and university websites, delivering daily personalized updates."
 ---
 
-I'm a bit lazy when it comes to manually searching for Ph.D. programs on social media. So, I decided to build a bot to do it for me. I wrote a hundred lines of code, and thus Fenjan was born. It searches Linkedin and Twitter for the latest Ph.D. positions and sends me a personalized email every morning.
+To simplify the process of finding Ph.D. opportunities, I created Fenjan - a bot that automatically searches for relevant positions. The initial version scanned LinkedIn and Twitter for Ph.D. openings and delivered them to my inbox each morning.
 
 ![Fenjan V1 Screenshot](/assets/projects-images/fenjan/v1.png)
 
-A couple of my friends showed interest in the bot, so I added a new feature to Fenjan that lets me add the keywords of other people. Now, every morning, Fenjan sends its customers an email containing all the Ph.D. positions shared on Twitter and LinkedIn in the last 24 hours.
-I also added a bit of CSS and HTML to it to make its emails easer to read.
+As friends expressed interest in using it, I expanded Fenjan to support multiple users with different research interests. The bot now sends tailored emails containing Ph.D. positions from the past 24 hours, with improved formatting for better readability.
 
 ![Fenjan V2 Screenshot](/assets/projects-images/fenjan/v2.png)
 
-I am also slowly adding support for searching through my target universities' websites for open Ph.D. positions. Currently, Fenjan scrapes 17 universities for vacant Ph.D. positions.
+The project has grown to include university website scanning, with Fenjan currently monitoring 17 universities for open positions, making the job search process more efficient.
 
 I used Python Twitter API and Selenium for searching Twitter and LinkedIn. All the codes for scraping universities' websites are written in Golang, and I save the search results in the SQLite database.
 

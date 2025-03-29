@@ -5,14 +5,14 @@ title: "hafez-fal.ir"
 # permalink: /projects/#
 date:  2021-02-21 12:00:07 +0000
 thumbnail: /assets/projects-images/hafez-fal/logo.png
-description: "Aa minimal site for reading Hafez's poets with and NLP twitter bot!"
+description: "A clean, ad-free website for reading Hafez's poetry with an NLP-powered Twitter bot."
 ---
 
-The story of Hafez-fal site started on the day when I got tired of Hafez fortune-telling sites that were full of advertisements. I shared my discomfort with [Kiavash](https://twitter.com/kiavash) and expressed my wish for a site that did not have so many ads that disturbed the eyes of Hafez readers. This is how we decided to build a Hafez Fal site that does not have any ads and is very simple and clean.
+Hafez-fal.ir came about when I grew frustrated with existing Hafez poetry sites cluttered with advertisements. After discussing this with [Kiavash](https://twitter.com/kiavash), we decided to create a simple, ad-free alternative that would provide a better reading experience.
 
 ![](/assets/projects-images/hafez-fal/landing-page.png)
 
-Everyone did their part of the work: I collected the texts from the web with the help of Python, and Kiavash, who had previously written Mira, converted the data I sent to him into YAML files with the help of Perl, and then converted it into the Mira format. He also created a random function in Javascript for getting a Fal. That's it, http://hafez-fal.ir, is a simple, clean, and minimal site for reading Hafez's poets.
+We divided the work based on our strengths: I used Python to collect the poetry texts from various sources, while Kiavash processed the data into YAML files using Perl and his Mira framework. He also implemented the JavaScript random selection function for the fortune-telling feature. The result is http://hafez-fal.ir - a clean, minimalist site focused entirely on Hafez's poetry.
 
 ![](/assets/projects-images/hafez-fal/447.png)
 

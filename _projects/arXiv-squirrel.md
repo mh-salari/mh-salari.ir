@@ -5,14 +5,14 @@ title: "arXivSquirrel"
 # permalink: /projects/#
 date:  2021-02-21 12:00:02 +0000
 thumbnail: /assets/projects-images/arXivSquirrel/arXivSquirrel.png
-description: "arXivSquirrel is a Go program that generates personalized RSS feeds from arXiv.org based on user keywords. It helps you stay up to date on the latest research papers in your field."
+description: "A Go program that creates personalized RSS feeds from arXiv.org based on your research keywords."
 ---
 
-arXivSquirrel is a Go program that I developed to keep up to date on the latest computer vision papers. As a computer vision researcher, staying up to date on the latest papers is essential. However, keeping track of all the papers being published on arXiv.org can be a daunting task. That's why I decided to create arXivSquirrel to make my life easier.
+arXivSquirrel is a tool I built to help keep track of new computer vision papers. Following all the publications on arXiv.org can be overwhelming, so I created this program to filter papers based on my interests.
 
-One of the unique features of arXivSquirrel is that it includes the image version of the first five pages of each paper in the RSS feed. This means that I can quickly get a sense of the content of the paper without having to read the full title or abstract. This feature can save a lot of time and help to identify papers that I may want to read in more detail.
+What makes arXivSquirrel different is that it includes images of the first five pages of each paper directly in the RSS feed. This visual preview helps quickly assess papers without reading through titles and abstracts, making it easier to identify which ones deserve closer attention.
 
-I wrote the arXivSquirrel code in a way that other people can use it and deploy it on their servers. To use arXivSquirrel, all you need to do is to provide a list of keywords related to your research interests. The bot then automatically generates an RSS feed that includes all the latest papers that match your keywords. You can use any RSS reader to subscribe to the feed and get updates whenever new papers are published.
+The program is designed to be user-friendly and deployable by anyone. You simply provide a list of keywords related to your research interests, and arXivSquirrel generates an RSS feed with matching papers. It works with any standard RSS reader, delivering updates as new relevant papers are published.
 
 ![lifera Screenshot](/assets/projects-images/arXivSquirrel/lifera.png)
 ![feedreader Screenshot](/assets/projects-images/arXivSquirrel/feedreader.png)

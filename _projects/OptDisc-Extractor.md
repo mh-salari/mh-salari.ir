@@ -5,16 +5,14 @@ title: "Automatically extracting the optic disc area in fundus images"
 # permalink: /projects/#
 date:  2021-02-21 12:00:03 +0000
 thumbnail: /assets/projects-images/OptDisc-Extractor/t0.png
-description: "This project aimed to automate the detection and localization of the optic disc in fundus images for efficient glaucoma detection."
+description: "A project that automates the detection of optic discs in fundus images to assist with glaucoma screening."
 ---
 
-The optic disc is a critical area for detecting glaucoma, as this condition primarily affects the optic disc and its surrounding areas. To improve the efficiency of glaucoma detection, I developed a simple yet effective threshold-based algorithm for automatically detecting the optic disc in fundus images.
+The optic disc is an important area for detecting glaucoma, as this condition affects the optic disc and surrounding regions. To help with more efficient screening, I developed a threshold-based algorithm for automatically detecting the optic disc in fundus images.
 
-I hate manually labeling images to train a deep learning model, and I'm that kind of developer who happily spends a couple of days automating a task that takes a few hours! So, I spent around a week on this project reading state-of-the-art papers regarding optic disc detection. I realized that a threshold method can be used to extract the optic-disc areas, but it's almost impossible to find the right threshold. However, we know a couple of facts about the optic disc:
-- it's circular.
-- it has a fixed aspect ratio to the entire eye area.
+Rather than manually labeling hundreds of images to train a deep learning model, I decided to find a more automated approach. After reviewing research papers on optic disc detection, I found that while threshold methods could work, determining the right threshold value was challenging. Working with what we know about optic discs (they're circular and have a consistent size ratio relative to the eye), I created a Python solution using OpenCV.
 
-So, I wrote a Python code with the help of OpenCV that starts to extract optic disc areas from images and changes the threshold values until it finds an area that checks all of the criteria (check the code if you are interested in this part!).
+The algorithm intelligently adjusts threshold values until it identifies areas matching the expected optic disc characteristics, effectively automating what would otherwise be manual work.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/D-Nlaal8U8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
