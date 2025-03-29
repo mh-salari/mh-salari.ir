@@ -21,20 +21,34 @@ layout: default
     </article>
 </main>
 
+<style>
+/* Direct style override for links in news posts */
+.post-text a {
+  color: var(--color-links);
+  transition: color 0.3s ease;
+}
+.post-text a:hover {
+  color: var(--color-links-hover) !important;
+  border-bottom-color: var(--color-links-hover);
+}
+
+/* Using standardized navigation styles from navigation.scss */
+</style>
+
 <div class="blog-navigation">
-    <div>
-        {% if page.previous.url %}
-        <a class="previous post-links" href="{{page.previous.url}}">
-            <i class="far fa-arrow-alt-circle-left"></i>
-            <span class="blog-navigation-text">{{page.previous.title}}</span>
-        </a>
-        {% endif %}
-    </div>
     <div>
         {% if page.next.url %}
         <a class="next post-links" href="{{page.next.url}}">
             <span class="blog-navigation-text">{{page.next.title}}</span>
-            <i class="far fa-arrow-alt-circle-right"></i>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        {% endif %}
+    </div>
+    <div>
+        {% if page.previous.url %}
+        <a class="previous post-links" href="{{page.previous.url}}">
+            <i class="fas fa-chevron-left"></i>
+            <span class="blog-navigation-text">{{page.previous.title}}</span>
         </a>
         {% endif %}
     </div>

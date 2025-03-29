@@ -1,39 +1,142 @@
-/* reset */
-* {
-  margin: 0;
-  padding: 0;
+/* 
+ * Main stylesheet for the website
+ * Import components and add page-specific styles
+ */
+/* Import component styles */
+/* 
+ * Modern CSS Reset
+ * Based on best practices and modern browser capabilities
+ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-/* variables */
-:root {
-  --primary: #003d3b;
-  --primary-rgb: 0, 61, 59;
-  --secondary: #0b5666;
-  --secondary-rgb: 11,86,102;
-  --links: 6, 99, 82;
-  --links-active: #6eb168;
+/* Remove default margin and padding */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
 }
 
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements */
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* 
+ * Global CSS Variables 
+ * Using modern CSS custom properties for better theming
+ */
+:root {
+  /* Primary Colors */
+  --color-primary: #003d3b;
+  --color-primary-rgb: 0, 61, 59;
+  --color-primary-light: rgba(var(--color-primary-rgb), 0.8);
+  /* Secondary Colors */
+  --color-secondary: #0b5666;
+  --color-secondary-rgb: 11, 86, 102;
+  --color-secondary-light: rgba(var(--color-secondary-rgb), 0.8);
+  /* Links */
+  --color-links-rgb: 6, 99, 82;
+  --color-links: rgb(var(--color-links-rgb));
+  --color-links-hover: #8A678A;
+  --color-active: #6eb168;
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  /* Border Radius */
+  --border-radius-sm: 3px;
+  --border-radius-md: 5px;
+  --border-radius-lg: 8px;
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-default: 0.3s ease;
+  /* Shadows */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 3px 10px rgba(0, 0, 0, 0.15);
+  /* For backward compatibility */
+  --primary: var(--color-primary);
+  --primary-rgb: var(--color-primary-rgb);
+  --secondary: var(--color-secondary);
+  --secondary-rgb: var(--color-secondary-rgb);
+  --links: var(--color-links-rgb);
+  --links-active: var(--color-active);
+}
+
+/* Global link styles */
+a {
+  text-decoration: none;
+  transition: color var(--transition-default);
+}
+a:hover {
+  color: var(--color-links-hover);
+}
+
+/* Specific link styles */
 .nav-links {
   text-decoration: none;
   font-size: 1.1em;
   color: var(--primary);
+  transition: color var(--transition-default);
 }
 .nav-links:hover {
-  color: var(--links-active);
+  color: var(--color-links-hover);
   text-shadow: 1px 2px rgba(0, 0, 0, 0.1);
 }
 .nav-links:active {
-  color: var(--links-active);
+  color: var(--color-active);
 }
 
 .category-links {
   text-decoration: none;
   color: rgba(var(--primary-rgb), 0.5);
+  transition: color var(--transition-default);
 }
 .category-links:hover {
-  color: rgba(var(--primary-rgb), 0.9);
+  color: var(--color-links-hover);
 }
 .category-links:active, .category-links:visited {
   color: rgba(var(--primary-rgb), 0.5);
@@ -42,9 +145,10 @@
 .post-links {
   text-decoration: none;
   color: var(--primary);
+  transition: color var(--transition-default);
 }
 .post-links:hover {
-  color: var(--links-active);
+  color: var(--color-links-hover) !important; /* Ensure this overrides any other styles */
 }
 .post-links:active {
   color: var(--primary);
@@ -53,9 +157,10 @@
 .tag-links {
   text-decoration: none;
   color: rgba(var(--primary-rgb), 0.6);
+  transition: color var(--transition-default);
 }
 .tag-links:hover {
-  color: rgba(var(--primary-rgb), 0.9);
+  color: var(--color-links-hover);
 }
 .tag-links:active, .tag-links:visited {
   color: rgba(var(--primary-rgb), 0.6);
@@ -64,8 +169,12 @@
 .orang-links {
   text-decoration: none;
   color: rgb(228, 118, 0);
+  transition: color var(--transition-default);
 }
-.orang-links:hover, .orang-links:active, .orang-links:visited {
+.orang-links:hover {
+  color: var(--color-links-hover);
+}
+.orang-links:active, .orang-links:visited {
   color: rgb(228, 118, 0);
 }
 
@@ -75,49 +184,37 @@
   margin-bottom: 5px;
 }
 
-footer {
+/* 
+ * Footer Styles
+ */
+.footer {
   font-family: "Zeyada", cursive;
   text-align: center;
-  padding: 50px 0px 0px 0px;
-  color: var(--primary);
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+  color: var(--color-primary);
   font-size: 1.3em;
+  border-top: 1px solid rgba(var(--color-primary-rgb), 0.1);
+  margin-top: var(--spacing-xl);
 }
-footer .icon {
-  /* Keep icon size unchanged */
-  width: 0.9em;
-  height: 0.9em;
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.copyright {
+  display: block;
 }
 
 .footer-break {
   display: none;
 }
 
-/* Base styles */
-body {
-  font-size: 16px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: var(--primary);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: rgba(var(--links), 0.9);
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: var(--links-active);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Neucha", cursive;
-  color: var(--primary);
-  margin-top: 0;
-}
-
-/* Main Nav */
+/* No media query needed since the footer is always centered */
+/* 
+ * Main Navigation Styles
+ */
 .main-nav {
   position: fixed;
   top: 0;
@@ -125,12 +222,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   z-index: 1000;
   background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-default);
 }
 .main-nav.scrolled {
   background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .nav-container {
@@ -139,7 +236,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 1rem;
+  padding: var(--spacing-sm) var(--spacing-md);
 }
 
 .nav-logo a {
@@ -149,12 +246,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-logo a i {
   font-size: 1.5rem;
-  color: var(--primary);
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--color-primary);
+  transition: transform var(--transition-default), color var(--transition-default);
 }
-.nav-logo a i:hover {
+.nav-logo a:hover i {
   transform: scale(1.1);
-  color: var(--links-active);
+  color: var(--color-links-hover);
+}
+.nav-logo a.active i {
+  color: var(--color-active);
+}
+.nav-logo a.active:hover i {
+  color: var(--color-links-hover);
 }
 
 .nav-links {
@@ -165,8 +268,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   background-color: white;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-md) 0;
 }
 .nav-links.active {
   display: flex;
@@ -174,76 +277,48 @@ h1, h2, h3, h4, h5, h6 {
 .nav-links a {
   display: flex;
   align-items: center;
-  padding: 0.75rem 1.5rem;
-  color: var(--primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  color: var(--color-primary);
+  text-decoration: none;
 }
-.nav-links a:hover, .nav-links a.active {
-  color: var(--links-active);
+.nav-links a.active {
+  color: var(--color-active);
+  font-weight: 500;
 }
-.nav-links a:hover i, .nav-links a:hover .icon, .nav-links a.active i, .nav-links a.active .icon {
+.nav-links a.active i {
+  color: var(--color-active);
+}
+.nav-links a.active:hover {
+  color: var(--color-links-hover);
+}
+.nav-links a.active:hover i {
   transform: scale(1.1);
+  color: var(--color-links-hover);
 }
-.nav-links a i, .nav-links a .icon {
+.nav-links a:hover {
+  color: var(--color-links-hover);
+}
+.nav-links a:hover i {
+  transform: scale(1.1);
+  color: var(--color-links-hover);
+}
+.nav-links a i {
   width: 1.25em;
-  margin-right: 0.5rem;
+  margin-right: var(--spacing-sm);
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-default);
 }
 
 .nav-toggle {
   background: none;
   border: none;
-  color: var(--primary);
+  color: var(--color-primary);
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 0.25rem;
+  padding: var(--spacing-xs);
 }
 .nav-toggle:focus {
   outline: none;
-}
-
-/* Page container */
-.page-container {
-  padding-top: 4rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Common section styling */
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-.section-header h2 {
-  font-size: 1.75rem;
-  position: relative;
-}
-.section-header h2:after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background-color: var(--links-active);
-}
-.section-header .view-all {
-  color: rgba(var(--links), 0.8);
-  font-size: 0.9rem;
-}
-.section-header .view-all:hover {
-  color: var(--links-active);
 }
 
 /* Responsive styles */
@@ -261,12 +336,306 @@ main {
     padding: 0;
   }
   .nav-links a {
-    padding: 0.5rem 1rem;
-    /* No need to override hover styles here as they're already defined above */
+    padding: var(--spacing-sm) var(--spacing-md);
   }
   .nav-links a .nav-text {
     display: inline;
   }
 }
+/* Legacy nav bar styles for backward compatibility */
+.nav-bar {
+  margin: var(--spacing-lg);
+  padding: 0 var(--spacing-md);
+  font-family: "Neucha", cursive;
+  font-size: 1.1em;
+  overflow: hidden;
+}
+
+.nav-home {
+  display: block;
+  text-align: center;
+  padding-right: 0;
+  margin-bottom: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+.nav-home .icon {
+  margin-left: var(--spacing-md);
+  width: 1.5em;
+}
+
+.nav-pages ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: var(--spacing-xs);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+.nav-pages li {
+  white-space: nowrap;
+  margin-right: var(--spacing-md);
+}
+
+@media screen and (min-width: 320px) {
+  .nav-pages {
+    display: flex;
+    justify-content: center;
+  }
+  .nav-pages ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+@media screen and (min-width: 640px) {
+  .nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .nav-home {
+    display: inline;
+    justify-self: start;
+  }
+  .nav-pages {
+    justify-self: end;
+  }
+  .nav-pages ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+@font-face {
+  font-family: "Yekan";
+  src: url("../persian-web-font/yekan-font/Yekan.eot");
+  src: url("../persian-web-font/yekan-font/Yekan.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/yekan-font/Yekan.woff") format("woff"), url("../persian-web-font/yekan-font/Yekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vazir";
+  src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.eot");
+  src: url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff?#iefix") format("embedded-opentype"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.woff") format("woff"), url("../persian-web-font/vazir-font-v18.0.0/Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Import main styles */
+/* 
+ * Main stylesheet for the website
+ * Import components and add page-specific styles
+ */
+/* Import component styles */
+/* 
+ * Standardized Navigation Styles
+ * For consistent navigation across all pages
+ * Supports both LTR and RTL layouts
+ */
+/* Blog/Post Navigation */
+.blog-navigation {
+  padding: 40px 0 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(var(--color-primary-rgb), 0.1);
+  margin-top: 30px;
+  /* Container for each navigation link */
+  /* Default styling for text, can be overridden for RTL layouts */
+}
+.blog-navigation div {
+  max-width: 45%;
+}
+.blog-navigation a {
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  text-decoration: none;
+  transition: all var(--transition-default);
+  padding: 8px 12px;
+  border-radius: var(--border-radius-sm);
+}
+.blog-navigation a:hover {
+  color: var(--color-links-hover);
+  background-color: rgba(var(--color-links-rgb), 0.05);
+}
+.blog-navigation a:hover i {
+  color: var(--color-links-hover);
+}
+.blog-navigation a.previous:hover i {
+  transform: translateX(-3px);
+}
+.blog-navigation a.next:hover i {
+  transform: translateX(3px);
+}
+.blog-navigation i {
+  font-size: 1.2rem;
+  margin: 0 8px;
+  transition: all var(--transition-default);
+  color: inherit;
+}
+.blog-navigation .blog-navigation-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+/* Responsive styles for blog navigation */
+@media screen and (max-width: 639px) {
+  .blog-navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .blog-navigation div {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .blog-navigation a {
+    justify-content: center;
+  }
+}
+/* 
+ * Main Styles
+ * Base styles used throughout the site
+ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--color-primary);
+  line-height: 1.6;
+}
+
+main {
+  overflow: hidden;
+  flex: 1;
+  padding: var(--spacing-xl) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+  min-height: 90%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: rgba(var(--color-primary-rgb), 0.2);
+  margin: var(--spacing-lg) 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-links);
+  transition: color var(--transition-default);
+}
+a:hover {
+  color: var(--color-links-hover);
+}
+a:active, a:visited {
+  color: var(--color-links);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Neucha", cursive;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5, h6 {
+  font-size: 1rem;
+}
+
+/* Common section styling */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+.section-header h2 {
+  font-size: 1.75rem;
+  position: relative;
+}
+.section-header h2:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-links-hover);
+}
+.section-header .view-all {
+  color: rgba(var(--color-links-rgb), 0.8);
+  font-size: 0.9rem;
+}
+.section-header .view-all:hover {
+  color: var(--color-links-hover);
+}
+
+/* Page container */
+.page-container {
+  padding-top: 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+  html, body {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .container {
+    padding: var(--spacing-md);
+  }
+  main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+/*
+ * This file now serves as the entry point for styles
+ * Page-specific styles are imported via Jekyll's front matter
+ * using the custom_css property
+ */
 
 /*# sourceMappingURL=styles.css.map */

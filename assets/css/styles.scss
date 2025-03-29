@@ -1,206 +1,25 @@
 ---
 ---
+/* 
+ * Main stylesheet for the website
+ * Import components and add page-specific styles
+ */
+
+/* Import component styles */
 @use "components/reset";
 @use "components/variables";
 @use "components/links";
 @use "components/icon";
 @use "components/footer";
+@use "components/nav-bar";
+@use "components/fa-fonts";
 
-/* Base styles */
-body {
-  font-size: 16px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: var(--primary);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+/* Import main styles */
+@use "pages/main";
 
-a {
-  text-decoration: none;
-  color: rgba(var(--links), .9);
-  transition: color 0.3s ease;
-  
-  &:hover {
-    color: var(--links-active);
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Neucha', cursive;
-  color: var(--primary);
-  margin-top: 0;
-}
-
-/* Main Nav */
-.main-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  
-  &.scrolled {
-    background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
-  }
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-}
-
-.nav-logo {
-  
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    i {
-      font-size: 1.5rem;
-      color: var(--primary);
-      transition: transform 0.3s ease, color 0.3s ease;
-      
-      &:hover {
-        transform: scale(1.1);
-        color: var(--links-active);
-      }
-    }
-  }
-}
-
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-  
-  &.active {
-    display: flex;
-  }
-  
-  a {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    color: var(--primary);
-    
-    &:hover, &.active {
-      color: var(--links-active);
-      
-      i, .icon {
-        transform: scale(1.1);
-      }
-    }
-    
-    i, .icon {
-      width: 1.25em;
-      margin-right: 0.5rem;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-  }
-}
-
-.nav-toggle {
-  background: none;
-  border: none;
-  color: var(--primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.25rem;
-  
-  &:focus {
-    outline: none;
-  }
-}
-
-/* Page container */
-.page-container {
-  padding-top: 4rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Common section styling */
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  
-  h2 {
-    font-size: 1.75rem;
-    position: relative;
-    
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background-color: var(--links-active);
-    }
-  }
-  
-  .view-all {
-    color: rgba(var(--links), 0.8);
-    font-size: 0.9rem;
-    
-    &:hover {
-      color: var(--links-active);
-    }
-  }
-}
-
-/* Responsive styles */
-@media screen and (min-width: 992px) {
-  .nav-toggle {
-    display: none;
-  }
-  
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    width: auto;
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
-    
-    a {
-      padding: 0.5rem 1rem;
-      
-      /* No need to override hover styles here as they're already defined above */
-      
-      .nav-text {
-        display: inline;
-      }
-    }
-  }
-}
+/*
+ * This file now serves as the entry point for styles
+ * Page-specific styles are imported via Jekyll's front matter
+ * using the custom_css property
+ */
 

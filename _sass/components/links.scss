@@ -1,23 +1,39 @@
+/* Global link styles */
+a {
+    text-decoration: none;
+    transition: color var(--transition-default);
+    
+    &:hover {
+        color: var(--color-links-hover);
+    }
+}
+
+/* Specific link styles */
 .nav-links {
     text-decoration: none;
     font-size: 1.1em;
     color: var(--primary);
-    // text-align: center;
+    transition: color var(--transition-default);
+    
     &:hover {
-        color: var(--links-active);
+        color: var(--color-links-hover);
         text-shadow: 1px 2px rgba(0, 0, 0, 0.1);
     }
+    
     &:active {
-        color: var(--links-active);
+        color: var(--color-active);
     }
 }
 
 .category-links {
     text-decoration: none;
     color: rgba(var(--primary-rgb), .5);
+    transition: color var(--transition-default);
+    
     &:hover {
-        color: rgba(var(--primary-rgb), .9);
+        color: var(--color-links-hover);
     }
+    
     &:active, &:visited {
         color: rgba(var(--primary-rgb), .5);
     }
@@ -26,11 +42,13 @@
 .post-links {
     text-decoration: none;
     color: var(--primary);
+    transition: color var(--transition-default);
   
     &:hover {
-        color: var(--links-active);
+        color: var(--color-links-hover) !important; /* Ensure this overrides any other styles */
     }
-    &:active{
+    
+    &:active {
         color: var(--primary);
     }
 }
@@ -38,9 +56,12 @@
 .tag-links {
     text-decoration: none;
     color: rgba(var(--primary-rgb), .6);
+    transition: color var(--transition-default);
+    
     &:hover {
-        color: rgba(var(--primary-rgb), .9);
+        color: var(--color-links-hover);
     }
+    
     &:active, &:visited {
         color: rgba(var(--primary-rgb), .6);
     }
@@ -49,7 +70,13 @@
 .orang-links {
     text-decoration: none;
     color: rgb(228, 118, 0);
-    &:hover, &:active, &:visited {
+    transition: color var(--transition-default);
+    
+    &:hover {
+        color: var(--color-links-hover);
+    }
+    
+    &:active, &:visited {
         color: rgb(228, 118, 0);
     }
 }

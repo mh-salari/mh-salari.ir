@@ -1,18 +1,28 @@
-footer {
+/* 
+ * Footer Styles
+ */
+.footer {
     font-family: 'Zeyada', cursive;
     text-align: center;
-    padding: 50px 0px 0px 0px;
-    // margin: 10px auto;
-    color: var(--primary);
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+    color: var(--color-primary);
     font-size: 1.3em;
-    
-    .icon {
-        /* Keep icon size unchanged */
-        width: 0.9em;
-        height: 0.9em;
-    }
+    border-top: 1px solid rgba(var(--color-primary-rgb), 0.1);
+    margin-top: var(--spacing-xl);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright {
+    display: block;
 }
 
 .footer-break {
     display: none;
 }
+
+/* No media query needed since the footer is always centered */

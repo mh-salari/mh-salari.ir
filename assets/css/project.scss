@@ -1,3 +1,10 @@
 ---
 ---
+/* Import project styles */
 @use "pages/project";
+@use "components/navigation";
+
+/* Project-specific overrides */
+.project-title, .publication-title {
+  text-align: center;
+}

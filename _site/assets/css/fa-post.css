@@ -1,3 +1,4 @@
+/* Import FA post styles */
 .article {
   color: var(--primary);
   margin: 0 5px;
@@ -66,16 +67,7 @@
   padding: 0 10px;
 }
 
-.blog-navigation {
-  padding-top: 25px;
-  display: none;
-}
-.blog-navigation .icon {
-  vertical-align: middle;
-  width: 2em;
-  margin: 0 2.5px;
-}
-
+/* Blog navigation styles now in components/navigation.scss */
 .blog-navigation-text {
   font-family: "Yekan", "Neucha", cursive;
   unicode-bidi: plaintext;
@@ -92,15 +84,6 @@
   .post-text {
     font-size: 14px;
   }
-  .blog-navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    font-size: 13px;
-    row-gap: 10px;
-  }
 }
 ul, ol {
   padding: 0 25px;
@@ -113,10 +96,6 @@ ul, ol {
   .post-text img {
     padding: 0 15px;
   }
-  .blog-navigation {
-    flex-direction: row;
-    font-size: 14px;
-  }
 }
 @media screen and (min-width: 960px) {
   .article {
@@ -125,6 +104,82 @@ ul, ol {
   .post-text img {
     padding: 0 20px;
   }
+}
+/* 
+ * Standardized Navigation Styles
+ * For consistent navigation across all pages
+ * Supports both LTR and RTL layouts
+ */
+/* Blog/Post Navigation */
+.blog-navigation {
+  padding: 40px 0 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(var(--color-primary-rgb), 0.1);
+  margin-top: 30px;
+  /* Container for each navigation link */
+  /* Default styling for text, can be overridden for RTL layouts */
+}
+.blog-navigation div {
+  max-width: 45%;
+}
+.blog-navigation a {
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  text-decoration: none;
+  transition: all var(--transition-default);
+  padding: 8px 12px;
+  border-radius: var(--border-radius-sm);
+}
+.blog-navigation a:hover {
+  color: var(--color-links-hover);
+  background-color: rgba(var(--color-links-rgb), 0.05);
+}
+.blog-navigation a:hover i {
+  color: var(--color-links-hover);
+}
+.blog-navigation a.previous:hover i {
+  transform: translateX(-3px);
+}
+.blog-navigation a.next:hover i {
+  transform: translateX(3px);
+}
+.blog-navigation i {
+  font-size: 1.2rem;
+  margin: 0 8px;
+  transition: all var(--transition-default);
+  color: inherit;
+}
+.blog-navigation .blog-navigation-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+/* Responsive styles for blog navigation */
+@media screen and (max-width: 639px) {
+  .blog-navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .blog-navigation div {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .blog-navigation a {
+    justify-content: center;
+  }
+}
+/* Persian-specific overrides */
+.blog-navigation .blog-navigation-text {
+  font-family: "Yekan", "Neucha", cursive;
+  unicode-bidi: plaintext;
 }
 
 /*# sourceMappingURL=fa-post.css.map */

@@ -72,66 +72,44 @@
 
 <body>
     <!-- Sticky Navigation Bar -->
-<nav class="main-nav">
+<nav class="main-nav" aria-label="Main navigation">
     <div class="nav-container">
         <div class="nav-logo">
-            <a href="http://localhost:4000/" title="Home" >
-                <i class="fas fa-home"></i>
+            <a href="http://localhost:4000/" aria-label="Home" >
+                <i class="fas fa-home" aria-hidden="true"></i>
             </a>
         </div>
         <div class="nav-links">
-            <a href="http://localhost:4000/news" title="News" >
-                <i class="far fa-newspaper"></i>
+            <a href="http://localhost:4000/news" aria-label="News" >
+                <i class="far fa-newspaper" aria-hidden="true"></i>
                 <span class="nav-text">News</span>
             </a>
-            <a href="http://localhost:4000/projects" title="Projects" >
-                <i class="far fa-folder-open"></i>
+            <a href="http://localhost:4000/projects" aria-label="Projects" >
+                <i class="far fa-folder-open" aria-hidden="true"></i>
                 <span class="nav-text">Projects</span>
             </a>
-            <a href="http://localhost:4000/publications" title="Publications" >
-                <i class="far fa-file-alt"></i>
+            <a href="http://localhost:4000/publications" aria-label="Publications" >
+                <i class="far fa-file-alt" aria-hidden="true"></i>
                 <span class="nav-text">Publications</span>
             </a>
-            <a href="http://localhost:4000/fa_blog" title="Persian Blog" >
-                <i class="far fa-edit"></i>
+            <a href="http://localhost:4000/fa_blog" aria-label="Persian Blog" >
+                <i class="far fa-edit" aria-hidden="true"></i>
                 <span class="nav-text">FaBlog</span>
             </a>
-            <a href="#" title="English Blog">
-                <i class="far fa-sticky-note"></i>
+            <a href="#" aria-label="English Blog">
+                <i class="far fa-sticky-note" aria-hidden="true"></i>
                 <span class="nav-text">EnBlog</span>
             </a>
-            <a href="http://localhost:4000/assets/files/Mohammadhossein Salari - CV.pdf" title="Resume">
-                <i class="far fa-user"></i>
+            <a href="http://localhost:4000/assets/files/Mohammadhossein Salari - CV.pdf" aria-label="Resume">
+                <i class="far fa-user" aria-hidden="true"></i>
                 <span class="nav-text">Resume</span>
             </a>
         </div>
-        <button class="nav-toggle">
-            <i class="fas fa-bars"></i>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
     </div>
 </nav>
-
-<script>
-    // Simple script for the mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        navToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    });
-
-    // Add a class to the nav when scrolling
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('.main-nav');
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-</script>
 
     <div class="page-container">
         <main>
@@ -176,17 +154,15 @@
 
 
         <!-- footer -->
-        <footer class="footer">
-    Mohammadhossein Salari <br class="footer-break"> &copy; 2025
-
-    <a class="link " href="http://localhost:4000/feed.xml" target="_blank">
-        <img class="icon" src="http://localhost:4000/assets/svg-icons/rss.svg">
-    </a>
-
+        <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+        <span class="copyright">Mohammadhossein Salari<br class="footer-break"> &copy; 2025</span>
+    </div>
 </footer>
     </div>
 
-    <!-- Nav bar script is included in the nav-bar.html include -->
+    <!-- External JavaScript -->
+    <script src="http://localhost:4000/assets/js/navigation.js"></script>
 </body>
 
 </html>
