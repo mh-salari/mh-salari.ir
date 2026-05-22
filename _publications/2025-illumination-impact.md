@@ -4,6 +4,7 @@ title: "Investigating the Impact of Illumination Change on the Accuracy of Head-
 authors: "Mohammadhossein Salari, Roman Bednarik"
 venue: "ICMI Companion '24: Companion Proceedings of the 26th International Conference on Multimodal Interaction"
 year: 2024
+date: 2024-11-04
 doi: "10.1145/3686215.3688383"
 ---
 
