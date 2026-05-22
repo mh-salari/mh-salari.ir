@@ -20,14 +20,20 @@ layout: default
 
         <div class="publication-links">
             {% if page.doi %}
-            <a href="https://doi.org/{{ page.doi }}" target="_blank" class="doi-link">
-                <i class="far fa-file-alt"></i> DOI
+            <a href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener">
+                <img src="https://img.shields.io/badge/DOI-{{ page.doi | replace: '-', '--' | replace: '/', '%2F' }}-blue" alt="DOI {{ page.doi }}">
             </a>
             {% endif %}
-            
+
+            {% if page.external_url %}
+            <a href="{{ page.external_url }}" target="_blank" rel="noopener">
+                <img src="https://img.shields.io/badge/paper-link-blue" alt="Paper link">
+            </a>
+            {% endif %}
+
             {% if page.pdf %}
-            <a href="{{ site.baseurl }}{{ page.pdf }}" target="_blank" class="pdf-link">
-                <i class="far fa-file-pdf"></i> PDF
+            <a href="{{ site.baseurl }}{{ page.pdf }}" target="_blank" rel="noopener">
+                <img src="https://img.shields.io/badge/PDF-document-red" alt="PDF">
             </a>
             {% endif %}
         </div>
@@ -38,21 +44,6 @@ layout: default
     </article>
 </main>
 
-<div class="blog-navigation">
-    <div>
-        {% if page.next.url %}
-        <a class="next post-links" href="{{page.next.url}}">
-            <span class="blog-navigation-text">{{page.next.title}}</span>
-            <i class="fas fa-chevron-left"></i>
-        </a>
-        {% endif %}
-    <div>
-        {% if page.previous.url %}
-        <a class="previous post-links" href="{{page.previous.url}}">
-            <i class="fas fa-chevron-right"></i>
-            <span class="blog-navigation-text">{{page.previous.title}}</span>
-        </a>
-        {% endif %}
-    </div>
-    </div>
+<div class="back-to-publications">
+    <a href="{{ site.baseurl }}/publications/">← Back to publications</a>
 </div>

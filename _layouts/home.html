@@ -85,7 +85,7 @@
           <h3 class="news-title">
             <a href="{{ site.baseurl }}{{ news.url }}">{{ news.title }}</a>
           </h3>
-          <div class="news-excerpt">{{ news.excerpt | strip_html | truncatewords: 20 }}</div>
+          <div class="news-excerpt">{% if news.summary %}{{ news.summary }}{% else %}{{ news.excerpt | strip_html | truncatewords: 20 }}{% endif %}</div>
         </div>
         {% endfor %}
       </div>
