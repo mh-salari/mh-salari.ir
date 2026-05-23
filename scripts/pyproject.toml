@@ -1,0 +1,108 @@
+[project]
+name = "scripts"
+version = "0.1.0"
+authors = [
+    { name = "Mohammadhossein Salari", email = "mohammadhossein.salari@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pillow>=12.2.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 119
+preview = true
+
+lint.extend-select = [
+    "E",    # Pycodestyle errors
+    "W",    # Pycodestyle warnings
+    "C90",  # McCabe
+    "I",    # isort
+    "N",    # PEP8 Naming
+    "D",    # Pydocstyle
+    "UP",   # Pyupgrade
+    "YTT",  # Flake8-2020
+    "ANN",  # Flake8-annotations
+    "ASYNC",# Flake8-async
+    "S",    # Flake8-bandit
+    "BLE",  # Flake8-blind-except
+    "FBT",  # Flake8-boolean-trap
+    "B",    # Flake8-bugbear
+    "A",    # Flake8-builtins
+    "COM",  # Flake8-commas
+    "C4",   # Flake8-comprehensions
+    "DTZ",  # Flake8-datetimez
+    "T10",  # Flake8-debugger
+    "DJ",   # Flake8-django
+    "EM",   # Flake8-errmsg
+    "EXE",  # Flake8-executable
+    "FA",   # Flake8-future-annotations
+    "ISC",  # Flake8-implicit-str-concat
+    "ICN",  # Flake8-import-conventions
+    "LOG",  # Flake8-logging
+    "G",    # Flake8-logging-format
+    "INP",  # Flake8-no-pep420
+    "PIE",  # Flake8-pie
+    "PYI",  # Flake8-pyi
+    "PT",   # Flake8-pytest-style
+    "Q",    # Flake8-quotes
+    "RSE",  # Flake8-raise
+    "RET",  # Flake8-return
+    "SLF",  # Flake8-self
+    "SLOT", # Flake8-slots
+    "SIM",  # Flake8-simplify
+    "TID",  # Flake8-tidy-imports
+    "TC",   # Flake8-type-checking
+    "INT",  # Flake8-gettext
+    "ARG",  # Flake8-unused-arguments
+    "PTH",  # Flake8-use-pathlib
+    "TD",   # Flake8-todos
+    "FIX",  # Flake8-fixme
+    "PD",   # Pandas-vet
+    "PGH",  # Pygrep-hooks
+    "PL",   # Pylint
+    "TRY",  # Tryceratops
+    "FLY",  # Flynt
+    "NPY",  # NumPy-specific
+    "FAST", # FastAPI
+    "AIR",  # Airflow
+    "PERF", # Perflint
+    "FURB", # Refurb
+    "RUF",  # Ruff-specific
+    "PLC0415", # import should be at top-level
+]
+
+lint.ignore = [
+    "E501",   # Line too long
+    "E741",   # Ambiguous variable name
+    "FBT003", # Boolean position value in function call
+    "D203",   # One blank line before class docstring
+    "D213",   # Multi-line docstring summary should start at second line
+    "S311",   # Pseudo-random generators not suitable for security
+    "PERF401",# For loop that can be replaced by list comprehension
+    "RET504", # Variable assignment immediately before return
+    "FA102",  # Missing `from __future__ import annotations`
+    "COM812", # Trailing comma missing
+    "TRY300", # Consider moving statement to `else` block
+    "BLE001", # Do not catch blind exception
+    "PLR2004",# Magic value used in comparison
+    "D400",   # First line should end with a period
+    "D415",   # First line should end with period/question/exclamation
+    "TID252", # Prefer absolute imports
+    "FBT001", # Boolean-typed positional argument in function definition
+    "FBT002", # Boolean default positional argument in function definition
+    "PLR0915",# Too many statements
+    "TRY003", # Avoid long messages outside the exception class
+    "EM101",  # Exception must not use a string literal
+    "EM102",  # Exception must not use an f-string literal
+    "D401",   # First line of docstring should be in imperative mood
+    "PLR0911",# Too many return statements
+    "C901",   # Function too complex
+    "PLR0912",# Too many branches
+    "PLR0913",# Too many arguments
+    "PLR0917",# Too many arguments
+    "PLR0914",# Too many local variables
+]
