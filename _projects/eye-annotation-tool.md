@@ -4,7 +4,8 @@ custom_css: project
 title: "EyE Annotation Tool"
 # permalink: /projects/#
 date: 2024-08-22
-thumbnail: /assets/projects-images/eye_annotation_tool/eye_annotation_tool.png
+thumbnail: /assets/projects-images/eye_annotation_tool/eye_annotation_tool-thumbnail.png
+hero: /assets/projects-images/eye_annotation_tool/eye_annotation_tool.png
 description: A Qt-based desktop tool for annotating pupil, iris, eyelid, and glints in eye images, with built-in auto-detectors.
 ---
 

@@ -4,7 +4,8 @@ custom_css: project
 title: "Cheshm"
 # permalink: /projects/#
 date: 2026-05-14
-thumbnail: /assets/projects-images/cheshm/cheshm.png
+thumbnail: /assets/projects-images/cheshm/cheshm-thumbnail.png
+hero: /assets/projects-images/cheshm/cheshm.png
 description: A cross-platform C++ library with Python bindings packaging pupil, glint, and limbus detectors for grayscale eye images.
 ---
 

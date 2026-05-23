@@ -4,7 +4,8 @@ custom_css: project
 title: "Fenjan"
 # permalink: /projects/#
 date: 2022-12-06
-thumbnail: /assets/projects-images/fenjan/fenjan.png
+thumbnail: /assets/projects-images/fenjan/fenjan-thumbnail.png
+hero: /assets/projects-images/fenjan/fenjan.png
 description: "A bot that finds Ph.D. positions from social media and university websites, delivering daily personalized updates."
 ---
 

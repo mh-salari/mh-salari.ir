@@ -4,7 +4,8 @@ custom_css: project
 title: "Zarafe"
 # permalink: /projects/#
 date: 2025-03-11
-thumbnail: /assets/projects-images/zarafe/zarafe.png
+thumbnail: /assets/projects-images/zarafe/zarafe-thumbnail.png
+hero: /assets/projects-images/zarafe/zarafe.png
 description: A unified video annotation tool for time-marking events across different head-mounted eye trackers.
 ---
 

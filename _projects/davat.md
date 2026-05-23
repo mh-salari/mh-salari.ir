@@ -4,7 +4,8 @@ custom_css: project
 title: "Davat(دوات)"
 # permalink: /projects/#
 date: 2021-05-03
-thumbnail: /assets/projects-images/davat/davat.png
+thumbnail: /assets/projects-images/davat/davat-thumbnail.png
+hero: /assets/projects-images/davat/davat.png
 description: "A Python library for normalizing and cleaning Persian text for NLP applications."
 ---
 
