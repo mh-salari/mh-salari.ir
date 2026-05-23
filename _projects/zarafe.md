@@ -3,14 +3,24 @@ layout: project
 custom_css: project
 title: "Zarafe"
 # permalink: /projects/#
-date: 2024-04-03
+date: 2025-03-11
 thumbnail: /assets/projects-images/zarafe/zarafe.png
-description: A tool for time annotation of eye-tracking recordings from multiple manufacturers with gaze data visualization.
+description: A unified video annotation tool for time-marking events across different head-mounted eye trackers.
 ---
 
-I developed Zarafe to simplify working with eye-tracking data from multiple manufacturers. Instead of using different systems for each device, I wanted one unified tool to do time annotation for eye-tracking recordings. The application loads videos with their corresponding gaze data files, displays gaze position overlays on each frame, and provides straightforward controls for creating time-based event markers. These annotations export easily to CSV for analysis, streamlining my workflow across different eye-tracking platforms without needing to switch between various software solutions.
+<div style="display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; justify-content: center; margin: 0 0 1.5rem;">
+<a href="https://pypi.org/project/zarafe/"><img src="https://img.shields.io/pypi/v/zarafe" alt="PyPI version" style="height: 22px; vertical-align: middle;"></a>
+<a href="https://pepy.tech/project/zarafe"><img src="https://static.pepy.tech/badge/zarafe" alt="Downloads" style="height: 22px; vertical-align: middle;"></a>
+<a href="https://pypi.org/project/zarafe/"><img src="https://img.shields.io/pypi/l/zarafe" alt="License" style="height: 22px; vertical-align: middle;"></a>
+<a href="https://github.com/mh-salari/zarafe"><img src="https://img.shields.io/badge/code-GitHub-181717?logo=github" alt="Code on GitHub" style="height: 22px; vertical-align: middle;"></a>
+</div>
 
-Developed by vibe-coding with Claude 3.7 Sonnet :)
+For my [pupil-size artifact paper]({{ site.baseurl }}/publications/2025-psa-head-mounted), I needed to annotate eye-tracking data from four different head-mounted eye trackers — the Pupil Core, Pupil Neon, SMI ETG 2w, and Tobii Pro Glasses 2 — each with its own data format and its own proprietary annotation software. Learning four different tools just to mark the same kind of event timestamps felt absurd, so I wrote my own.
 
+Zarafe works on the `worldCamera.mp4` + `gazeData.tsv` pair produced by [glassesValidator](https://github.com/dcnieho/glassesValidator) once each manufacturer's native recording is converted to that common format. Inside Zarafe you get the video with gaze position overlaid frame by frame, controls to create and manage time-based event annotations, and CSV export for downstream analysis.
 
-[View project on GitHub](https://github.com/mh-salari/zarafe)
+Here's what the interface looks like in use:
+
+<img src="/assets/projects-images/zarafe/app.png" alt="Zarafe application screenshot" style="width: 100%; display: block; margin: 1.5rem auto;">
+
+Code: [github.com/mh-salari/zarafe](https://github.com/mh-salari/zarafe)

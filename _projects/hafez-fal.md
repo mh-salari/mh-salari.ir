@@ -3,28 +3,28 @@ layout: project
 custom_css: project
 title: "hafez-fal.ir"
 # permalink: /projects/#
-date:  2021-02-26 12:00:07 +0000
+date: 2018-09-13
 thumbnail: /assets/projects-images/hafez-fal/logo.png
 description: "A clean, ad-free website for reading Hafez's poetry with an NLP-powered Twitter bot."
 ---
 
-Hafez-fal.ir came about when I grew frustrated with existing Hafez poetry sites cluttered with advertisements. After discussing this with [Kiavash](https://twitter.com/kiavash), we decided to create a simple, ad-free alternative that would provide a better reading experience.
+Hafez-fal.ir started in 2018 because I was fed up with existing Hafez poetry sites cluttered with ads. After discussing it one evening with [Kiavash](https://twitter.com/kiavash), we decided to build a clean, ad-free alternative.
 
-![](/assets/projects-images/hafez-fal/landing-page.png)
+![](/assets/projects-images/hafez-fal/ghazal-128.png)
 
-We divided the work based on our strengths: I used Python to collect the poetry texts from various sources, while Kiavash processed the data into YAML files using Perl and his Mira framework. He also implemented the JavaScript random selection function for the fortune-telling feature. The result is http://hafez-fal.ir - a clean, minimalist site focused entirely on Hafez's poetry.
+We split the work based on our strengths. I scraped Hafez's poetry from various sources and maintained the texts. Kiavash designed and implemented the template (based on Bootstrap's cover template) and documented each ghazal for Mira, which handled content management. He also wrote the JavaScript random-selection logic for the fortune-telling feature. The result lives at [hafez-fal.ir](http://hafez-fal.ir).
 
-![](/assets/projects-images/hafez-fal/447.png)
+At first the site had very few visitors, so I built a Twitter bot that tweets a random poem every day at 7:27 AM. To get more eyes on it, I also taught the bot to like any tweet mentioning "حافظ".
 
-At the beginning, Hafez-fal.ir did not have many visitors. So, I decided to create a Twitter bot for it that randomly tweets one of Hafez's poems every day at 7:27 AM. Additionally, to attract more audience, I added the ability to like tweets containing the word "حافظ" to the Twitter bot.
+<img src="/assets/projects-images/hafez-fal/twitter.png" alt="Twitter bot" style="max-width: 500px; width: 100%; display: block; margin: 1.5rem auto;">
 
-![](/assets/projects-images/hafez-fal/twitter.png)
+But "حافظ" has many meanings beyond the poet, so I added a filter to only like poetry-related tweets. The first version used ULMFit and reached 95.5% accuracy. Later I realized that was overkill — a few scikit-learn experiments with Bag-of-Words on the same dataset, without any preprocessing, hit 96.7%.
 
-Since the word "حافظ" has many meanings apart from the poet, I initially implemented a filter to only like tweets related to the poetry using ULMFit's deep neural network. This network achieved 95.5% accuracy. However, later on, I realized that a deep and heavy neural network was not needed for this task. I conducted some experiments with scikit-learn models on Bag of Words tokens on the same dataset without any preprocessing and achieved 96.7% accuracy!
+<img src="/assets/projects-images/hafez-fal/accuracy.jpeg" alt="Model accuracy comparison" style="max-width: 600px; width: 100%; display: block; margin: 1.5rem auto;">
 
-![](/assets/projects-images/hafez-fal/accuracy.jpeg)
+In Spring 2026 the site was rewritten into a Progressive Web App with no frameworks or dependencies — you can install it like a native app and use it offline. The codebase lives at [github.com/sandoogh/hafez-fal.ir](https://github.com/sandoogh/hafez-fal.ir).
 
-Currently, the Hafez-fal.ir receives an average number of 5.5k monthly visitors.
+At the time of writing, Cloudflare reported about **15.48k unique visitors** and **1.32M requests** over the previous 30 days. I suspect a chunk of that is bots and AI crawlers, so the real human number is probably lower — but that's what the dashboard tells me.
 
-![](/assets/projects-images/hafez-fal/overview.png)
+<img src="/assets/projects-images/hafez-fal/overview.png" alt="Cloudflare stats overview" style="max-width: 700px; width: 100%; display: block; margin: 1.5rem auto;">
 
