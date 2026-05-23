@@ -9,9 +9,15 @@ layout: default
             <h1><a class="post-links" href="{{ site.baseurl }}{{ post.url }}"> {{ page.title }}</a></h1>
         </div>
 
-        {% if page.thumbnail %}
+        {% assign hero_src = page.hero | default: page.thumbnail %}
+        {% if hero_src %}
         <div class="title-image">
-            <img src="{{ page.thumbnail }}" alt="{{ page.title }}">
+            {% assign hero_ext = hero_src | split: '.' | last | downcase %}
+            {% if hero_ext == 'mp4' or hero_ext == 'webm' %}
+            <video src="{{ hero_src }}" autoplay loop muted playsinline></video>
+            {% else %}
+            <img src="{{ hero_src }}" alt="{{ page.title }}">
+            {% endif %}
         </div>
         {% endif %}
 

@@ -12,7 +12,12 @@ layout: default
         <div class="project">
             <div class="project-thumbnail">
                 <a href="{{ site.baseurl }}{{ project.url }}">
+                    {% assign thumb_ext = project.thumbnail | split: '.' | last | downcase %}
+                    {% if thumb_ext == 'mp4' or thumb_ext == 'webm' %}
+                    <video src="{{ site.baseurl }}{{ project.thumbnail }}" autoplay loop muted playsinline></video>
+                    {% else %}
                     <img src="{{ site.baseurl }}{{ project.thumbnail }}" alt="{{ project.title }}" />
+                    {% endif %}
                 </a>
             </div>
             <div class="project-title">
